@@ -1,0 +1,245 @@
+// Products Page JavaScript
+'use strict';
+
+// Additional translations for products page
+const productTranslations = {
+    en: {
+        'products-title': 'Our Products',
+        'products-subtitle': 'Smart prefabricated steel structures for every need',
+        'cat-all': 'All Products',
+        'cat-residential': 'Residential',
+        'cat-commercial': 'Commercial',
+        'cat-enterprise': 'Enterprise',
+        
+        // Taglines
+        'starter-tagline': 'Compact living redefined',
+        'family-tagline': 'Perfect family living space',
+        'custom-tagline': 'Tailored to your vision',
+        'pro-tagline': 'Industrial & commercial excellence',
+        
+        // Common
+        'specs-title': 'Specifications',
+        'features-title': 'Features',
+        'get-quote': 'Get Quote',
+        'download-specs': 'Download Specs',
+        'contact-sales': 'Contact Sales',
+        'request-consultation': 'Request Consultation',
+        'price-contact': 'Contact for pricing',
+        
+        // Starter specs
+        'starter-spec-1': 'Area: 50-80 m²',
+        'starter-spec-2': 'Bedrooms: 1-2',
+        'starter-spec-3': 'Build time: 30-45 days',
+        'starter-spec-4': 'Floors: 1-2',
+        
+        // Starter features
+        'starter-feat-1': 'Smart home ready',
+        'starter-feat-2': 'Energy efficient design',
+        'starter-feat-3': 'Modular expansion',
+        'starter-feat-4': 'Climate control',
+        'starter-feat-5': 'Security system',
+        'starter-feat-6': '10 year warranty',
+        
+        // Family specs
+        'family-spec-1': 'Area: 100-150 m²',
+        'family-spec-2': 'Bedrooms: 3-4',
+        'family-spec-3': 'Build time: 45-60 days',
+        'family-spec-4': 'Floors: 2-3',
+        
+        // Family features
+        'family-feat-1': 'Full smart home system',
+        'family-feat-2': 'Solar panel ready',
+        'family-feat-3': 'Premium insulation',
+        'family-feat-4': 'Garden integration',
+        'family-feat-5': 'Garage included',
+        'family-feat-6': '15 year warranty',
+        
+        // Custom specs
+        'custom-spec-1': 'Area: 200+ m²',
+        'custom-spec-2': 'Bedrooms: Custom',
+        'custom-spec-3': 'Build time: 60-90 days',
+        'custom-spec-4': 'Floors: Up to 5',
+        
+        // Custom features
+        'custom-feat-1': 'Architect consultation',
+        'custom-feat-2': 'BIM design process',
+        'custom-feat-3': 'Luxury finishes',
+        'custom-feat-4': 'Pool & landscape',
+        'custom-feat-5': 'Home automation',
+        'custom-feat-6': '20 year warranty',
+        
+        // PRO specs
+        'pro-spec-1': 'Area: 500+ m²',
+        'pro-spec-2': 'Type: Warehouse/Office',
+        'pro-spec-3': 'Build time: Custom timeline',
+        'pro-spec-4': 'Scale: Unlimited',
+        
+        // PRO features
+        'pro-feat-1': 'Industrial grade',
+        'pro-feat-2': 'Fire safety systems',
+        'pro-feat-3': 'Loading docks',
+        'pro-feat-4': 'HVAC systems',
+        'pro-feat-5': 'Access control',
+        'pro-feat-6': '25 year warranty',
+        
+        // Comparison
+        'compare-title': 'Compare Products',
+        'compare-feature': 'Feature',
+        'compare-area': 'Area',
+        'compare-price': 'Price Range',
+        'compare-time': 'Build Time',
+        'compare-smart': 'Smart Home',
+        'compare-solar': 'Solar Ready',
+        'compare-custom': 'Custom',
+        'compare-warranty': 'Warranty',
+        'compare-basic': 'Basic',
+        'compare-moderate': 'Moderate',
+        'compare-full': 'Full'
+    },
+    
+    vi: {
+        'products-title': 'Sản phẩm của chúng tôi',
+        'products-subtitle': 'Kết cấu thép tiền chế thông minh cho mọi nhu cầu',
+        'cat-all': 'Tất cả sản phẩm',
+        'cat-residential': 'Nhà ở',
+        'cat-commercial': 'Thương mại',
+        'cat-enterprise': 'Doanh nghiệp',
+        
+        // Taglines
+        'starter-tagline': 'Không gian sống nhỏ gọn được định nghĩa lại',
+        'family-tagline': 'Không gian sống gia đình hoàn hảo',
+        'custom-tagline': 'Thiết kế theo tầm nhìn của bạn',
+        'pro-tagline': 'Xuất sắc cho công nghiệp và thương mại',
+        
+        // Common
+        'specs-title': 'Thông số kỹ thuật',
+        'features-title': 'Tính năng',
+        'get-quote': 'Nhận báo giá',
+        'download-specs': 'Tải thông số',
+        'contact-sales': 'Liên hệ bán hàng',
+        'request-consultation': 'Yêu cầu tư vấn',
+        'price-contact': 'Liên hệ để biết giá',
+        
+        // Starter specs
+        'starter-spec-1': 'Diện tích: 50-80 m²',
+        'starter-spec-2': 'Phòng ngủ: 1-2',
+        'starter-spec-3': 'Thời gian xây: 30-45 ngày',
+        'starter-spec-4': 'Tầng: 1-2',
+        
+        // Starter features
+        'starter-feat-1': 'Sẵn sàng nhà thông minh',
+        'starter-feat-2': 'Thiết kế tiết kiệm năng lượng',
+        'starter-feat-3': 'Mở rộng theo module',
+        'starter-feat-4': 'Kiểm soát khí hậu',
+        'starter-feat-5': 'Hệ thống an ninh',
+        'starter-feat-6': 'Bảo hành 10 năm',
+        
+        // Family specs
+        'family-spec-1': 'Diện tích: 100-150 m²',
+        'family-spec-2': 'Phòng ngủ: 3-4',
+        'family-spec-3': 'Thời gian xây: 45-60 ngày',
+        'family-spec-4': 'Tầng: 2-3',
+        
+        // Family features
+        'family-feat-1': 'Hệ thống nhà thông minh đầy đủ',
+        'family-feat-2': 'Sẵn sàng lắp pin năng lượng mặt trời',
+        'family-feat-3': 'Cách nhiệt cao cấp',
+        'family-feat-4': 'Tích hợp sân vườn',
+        'family-feat-5': 'Bao gồm nhà xe',
+        'family-feat-6': 'Bảo hành 15 năm',
+        
+        // Custom specs
+        'custom-spec-1': 'Diện tích: 200+ m²',
+        'custom-spec-2': 'Phòng ngủ: Tùy chỉnh',
+        'custom-spec-3': 'Thời gian xây: 60-90 ngày',
+        'custom-spec-4': 'Tầng: Lên đến 5',
+        
+        // Custom features
+        'custom-feat-1': 'Tư vấn kiến trúc sư',
+        'custom-feat-2': 'Quy trình thiết kế BIM',
+        'custom-feat-3': 'Hoàn thiện cao cấp',
+        'custom-feat-4': 'Hồ bơi và cảnh quan',
+        'custom-feat-5': 'Tự động hóa ngôi nhà',
+        'custom-feat-6': 'Bảo hành 20 năm',
+        
+        // PRO specs
+        'pro-spec-1': 'Diện tích: 500+ m²',
+        'pro-spec-2': 'Loại: Kho/Văn phòng',
+        'pro-spec-3': 'Thời gian xây: Lịch trình tùy chỉnh',
+        'pro-spec-4': 'Quy mô: Không giới hạn',
+        
+        // PRO features
+        'pro-feat-1': 'Cấp độ công nghiệp',
+        'pro-feat-2': 'Hệ thống phòng cháy chữa cháy',
+        'pro-feat-3': 'Cầu tải',
+        'pro-feat-4': 'Hệ thống HVAC',
+        'pro-feat-5': 'Kiểm soát ra vào',
+        'pro-feat-6': 'Bảo hành 25 năm',
+        
+        // Comparison
+        'compare-title': 'So sánh sản phẩm',
+        'compare-feature': 'Tính năng',
+        'compare-area': 'Diện tích',
+        'compare-price': 'Khoảng giá',
+        'compare-time': 'Thời gian xây',
+        'compare-smart': 'Nhà thông minh',
+        'compare-solar': 'Sẵn sàng năng lượng mặt trời',
+        'compare-custom': 'Tùy chỉnh',
+        'compare-warranty': 'Bảo hành',
+        'compare-basic': 'Cơ bản',
+        'compare-moderate': 'Trung bình',
+        'compare-full': 'Đầy đủ'
+    }
+};
+
+// Merge translations
+Object.keys(productTranslations).forEach(lang => {
+    Object.assign(window.FrameX.translations[lang], productTranslations[lang]);
+});
+
+// Category filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryBtns = document.querySelectorAll('.tab-btn');
+    const productCards = document.querySelectorAll('.product-detail-card');
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter products
+            productCards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const cardCategories = card.getAttribute('data-category');
+                    if (cardCategories && cardCategories.includes(category)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+    
+    // Update language on page load
+    window.FrameX.updateLanguage();
+    
+    // Smooth scroll to product if hash in URL
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                const offsetTop = target.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+});

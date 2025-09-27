@@ -1,0 +1,173 @@
+// Image and Icon Loader Utilities
+'use strict';
+
+(function() {
+    // Image lazy loading with fallback
+    function setupImageLazyLoading() {
+        // Check if native lazy loading is supported
+        if ('loading' in HTMLImageElement.prototype) {
+            // Native lazy loading is supported
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                // Add error handler
+                img.addEventListener('error', handleImageError);
+            });
+        } else {
+            // Fallback to Intersection Observer
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.addEventListener('error', handleImageError);
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+    }
+    
+    // Handle image loading errors
+    function handleImageError(e) {
+        const img = e.target;
+        const altText = img.alt || 'Image';
+        
+        // Create fallback SVG
+        const fallbackSVG = `
+            <svg width="${img.width || 120}" height="${img.height || 40}" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="120" height="40" fill="#f8f8f8" stroke="#e8e8e8" stroke-width="1"/>
+                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+                      font-family="Inter, sans-serif" font-size="12" fill="#707070">
+                    ${altText.substring(0, 15)}${altText.length > 15 ? '...' : ''}
+                </text>
+            </svg>
+        `;
+        
+        // Convert SVG to data URL
+        const svgDataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(fallbackSVG);
+        img.src = svgDataUrl;
+        img.classList.add('image-fallback');
+    }
+    
+    // Check Font Awesome icons loading
+    function checkFontAwesome() {
+        // Wait for Font Awesome to load
+        let checkCount = 0;
+        const maxChecks = 10;
+        
+        const checkInterval = setInterval(() => {
+            checkCount++;
+            
+            // Check if Font Awesome is loaded by testing a known icon
+            const testIcon = document.createElement('i');
+            testIcon.className = 'fas fa-check';
+            testIcon.style.position = 'absolute';
+            testIcon.style.visibility = 'hidden';
+            document.body.appendChild(testIcon);
+            
+            const computed = window.getComputedStyle(testIcon, ':before');
+            const content = computed.getPropertyValue('content');
+            
+            if (content && content !== 'none' && content !== '') {
+                // Font Awesome loaded successfully
+                clearInterval(checkInterval);
+                document.body.removeChild(testIcon);
+                console.log('Font Awesome loaded successfully');
+            } else if (checkCount >= maxChecks) {
+                // Font Awesome failed to load, apply fallback
+                clearInterval(checkInterval);
+                document.body.removeChild(testIcon);
+                console.warn('Font Awesome failed to load, applying fallbacks');
+                applyIconFallbacks();
+            }
+        }, 500);
+    }
+    
+    // Apply fallback for missing icons
+    function applyIconFallbacks() {
+        const icons = document.querySelectorAll('i[class*="fa-"]');
+        
+        icons.forEach(icon => {
+            // Check if icon is rendering
+            const computed = window.getComputedStyle(icon, ':before');
+            const content = computed.getPropertyValue('content');
+            
+            if (!content || content === 'none' || content === '') {
+                // Icon not rendering, replace with inline SVG
+                const iconName = extractIconName(icon.className);
+                const fallbackHTML = getFallbackIcon(iconName);
+                
+                const span = document.createElement('span');
+                span.className = 'icon-fallback';
+                span.innerHTML = fallbackHTML;
+                span.setAttribute('aria-hidden', 'true');
+                
+                icon.parentNode.replaceChild(span, icon);
+            }
+        });
+    }
+    
+    // Extract icon name from class
+    function extractIconName(className) {
+        const match = className.match(/fa-([a-z-]+)/);
+        return match ? match[1] : 'default';
+    }
+    
+    // Get fallback SVG icon
+    function getFallbackIcon(name) {
+        const iconMap = {
+            'home': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>',
+            'building': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>',
+            'phone': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>',
+            'envelope': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+            'check': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>',
+            'default': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18"/></svg>'
+        };
+        
+        return iconMap[name] || iconMap['default'];
+    }
+    
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    function init() {
+        setupImageLazyLoading();
+        checkFontAwesome();
+        
+        // Add styles for fallbacks
+        if (!document.getElementById('fallback-styles')) {
+            const style = document.createElement('style');
+            style.id = 'fallback-styles';
+            style.textContent = `
+                .image-fallback {
+                    background: #f8f8f8;
+                    border: 1px solid #e8e8e8;
+                }
+                .icon-fallback {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .icon-fallback svg {
+                    width: 1em;
+                    height: 1em;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
+    // Export for global use
+    window.ImageLoader = {
+        setupImageLazyLoading,
+        checkFontAwesome,
+        applyIconFallbacks
+    };
+})();

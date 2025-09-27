@@ -1,0 +1,128 @@
+// Services Page JavaScript
+'use strict';
+
+// Additional translations for services page
+const servicesTranslations = {
+    en: {
+        'services-title': 'Our Services',
+        'services-subtitle': 'Complete solutions from design to installation',
+        
+        // Service 1 - Smart Home
+        'service-1-title': 'Smart Home Integration',
+        'service-1-desc': 'Transform your steel structure into an intelligent living space with IoT ecosystem integration',
+        'service-1-feat-1': 'Voice control systems',
+        'service-1-feat-2': 'Automated lighting',
+        'service-1-feat-3': 'Security integration',
+        'service-1-feat-4': 'Energy monitoring',
+        
+        // Service 2 - Installation
+        'service-2-title': 'Professional Installation',
+        'service-2-desc': 'Certified teams ensure perfect assembly with minimal construction time',
+        'service-2-feat-1': 'Certified installers',
+        'service-2-feat-2': 'Quality assurance',
+        'service-2-feat-3': 'Fast assembly',
+        'service-2-feat-4': 'Site preparation',
+        
+        // Service 3 - Custom Work
+        'service-3-title': 'Custom Steel Work',
+        'service-3-desc': 'Bespoke fabrication for unique architectural requirements',
+        'service-3-feat-1': 'Custom fabrication',
+        'service-3-feat-2': 'Special finishes',
+        'service-3-feat-3': 'Architectural details',
+        'service-3-feat-4': 'Structural modifications',
+        
+        // Service 4 - BIM
+        'service-4-title': 'BIM Design Services',
+        'service-4-desc': 'Advanced 3D modeling and clash detection for perfect construction',
+        'service-4-feat-1': '3D modeling',
+        'service-4-feat-2': 'Clash detection',
+        'service-4-feat-3': 'Virtual walkthroughs',
+        'service-4-feat-4': 'Documentation',
+        
+        // Process
+        'process-title': 'Our Process',
+        'step-1-title': 'Consultation',
+        'step-1-desc': 'Understand your needs and requirements',
+        'step-2-title': 'Design',
+        'step-2-desc': 'Create detailed plans using BIM technology',
+        'step-3-title': 'Fabrication',
+        'step-3-desc': 'Precision manufacturing in our facilities',
+        'step-4-title': 'Installation',
+        'step-4-desc': 'Professional assembly on your site',
+        'step-5-title': 'Support',
+        'step-5-desc': 'Ongoing maintenance and warranty service',
+        
+        // CTA
+        'service-cta-title': 'Need Our Services?',
+        'service-cta-subtitle': 'Let\'s discuss your project requirements',
+        'get-consultation': 'Get Free Consultation',
+        'learn-more': 'Learn More →'
+    },
+    
+    vi: {
+        'services-title': 'Dịch vụ của chúng tôi',
+        'services-subtitle': 'Giải pháp hoàn chỉnh từ thiết kế đến lắp đặt',
+        
+        // Service 1 - Smart Home
+        'service-1-title': 'Tích hợp nhà thông minh',
+        'service-1-desc': 'Biến kết cấu thép của bạn thành không gian sống thông minh với hệ sinh thái IoT',
+        'service-1-feat-1': 'Hệ thống điều khiển giọng nói',
+        'service-1-feat-2': 'Chiếu sáng tự động',
+        'service-1-feat-3': 'Tích hợp an ninh',
+        'service-1-feat-4': 'Giám sát năng lượng',
+        
+        // Service 2 - Installation
+        'service-2-title': 'Lắp đặt chuyên nghiệp',
+        'service-2-desc': 'Đội ngũ được chứng nhận đảm bảo lắp ráp hoàn hảo với thời gian thi công tối thiểu',
+        'service-2-feat-1': 'Thợ lắp đặt được chứng nhận',
+        'service-2-feat-2': 'Đảm bảo chất lượng',
+        'service-2-feat-3': 'Lắp ráp nhanh',
+        'service-2-feat-4': 'Chuẩn bị mặt bằng',
+        
+        // Service 3 - Custom Work
+        'service-3-title': 'Gia công thép theo yêu cầu',
+        'service-3-desc': 'Chế tạo theo yêu cầu cho các yêu cầu kiến trúc độc đáo',
+        'service-3-feat-1': 'Chế tạo tùy chỉnh',
+        'service-3-feat-2': 'Hoàn thiện đặc biệt',
+        'service-3-feat-3': 'Chi tiết kiến trúc',
+        'service-3-feat-4': 'Sửa đổi kết cấu',
+        
+        // Service 4 - BIM
+        'service-4-title': 'Dịch vụ thiết kế BIM',
+        'service-4-desc': 'Mô hình 3D tiên tiến và phát hiện xung đột cho công trình hoàn hảo',
+        'service-4-feat-1': 'Mô hình 3D',
+        'service-4-feat-2': 'Phát hiện xung đột',
+        'service-4-feat-3': 'Tham quan ảo',
+        'service-4-feat-4': 'Tài liệu hóa',
+        
+        // Process
+        'process-title': 'Quy trình của chúng tôi',
+        'step-1-title': 'Tư vấn',
+        'step-1-desc': 'Hiểu nhu cầu và yêu cầu của bạn',
+        'step-2-title': 'Thiết kế',
+        'step-2-desc': 'Tạo bản vẽ chi tiết bằng công nghệ BIM',
+        'step-3-title': 'Chế tạo',
+        'step-3-desc': 'Sản xuất chính xác tại cơ sở của chúng tôi',
+        'step-4-title': 'Lắp đặt',
+        'step-4-desc': 'Lắp ráp chuyên nghiệp tại công trường',
+        'step-5-title': 'Hỗ trợ',
+        'step-5-desc': 'Bảo trì liên tục và dịch vụ bảo hành',
+        
+        // CTA
+        'service-cta-title': 'Cần dịch vụ của chúng tôi?',
+        'service-cta-subtitle': 'Hãy thảo luận về yêu cầu dự án của bạn',
+        'get-consultation': 'Nhận tư vấn miễn phí',
+        'learn-more': 'Tìm hiểu thêm →'
+    }
+};
+
+// Merge translations
+Object.keys(servicesTranslations).forEach(lang => {
+    Object.assign(window.FrameX.translations[lang], servicesTranslations[lang]);
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    // Update language on page load
+    window.FrameX.updateLanguage();
+});
