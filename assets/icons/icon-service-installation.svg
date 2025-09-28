@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="48" height="48" rx="10" ry="10" fill="#ff6b35"/>
+  <!-- Installation icon - Wrench -->
+  <g transform="translate(24, 24)">
+    <path d="M8.5,-8.5 C10,-10 10,-12 8.5,-13.5 C7,-15 5,-15 3.5,-13.5 L-1,-9 L-9,-1 L-13.5,3.5 C-15,5 -15,7 -13.5,8.5 C-12,10 -10,10 -8.5,8.5 L-4,4 L4,-4 Z
+             M-11,6 C-11,7 -10,8 -9,8 C-8,8 -7,7 -7,6 C-7,5 -8,4 -9,4 C-10,4 -11,5 -11,6 Z"
+          fill="none" 
+          stroke="white" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+</svg>

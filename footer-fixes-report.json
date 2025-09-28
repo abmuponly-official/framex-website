@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-09-28T18:38:27.713Z",
+  "filesUpdated": 8,
+  "changes": [
+    "Fixed social media link order: 3D Warehouse, Pinterest, LinkedIn",
+    "Added rel=\"noopener noreferrer\" to all external links",
+    "Normalized SVG icon sizes to 24x24",
+    "Added proper aria-labels for accessibility",
+    "Applied consistent stroke-based icon style",
+    "Added footer-fixes.css for styling improvements"
+  ],
+  "socialLinks": {
+    "3D Warehouse": "https://3dwarehouse.sketchup.com/by/framexvn",
+    "Pinterest": "https://www.pinterest.com/FRAMEXVN/",
+    "LinkedIn": "https://www.linkedin.com/company/framexvn"
+  },
+  "cssUpdates": [
+    "Social icon hover states with brand color",
+    "CTA button with black background and hover effects",
+    "Focus states for keyboard navigation",
+    "Dark mode adjustments",
+    "Reduced motion preferences"
+  ]
+}

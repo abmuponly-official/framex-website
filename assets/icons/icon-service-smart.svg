@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="48" height="48" rx="10" ry="10" fill="#ff6b35"/>
+  <!-- Smart Integration icon - CPU/Chip -->
+  <g transform="translate(24, 24)">
+    <!-- Main chip body -->
+    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="white" stroke-width="2"/>
+    <!-- Inner processor -->
+    <rect x="-4" y="-4" width="8" height="8" fill="white"/>
+    <!-- Connection pins -->
+    <line x1="-3" y1="-8" x2="-3" y2="-11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="3" y1="-8" x2="3" y2="-11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-3" y1="8" x2="-3" y2="11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="3" y1="8" x2="3" y2="11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="-3" x2="11" y2="-3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="3" x2="11" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-8" y1="-3" x2="-11" y2="-3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-8" y1="3" x2="-11" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

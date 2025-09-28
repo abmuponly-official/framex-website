@@ -1,0 +1,342 @@
+/**
+ * Comparison Table Light Theme
+ * Clean, readable color scheme harmonious with site background
+ * Date: 2025-09-28
+ * Scope: Product page comparison table (both VI and EN)
+ */
+
+/* ========================================
+   DESIGN TOKENS - LIGHT THEME
+   ======================================== */
+:root {
+    --fx-surface: #FFFFFF;
+    --fx-surface-alt: #F8FAFC;
+    --fx-border: #E5E7EB;
+    --fx-header-bg: #F3F4F6;
+    --fx-text: #111827;
+    --fx-text-bold: #000000;
+    --fx-muted: #6B7280;
+    --fx-accent: #FF6B35;
+    --fx-accent-light: rgba(255, 107, 53, 0.15);
+}
+
+/* ========================================
+   RESET DARK/HEAVY STYLES
+   ======================================== */
+.comparison-table,
+.comparison-table * {
+    background-image: none !important;
+}
+
+.comparison-table tbody td:first-child {
+    background: transparent !important;
+}
+
+.comparison-table .featured {
+    background: transparent !important;
+}
+
+/* Remove any existing gradients or overlays */
+.comparison-table::before,
+.comparison-table::after,
+.comparison-table tbody::before,
+.comparison-table tbody::after {
+    display: none !important;
+}
+
+/* ========================================
+   BASE TABLE STYLES - ALL LOCALES
+   ======================================== */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--fx-surface);
+    color: var(--fx-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid var(--fx-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ========================================
+   HEADER STYLING
+   ======================================== */
+.comparison-table thead {
+    background: var(--fx-header-bg) !important;
+    position: relative;
+}
+
+/* Brand accent line at top of header */
+.comparison-table thead::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--fx-accent);
+    z-index: 1;
+}
+
+.comparison-table thead th {
+    background: transparent !important;
+    color: var(--fx-text) !important;
+    font-weight: 600 !important;
+    padding: 14px 16px !important;
+    text-align: left;
+    border-bottom: 1px solid var(--fx-border) !important;
+    border-right: 1px solid var(--fx-border) !important;
+    vertical-align: middle;
+}
+
+/* Center product name headers */
+.comparison-table thead th:not(:first-child) {
+    text-align: center;
+}
+
+/* First header cell - feature label */
+.comparison-table thead th:first-child {
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: var(--fx-muted) !important;
+}
+
+/* Remove right border from last header cell */
+.comparison-table thead th:last-child {
+    border-right: none !important;
+}
+
+/* ========================================
+   BODY STYLING - ZEBRA STRIPING
+   ======================================== */
+
+/* Reset all row backgrounds first */
+.comparison-table tbody tr {
+    background: transparent !important;
+}
+
+/* Odd rows - white background */
+.comparison-table tbody tr:nth-child(odd) td,
+.comparison-table tbody tr:nth-child(odd) th[scope="row"] {
+    background: var(--fx-surface) !important;
+}
+
+/* Even rows - light gray background */
+.comparison-table tbody tr:nth-child(even) td,
+.comparison-table tbody tr:nth-child(even) th[scope="row"] {
+    background: var(--fx-surface-alt) !important;
+}
+
+/* ========================================
+   CELL STYLING
+   ======================================== */
+.comparison-table tbody td,
+.comparison-table tbody th[scope="row"] {
+    padding: 12px 16px !important;
+    vertical-align: middle !important;
+    border-right: 1px solid var(--fx-border) !important;
+    border-bottom: 1px solid var(--fx-border) !important;
+    color: var(--fx-text) !important;
+}
+
+/* Feature name cells (first column) */
+.comparison-table tbody td:first-child,
+.comparison-table tbody th[scope="row"] {
+    font-weight: 600 !important;
+    color: var(--fx-text-bold) !important;
+    text-align: left !important;
+    position: relative;
+    padding-left: 20px !important;
+}
+
+/* Subtle accent for first column on desktop */
+@media (min-width: 768px) {
+    .comparison-table tbody td:first-child::before,
+    .comparison-table tbody th[scope="row"]::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: -1px;
+        width: 3px;
+        background: var(--fx-accent);
+        opacity: 0.5;
+    }
+}
+
+/* Product value cells - centered */
+.comparison-table tbody td:not(:first-child) {
+    text-align: center !important;
+    color: var(--fx-muted) !important;
+}
+
+/* Remove right border from last cells */
+.comparison-table tbody td:last-child,
+.comparison-table tbody th:last-child {
+    border-right: none !important;
+}
+
+/* Remove bottom border from last row */
+.comparison-table tbody tr:last-child td,
+.comparison-table tbody tr:last-child th {
+    border-bottom: none !important;
+}
+
+/* ========================================
+   SPECIAL CONTENT STYLING
+   ======================================== */
+
+/* Strong/bold text in cells */
+.comparison-table strong,
+.comparison-table b {
+    color: var(--fx-text) !important;
+    font-weight: 600 !important;
+}
+
+/* Empty value indicators (dashes) */
+.comparison-table td:contains("–"),
+.comparison-table td:contains("—") {
+    color: #D1D5DB !important;
+    font-size: 1.25rem !important;
+}
+
+/* Small text or notes */
+.comparison-table small,
+.comparison-table .note {
+    color: var(--fx-muted) !important;
+    font-size: 0.875rem;
+}
+
+/* Line breaks - ensure proper spacing */
+.comparison-table br {
+    line-height: 0.5;
+}
+
+/* ========================================
+   FEATURED COLUMN (if needed)
+   ======================================== */
+.comparison-table .featured {
+    position: relative;
+}
+
+/* Subtle highlight for featured column */
+.comparison-table tbody .featured {
+    background: color-mix(in srgb, var(--fx-accent), transparent 95%) !important;
+}
+
+/* ========================================
+   HOVER STATES (desktop only)
+   ======================================== */
+@media (hover: hover) {
+    .comparison-table tbody tr:hover td {
+        background: var(--fx-accent-light) !important;
+        transition: background-color 0.15s ease;
+    }
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 768px) {
+    .comparison-table {
+        min-width: 600px;
+        font-size: 0.875rem;
+    }
+    
+    .comparison-table thead th,
+    .comparison-table tbody td,
+    .comparison-table tbody th {
+        padding: 10px 12px !important;
+    }
+    
+    /* Remove first column accent on mobile */
+    .comparison-table tbody td:first-child::before,
+    .comparison-table tbody th[scope="row"]::before {
+        display: none;
+    }
+    
+    .comparison-table tbody td:first-child,
+    .comparison-table tbody th[scope="row"] {
+        padding-left: 12px !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Focus states for interactive elements */
+.comparison-table a:focus,
+.comparison-table button:focus {
+    outline: 2px solid var(--fx-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+    .comparison-table {
+        border: 2px solid var(--fx-text);
+    }
+    
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        border-width: 2px;
+    }
+    
+    .comparison-table thead::before {
+        height: 3px;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (optional)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fx-surface: #1F2937;
+        --fx-surface-alt: #111827;
+        --fx-border: #374151;
+        --fx-header-bg: #111827;
+        --fx-text: #F3F4F6;
+        --fx-text-bold: #FFFFFF;
+        --fx-muted: #9CA3AF;
+    }
+    
+    .comparison-table {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .comparison-table {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+    
+    .comparison-table thead {
+        background: #F0F0F0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .comparison-table tbody tr:nth-child(even) td {
+        background: #F8F8F8 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

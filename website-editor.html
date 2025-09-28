@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameX Website Editor - Visual Editing Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .editor-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 350px;
+            height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #111;
+            border-right: 1px solid #222;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .sidebar h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .page-list {
+            list-style: none;
+        }
+        
+        .page-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #1a1a1a;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .page-list li:hover {
+            background: #ff6b35;
+            transform: translateX(5px);
+        }
+        
+        .page-list li.active {
+            background: #ff6b35;
+            color: #000;
+            font-weight: 600;
+        }
+        
+        /* Main Preview Area */
+        .preview-area {
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .toolbar {
+            background: #1a1a1a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        .toolbar-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            background: #ff6b35;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn.secondary {
+            background: #333;
+            color: #fff;
+        }
+        
+        .device-selector {
+            display: flex;
+            gap: 10px;
+            background: #222;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .device-btn {
+            padding: 5px 10px;
+            background: transparent;
+            color: #666;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .device-btn.active {
+            color: #ff6b35;
+            background: #333;
+            border-radius: 3px;
+        }
+        
+        .preview-frame {
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: #fff;
+            transition: all 0.5s ease;
+        }
+        
+        .preview-frame.mobile {
+            width: 375px;
+            margin: 20px auto;
+            border: 10px solid #333;
+            border-radius: 20px;
+            height: 667px;
+        }
+        
+        .preview-frame.tablet {
+            width: 768px;
+            margin: 20px auto;
+            border: 10px solid #333;
+            border-radius: 15px;
+            height: 1024px;
+        }
+        
+        /* Properties Panel */
+        .properties-panel {
+            background: #111;
+            border-left: 1px solid #222;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .property-group {
+            margin-bottom: 25px;
+        }
+        
+        .property-group h4 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .property-item {
+            margin-bottom: 15px;
+        }
+        
+        .property-item label {
+            display: block;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .property-item input,
+        .property-item select,
+        .property-item textarea {
+            width: 100%;
+            padding: 8px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .property-item input[type="color"] {
+            height: 40px;
+            cursor: pointer;
+        }
+        
+        .property-item textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        /* Color Palette */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.1);
+            border-color: #ff6b35;
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0a0a0a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #666;
+            z-index: 1000;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Edit Mode Overlay */
+        .edit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .edit-highlight {
+            position: absolute;
+            border: 2px dashed #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+            pointer-events: all;
+            cursor: pointer;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .modal-header {
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h2 {
+            color: #ff6b35;
+        }
+        
+        .modal-body {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .modal-footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>📄 Pages</h3>
+            <ul class="page-list">
+                <li class="active" data-page="index.html">🏠 Home</li>
+                <li data-page="products.html">📦 Products</li>
+                <li data-page="services.html">🛠️ Services</li>
+                <li data-page="projects.html">🏗️ Projects</li>
+                <li data-page="blog.html">📝 Blog</li>
+                <li data-page="contact.html">📞 Contact</li>
+                <li data-page="about.html">ℹ️ About</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">🎨 Templates</h3>
+            <ul class="page-list">
+                <li onclick="addSection('hero')">+ Hero Section</li>
+                <li onclick="addSection('features')">+ Features Grid</li>
+                <li onclick="addSection('cta')">+ Call to Action</li>
+                <li onclick="addSection('testimonial')">+ Testimonials</li>
+            </ul>
+        </div>
+        
+        <!-- Main Preview Area -->
+        <div class="preview-area">
+            <div class="toolbar">
+                <div class="toolbar-buttons">
+                    <button class="btn" onclick="toggleEditMode()">✏️ Edit Mode</button>
+                    <button class="btn secondary" onclick="previewChanges()">👁️ Preview</button>
+                    <button class="btn secondary" onclick="undoChange()">↩️ Undo</button>
+                    <button class="btn secondary" onclick="redoChange()">↪️ Redo</button>
+                </div>
+                
+                <div class="device-selector">
+                    <button class="device-btn active" onclick="setDevice('desktop')">💻</button>
+                    <button class="device-btn" onclick="setDevice('tablet')">📱</button>
+                    <button class="device-btn" onclick="setDevice('mobile')">📲</button>
+                </div>
+                
+                <div class="toolbar-buttons">
+                    <button class="btn" onclick="saveChanges()">💾 Save</button>
+                    <button class="btn" onclick="publishChanges()">🚀 Publish</button>
+                </div>
+            </div>
+            
+            <iframe id="preview" class="preview-frame" src="/index.html"></iframe>
+            <div class="edit-overlay" id="editOverlay"></div>
+        </div>
+        
+        <!-- Properties Panel -->
+        <div class="properties-panel">
+            <div class="property-group">
+                <h4>📝 Content</h4>
+                <div class="property-item">
+                    <label>Title</label>
+                    <input type="text" id="elementTitle" placeholder="Enter title...">
+                </div>
+                <div class="property-item">
+                    <label>Text</label>
+                    <textarea id="elementText" placeholder="Enter text content..."></textarea>
+                </div>
+            </div>
+            
+            <div class="property-group">
+                <h4>🎨 Style</h4>
+                <div class="property-item">
+                    <label>Background Color</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+                <div class="property-item">
+                    <label>Text Color</label>
+                    <input type="color" id="textColor" value="#000000">
+                </div>
+                <div class="property-item">
+                    <label>Font Size</label>
+                    <input type="range" id="fontSize" min="12" max="72" value="16">
+                    <span id="fontSizeValue">16px</span>
+                </div>
+                <div class="property-item">
+                    <label>Padding</label>
+                    <input type="range" id="padding" min="0" max="100" value="20">
+                    <span id="paddingValue">20px</span>
+                </div>
+            </div>
+            
+            <div class="property-group">
+                <h4>🎨 Brand Colors</h4>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #000000" onclick="applyColor('#000000')"></div>
+                    <div class="color-swatch" style="background: #ffffff" onclick="applyColor('#ffffff')"></div>
+                    <div class="color-swatch" style="background: #ff6b35" onclick="applyColor('#ff6b35')"></div>
+                    <div class="color-swatch" style="background: #f8f8f8" onclick="applyColor('#f8f8f8')"></div>
+                    <div class="color-swatch" style="background: #333333" onclick="applyColor('#333333')"></div>
+                </div>
+            </div>
+            
+            <div class="property-group">
+                <h4>⚙️ Actions</h4>
+                <button class="btn" style="width: 100%; margin-bottom: 10px;" onclick="duplicateElement()">📋 Duplicate</button>
+                <button class="btn secondary" style="width: 100%; margin-bottom: 10px;" onclick="deleteElement()">🗑️ Delete</button>
+                <button class="btn secondary" style="width: 100%;" onclick="exportCode()">💾 Export Code</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>Connected • Auto-save enabled</span>
+        </div>
+        <div>
+            <span id="lastSaved">Last saved: Just now</span>
+            <span style="margin-left: 20px;">Changes: <span id="changeCount">0</span></span>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" id="publishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚀 Publish Changes</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your changes will be pushed to GitHub and a pull request will be created.</p>
+                <p style="margin-top: 15px;">Branch: <strong>genspark_ai_developer</strong></p>
+                <p>Files modified: <strong id="modifiedCount">3</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn" onclick="confirmPublish()">Publish</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Editor State
+        let editMode = false;
+        let currentPage = 'index.html';
+        let selectedElement = null;
+        let changes = [];
+        let changeIndex = -1;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setupPageNavigation();
+            setupPropertyListeners();
+            setupKeyboardShortcuts();
+            startAutoSave();
+        });
+        
+        // Page Navigation
+        function setupPageNavigation() {
+            document.querySelectorAll('.page-list li[data-page]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    document.querySelector('.page-list li.active')?.classList.remove('active');
+                    e.target.classList.add('active');
+                    currentPage = e.target.dataset.page;
+                    document.getElementById('preview').src = '/' + currentPage;
+                });
+            });
+        }
+        
+        // Device Preview
+        function setDevice(device) {
+            const frame = document.getElementById('preview');
+            document.querySelectorAll('.device-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            frame.className = 'preview-frame';
+            if (device !== 'desktop') {
+                frame.classList.add(device);
+            }
+        }
+        
+        // Edit Mode
+        function toggleEditMode() {
+            editMode = !editMode;
+            const overlay = document.getElementById('editOverlay');
+            
+            if (editMode) {
+                overlay.style.display = 'block';
+                enableEditMode();
+            } else {
+                overlay.style.display = 'none';
+                disableEditMode();
+            }
+        }
+        
+        function enableEditMode() {
+            const iframe = document.getElementById('preview');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // Add click handlers to editable elements
+            iframeDoc.querySelectorAll('h1, h2, h3, p, a, button, div[class*="card"]').forEach(elem => {
+                elem.style.cursor = 'pointer';
+                elem.addEventListener('click', selectElement);
+                elem.addEventListener('mouseover', highlightElement);
+                elem.addEventListener('mouseout', unhighlightElement);
+            });
+        }
+        
+        function selectElement(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (selectedElement) {
+                selectedElement.style.outline = 'none';
+            }
+            
+            selectedElement = e.target;
+            selectedElement.style.outline = '2px solid #ff6b35';
+            
+            // Load properties
+            document.getElementById('elementText').value = selectedElement.innerText || '';
+            document.getElementById('bgColor').value = rgbToHex(selectedElement.style.backgroundColor || '#ffffff');
+            document.getElementById('textColor').value = rgbToHex(selectedElement.style.color || '#000000');
+        }
+        
+        // Property Listeners
+        function setupPropertyListeners() {
+            document.getElementById('elementText').addEventListener('input', (e) => {
+                if (selectedElement) {
+                    recordChange();
+                    selectedElement.innerText = e.target.value;
+                }
+            });
+            
+            document.getElementById('bgColor').addEventListener('input', (e) => {
+                if (selectedElement) {
+                    recordChange();
+                    selectedElement.style.backgroundColor = e.target.value;
+                }
+            });
+            
+            document.getElementById('textColor').addEventListener('input', (e) => {
+                if (selectedElement) {
+                    recordChange();
+                    selectedElement.style.color = e.target.value;
+                }
+            });
+            
+            document.getElementById('fontSize').addEventListener('input', (e) => {
+                document.getElementById('fontSizeValue').textContent = e.target.value + 'px';
+                if (selectedElement) {
+                    recordChange();
+                    selectedElement.style.fontSize = e.target.value + 'px';
+                }
+            });
+            
+            document.getElementById('padding').addEventListener('input', (e) => {
+                document.getElementById('paddingValue').textContent = e.target.value + 'px';
+                if (selectedElement) {
+                    recordChange();
+                    selectedElement.style.padding = e.target.value + 'px';
+                }
+            });
+        }
+        
+        // Change Management
+        function recordChange() {
+            changes = changes.slice(0, changeIndex + 1);
+            changes.push({
+                element: selectedElement,
+                html: selectedElement.outerHTML,
+                timestamp: Date.now()
+            });
+            changeIndex++;
+            document.getElementById('changeCount').textContent = changes.length;
+        }
+        
+        function undoChange() {
+            if (changeIndex > 0) {
+                changeIndex--;
+                // Implement undo logic
+                console.log('Undo change');
+            }
+        }
+        
+        function redoChange() {
+            if (changeIndex < changes.length - 1) {
+                changeIndex++;
+                // Implement redo logic
+                console.log('Redo change');
+            }
+        }
+        
+        // Save & Publish
+        function saveChanges() {
+            // Send changes to backend
+            fetch('/api/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    page: currentPage,
+                    changes: changes
+                })
+            }).then(() => {
+                document.getElementById('lastSaved').textContent = 'Last saved: Just now';
+            });
+        }
+        
+        function publishChanges() {
+            document.getElementById('modifiedCount').textContent = changes.length;
+            document.getElementById('publishModal').classList.add('active');
+        }
+        
+        function confirmPublish() {
+            // Create PR
+            fetch('/api/publish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    branch: 'genspark_ai_developer',
+                    changes: changes
+                })
+            }).then(response => response.json())
+            .then(data => {
+                alert(`Pull Request created: ${data.pr_url}`);
+                closeModal();
+            });
+        }
+        
+        // Utilities
+        function rgbToHex(rgb) {
+            if (rgb.startsWith('#')) return rgb;
+            const values = rgb.match(/\d+/g);
+            if (!values) return '#000000';
+            return '#' + values.slice(0, 3).map(x => {
+                const hex = parseInt(x).toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            }).join('');
+        }
+        
+        function closeModal() {
+            document.getElementById('publishModal').classList.remove('active');
+        }
+        
+        // Keyboard Shortcuts
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey || e.metaKey) {
+                    switch (e.key) {
+                        case 's':
+                            e.preventDefault();
+                            saveChanges();
+                            break;
+                        case 'z':
+                            e.preventDefault();
+                            undoChange();
+                            break;
+                        case 'y':
+                            e.preventDefault();
+                            redoChange();
+                            break;
+                    }
+                }
+            });
+        }
+        
+        // Auto Save
+        function startAutoSave() {
+            setInterval(() => {
+                if (changes.length > 0) {
+                    saveChanges();
+                }
+            }, 30000); // Auto save every 30 seconds
+        }
+        
+        // Template Functions
+        function addSection(type) {
+            console.log('Adding section:', type);
+            // Implement section templates
+        }
+        
+        function applyColor(color) {
+            if (selectedElement) {
+                recordChange();
+                selectedElement.style.backgroundColor = color;
+                document.getElementById('bgColor').value = color;
+            }
+        }
+        
+        function duplicateElement() {
+            if (selectedElement) {
+                const clone = selectedElement.cloneNode(true);
+                selectedElement.parentNode.insertBefore(clone, selectedElement.nextSibling);
+                recordChange();
+            }
+        }
+        
+        function deleteElement() {
+            if (selectedElement && confirm('Delete this element?')) {
+                recordChange();
+                selectedElement.remove();
+                selectedElement = null;
+            }
+        }
+        
+        function exportCode() {
+            const iframe = document.getElementById('preview');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const html = iframeDoc.documentElement.outerHTML;
+            
+            // Download HTML file
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = currentPage;
+            a.click();
+        }
+    </script>
+</body>
+</html>

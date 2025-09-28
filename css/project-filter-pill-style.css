@@ -1,0 +1,224 @@
+/**
+ * Project Filter Pills - Blog Category Style Alignment
+ * Makes Project page filters match Blog category chips exactly
+ * Date: 2025-09-28
+ */
+
+/* ========================================
+   DESIGN TOKENS (matching Blog)
+   ======================================== */
+:root {
+    --pill-bg: var(--gray-100, #f3f4f6);
+    --pill-border: var(--gray-200, #e5e7eb);
+    --pill-text: var(--gray-700, #374151);
+    --pill-hover-bg: var(--gray-200, #e5e7eb);
+    --pill-hover-border: var(--gray-300, #d1d5db);
+    --pill-active-bg: var(--black, #000000);
+    --pill-active-text: var(--white, #ffffff);
+    --pill-active-border: var(--black, #000000);
+    --pill-radius: 20px;
+    --pill-padding-y: var(--space-xs, 8px);
+    --pill-padding-x: var(--space-md, 16px);
+    --pill-gap: var(--space-sm, 12px);
+    --pill-font-size: var(--font-size-sm, 14px);
+}
+
+/* ========================================
+   PROJECT FILTER CONTAINER
+   ======================================== */
+.project-filter {
+    /* Keep existing background and padding */
+}
+
+.project-filter .filter-tabs {
+    display: flex !important;
+    justify-content: center !important;
+    gap: var(--pill-gap) !important;
+    flex-wrap: wrap !important;
+}
+
+/* ========================================
+   FILTER BUTTONS AS PILLS (matching Blog)
+   ======================================== */
+.project-filter .filter-btn {
+    /* Reset existing styles */
+    all: unset;
+    
+    /* Apply Blog pill styles */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: var(--pill-padding-y) var(--pill-padding-x) !important;
+    background: var(--pill-bg) !important;
+    border: 1px solid var(--pill-border) !important;
+    color: var(--pill-text) !important;
+    font-size: var(--pill-font-size) !important;
+    font-weight: 500 !important;
+    border-radius: var(--pill-radius) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    
+    /* Remove uppercase and letter-spacing from original */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    
+    /* Ensure proper font inheritance */
+    font-family: inherit !important;
+    line-height: 1.2 !important;
+    
+    /* Prevent text selection on click */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+/* ========================================
+   HOVER STATE (matching Blog)
+   ======================================== */
+.project-filter .filter-btn:hover {
+    background: var(--pill-hover-bg) !important;
+    border-color: var(--pill-hover-border) !important;
+    color: var(--pill-text) !important;
+    transform: none !important; /* Remove any transform effects */
+}
+
+/* ========================================
+   ACTIVE/SELECTED STATE (matching Blog)
+   ======================================== */
+.project-filter .filter-btn.active {
+    background: var(--pill-active-bg) !important;
+    color: var(--pill-active-text) !important;
+    border-color: var(--pill-active-border) !important;
+}
+
+.project-filter .filter-btn.active:hover {
+    /* Slightly lighter black on hover for active state */
+    background: color-mix(in srgb, var(--pill-active-bg, #000) 88%, #fff 12%) !important;
+    border-color: color-mix(in srgb, var(--pill-active-border, #000) 88%, #fff 12%) !important;
+}
+
+/* ========================================
+   FOCUS STATE FOR ACCESSIBILITY
+   ======================================== */
+.project-filter .filter-btn:focus {
+    outline: none !important;
+}
+
+.project-filter .filter-btn:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12) !important;
+}
+
+.project-filter .filter-btn.active:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* ========================================
+   ACTIVE CLICK STATE
+   ======================================== */
+.project-filter .filter-btn:active {
+    transform: scale(0.98) !important;
+}
+
+/* ========================================
+   DISABLED STATE (if needed)
+   ======================================== */
+.project-filter .filter-btn:disabled,
+.project-filter .filter-btn[disabled] {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+/* ========================================
+   ICON SUPPORT (if icons are added)
+   ======================================== */
+.project-filter .filter-btn .icon,
+.project-filter .filter-btn i {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px !important;
+    color: currentColor !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 768px) {
+    .project-filter .filter-tabs {
+        gap: 8px !important;
+    }
+    
+    .project-filter .filter-btn {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-filter .filter-tabs {
+        gap: 6px !important;
+        padding: 0 var(--space-sm);
+    }
+    
+    .project-filter .filter-btn {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Ensure keyboard navigation is visible */
+.project-filter .filter-btn:focus-visible::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: calc(var(--pill-radius) + 3px);
+    border: 2px solid transparent;
+    pointer-events: none;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .project-filter .filter-btn {
+        border-width: 2px !important;
+    }
+    
+    .project-filter .filter-btn.active {
+        border: 2px solid currentColor !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .project-filter .filter-btn {
+        transition: none !important;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --pill-bg: #1f2937;
+        --pill-border: #374151;
+        --pill-text: #d1d5db;
+        --pill-hover-bg: #374151;
+        --pill-hover-border: #4b5563;
+        --pill-active-bg: #ffffff;
+        --pill-active-text: #000000;
+        --pill-active-border: #ffffff;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .project-filter {
+        display: none !important;
+    }
+}

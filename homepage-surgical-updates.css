@@ -1,0 +1,177 @@
+/**
+ * FrameX Homepage Surgical Updates - December 2024
+ * Minimal CSS overrides for service icons and footer logo
+ * Scope: Homepage only
+ */
+
+/* ========================================
+   1. SERVICE ICONS - OUTLINE STYLE CONSISTENCY
+   ======================================== */
+
+/* Replace Font Awesome solid icons with outline style for consistency */
+.service-card-enhanced .service-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Remove Font Awesome icon and use SVG background */
+.service-card-enhanced .service-icon i {
+    display: none;
+}
+
+/* Service 1: Design & Planning - Outline Compass Icon */
+.service-card-enhanced:nth-child(1) .service-icon::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23ff6b35' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Service 2: Manufacturing - Outline Factory Icon */
+.service-card-enhanced:nth-child(2) .service-icon::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23ff6b35' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 21h18'/%3E%3Cpath d='M5 21V7l8-4v18'/%3E%3Cpath d='M19 21V11l-6-3'/%3E%3Cline x1='9' y1='9' x2='9' y2='9.01'/%3E%3Cline x1='9' y1='12' x2='9' y2='12.01'/%3E%3Cline x1='9' y1='15' x2='9' y2='15.01'/%3E%3Cline x1='9' y1='18' x2='9' y2='18.01'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Service 3: Installation - Outline Tools Icon */
+.service-card-enhanced:nth-child(3) .service-icon::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23ff6b35' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Service 4: Smart Integration - Outline Chip Icon */
+.service-card-enhanced:nth-child(4) .service-icon::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23ff6b35' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='4' width='16' height='16' rx='2' ry='2'/%3E%3Crect x='9' y='9' width='6' height='6'/%3E%3Cline x1='9' y1='1' x2='9' y2='4'/%3E%3Cline x1='15' y1='1' x2='15' y2='4'/%3E%3Cline x1='9' y1='20' x2='9' y2='23'/%3E%3Cline x1='15' y1='20' x2='15' y2='23'/%3E%3Cline x1='20' y1='9' x2='23' y2='9'/%3E%3Cline x1='20' y1='14' x2='23' y2='14'/%3E%3Cline x1='1' y1='9' x2='4' y2='9'/%3E%3Cline x1='1' y1='14' x2='4' y2='14'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover state for service icons */
+.service-card-enhanced:hover .service-icon::after {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Active/Focus states */
+.service-card-enhanced:focus-within .service-icon::after,
+.service-card-enhanced:active .service-icon::after {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   2. FOOTER LOGO UPDATE
+   ======================================== */
+
+/* Footer logo container adjustments */
+.footer-logo {
+    margin-bottom: 20px;
+    display: block;
+    height: 48px;
+}
+
+/* Replace current logo with correct asset */
+.footer-logo img {
+    height: 48px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+    /* Force the correct logo URL */
+    content: url('http://framex.vn/assets/images/framex-logo-footer.png');
+}
+
+/* Fallback for broken image */
+.footer-logo img[src*="gensparksite"] {
+    /* Override the gensparksite URL with correct asset */
+    content: url('http://framex.vn/assets/images/framex-logo-footer.png');
+}
+
+/* Ensure footer logo matches Contact page styling */
+.footer-about {
+    max-width: 320px;
+}
+
+.footer-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #6b7280;
+    margin-top: 16px;
+}
+
+/* ========================================
+   3. RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .service-card-enhanced .service-icon::after {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .footer-logo img {
+        height: 40px;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    .service-card-enhanced .service-icon::after {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .footer-logo {
+        margin-bottom: 16px;
+    }
+    
+    .footer-logo img {
+        height: 36px;
+        max-width: 150px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .service-card-enhanced .service-icon::after {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print styles */
+@media print {
+    .service-card-enhanced .service-icon::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

@@ -1,0 +1,59 @@
+{
+  "features": [
+    {
+      "name": "Diện tích phù hợp",
+      "starter": "< 150 m² (một tầng) hoặc 50 m²/tầng (2–3 tầng)",
+      "smart": "< 225 m² (một tầng) hoặc 75 m²/tầng (2–3 tầng)",
+      "premium": "> 300 m² sàn hoặc > 150 m²/tầng (2 tầng)"
+    },
+    {
+      "name": "Kết cấu thép",
+      "starter": "Tiêu chuẩn",
+      "smart": "Nâng cao, có thể tùy biến theo yêu cầu",
+      "premium": "Cao cấp, thiết kế riêng hoàn toàn"
+    },
+    {
+      "name": "Chống thấm",
+      "starter": "Cơ bản",
+      "smart": "Cơ bản",
+      "premium": "Nâng cao"
+    },
+    {
+      "name": "Cách nhiệt",
+      "starter": "Cơ bản",
+      "smart": "Cơ bản",
+      "premium": "Nâng cao"
+    },
+    {
+      "name": "Tiện ích thông minh (Smart Home)",
+      "starter": "–",
+      "smart": "Cơ bản (chống trộm, báo cháy, camera, internet)",
+      "premium": "Nâng cao tùy chỉnh theo yêu cầu riêng"
+    },
+    {
+      "name": "Chống cháy",
+      "starter": "–",
+      "smart": "–",
+      "premium": "Kết cấu chống cháy đầy đủ"
+    },
+    {
+      "name": "Chi tiết sắt mỹ thuật",
+      "subtitle": "(cầu thang, lan can, chi tiết đặc biệt)",
+      "starter": "Cầu thang đơn giản",
+      "smart": "Cầu thang đơn giản",
+      "premium": "Cầu thang + lan can + các chi tiết đặc biệt"
+    },
+    {
+      "name": "Bảo hành",
+      "starter": "15 năm",
+      "smart": "15 năm",
+      "premium": "20 năm"
+    },
+    {
+      "name": "Khách hàng mục tiêu",
+      "starter": "Nhà phố nhỏ, công trình phổ thông",
+      "smart": "Villa nhỏ, cần tiện ích & cá nhân hóa",
+      "premium": "Biệt thự lớn, công trình đặc biệt"
+    }
+  ]
+}
