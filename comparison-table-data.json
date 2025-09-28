@@ -1,0 +1,130 @@
+{
+  "vi": {
+    "headers": [
+      "Tính năng",
+      "**FrameX STARTER**",
+      "**FrameX SMART**",
+      "**FrameX PREMIUM**"
+    ],
+    "rows": [
+      {
+        "feature": "Diện tích phù hợp",
+        "starter": "< 150 m² (một tầng)<br>hoặc 50 m²/tầng nếu 2-3 tầng",
+        "smart": "< 225 m² (một tầng)<br>hoặc 75 m²/tầng nếu 2-3 tầng",
+        "premium": "> 300 m² sàn<br>hoặc > 150 m²/tầng (2 tầng)"
+      },
+      {
+        "feature": "Kết cấu thép (Steel Structure)",
+        "starter": "Tiêu chuẩn",
+        "smart": "Nâng cao, có thể tùy biến theo yêu cầu",
+        "premium": "Cao cấp, thiết kế riêng hoàn toàn"
+      },
+      {
+        "feature": "Chống thấm (Waterproofing)",
+        "starter": "Cơ bản",
+        "smart": "Cơ bản",
+        "premium": "Nâng cao"
+      },
+      {
+        "feature": "Cách nhiệt (Insulation)",
+        "starter": "Cơ bản",
+        "smart": "Cơ bản",
+        "premium": "Nâng cao"
+      },
+      {
+        "feature": "Smart Home / tiện ích thông minh",
+        "starter": "–",
+        "smart": "Cơ bản (bao gồm chống trộm, báo cháy, camera, internet)",
+        "premium": "Nâng cao — tùy chỉnh theo yêu cầu riêng"
+      },
+      {
+        "feature": "Chống cháy (Fire Protection)",
+        "starter": "–",
+        "smart": "–",
+        "premium": "Kết cấu chống cháy đầy đủ"
+      },
+      {
+        "feature": "Chi tiết sắt mỹ thuật (Artistic Steel: cầu thang, lan can, chi tiết đặc biệt)",
+        "starter": "Cầu thang đơn giản",
+        "smart": "Cầu thang đơn giản",
+        "premium": "Cầu thang + lan can + các chi tiết đặc biệt"
+      },
+      {
+        "feature": "Bảo hành",
+        "starter": "15 năm",
+        "smart": "15 năm",
+        "premium": "20 năm"
+      },
+      {
+        "feature": "Đối tượng khách hàng mục tiêu",
+        "starter": "Nhà phố nhỏ, công trình phổ thông",
+        "smart": "Villa nhỏ, cần tiện ích & cá nhân hóa",
+        "premium": "Biệt thự lớn, công trình đặc biệt"
+      }
+    ]
+  },
+  "en": {
+    "headers": [
+      "Feature",
+      "**FrameX STARTER**",
+      "**FrameX SMART**",
+      "**FrameX PREMIUM**"
+    ],
+    "rows": [
+      {
+        "feature": "Area",
+        "starter": "<150m² (1 floor)<br>50m²/floor (2–3 floors)",
+        "smart": "<225m² (1 floor)<br>75m²/floor (2–3 floors)",
+        "premium": ">300m² total floor area<br>>150m²/floor (2 floors)"
+      },
+      {
+        "feature": "Steel Structure",
+        "starter": "Standard",
+        "smart": "Advanced, customizable",
+        "premium": "Premium, custom-designed"
+      },
+      {
+        "feature": "Waterproofing",
+        "starter": "Basic",
+        "smart": "Basic",
+        "premium": "Advanced"
+      },
+      {
+        "feature": "Insulation",
+        "starter": "Basic",
+        "smart": "Basic",
+        "premium": "Advanced"
+      },
+      {
+        "feature": "Smart Home",
+        "starter": "–",
+        "smart": "Basic<br>(anti-theft, fire alarm, camera, internet)",
+        "premium": "Advanced<br>(customized upon request)"
+      },
+      {
+        "feature": "Fire Protection",
+        "starter": "–",
+        "smart": "–",
+        "premium": "Fire-resistant structure"
+      },
+      {
+        "feature": "Artistic Steel",
+        "starter": "Simple staircase",
+        "smart": "Simple staircase",
+        "premium": "Staircase, railing, and special details"
+      },
+      {
+        "feature": "Warranty",
+        "starter": "15 years",
+        "smart": "15 years",
+        "premium": "20 years"
+      },
+      {
+        "feature": "Target Customer",
+        "starter": "Small townhouses<br>General-purpose projects",
+        "smart": "Small villas<br>Seeking convenience & personalization",
+        "premium": "Large villas<br>Special projects"
+      }
+    ]
+  }
+}
