@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameX - Nhà Thép Tiền Chế Trong 30-90 Ngày | 3 Giải Pháp Từ 8tr/m²</title>
+    <meta name="description" content="FrameX - 3 dòng nhà thép tiền chế: STARTER từ 8tr/m² (30 ngày), SMART nhà thông minh 12tr/m² (45-60 ngày), PREMIUM biệt thự cao cấp. Thi công toàn quốc, bảo hành 50 năm.">
+    
+    <style>
+        /* New Color System for Product Lines */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --orange: #ff6b35;
+            
+            /* STARTER Colors */
+            --starter-primary: #2563eb;
+            --starter-light: #dbeafe;
+            --starter-dark: #1e40af;
+            
+            /* SMART Colors */
+            --smart-primary: #16a34a;
+            --smart-light: #dcfce7;
+            --smart-dark: #15803d;
+            
+            /* PREMIUM Colors */
+            --premium-primary: #d97706;
+            --premium-light: #fef3c7;
+            --premium-dark: #92400e;
+        }
+        
+        /* Hero Section Styles */
+        .hero-new {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 1200px;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        
+        .highlight {
+            color: var(--orange);
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        /* Hero CTA Grid */
+        .hero-cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-cta-grid button {
+            padding: 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-starter {
+            background: var(--starter-light);
+            border: 2px solid var(--starter-primary);
+        }
+        
+        .cta-starter:hover {
+            background: var(--starter-primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .cta-smart {
+            background: var(--smart-light);
+            border: 2px solid var(--smart-primary);
+        }
+        
+        .cta-smart:hover {
+            background: var(--smart-primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .cta-premium {
+            background: var(--premium-light);
+            border: 2px solid var(--premium-primary);
+        }
+        
+        .cta-premium:hover {
+            background: var(--premium-primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .hero-cta-grid .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-cta-grid .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Trust Indicators */
+        .hero-trust {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Product Cards Section */
+        .products-new {
+            padding: 4rem 1rem;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--black);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .product-card.starter {
+            border-color: var(--starter-primary);
+        }
+        
+        .product-card.smart {
+            border-color: var(--smart-primary);
+        }
+        
+        .product-card.smart.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-card.premium {
+            border-color: var(--premium-primary);
+        }
+        
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .starter .badge { background: var(--starter-primary); }
+        .smart .badge { background: var(--smart-primary); }
+        .premium .badge { background: var(--premium-primary); }
+        
+        .product-card h3 {
+            font-size: 1.75rem;
+            margin: 1rem 0 0.5rem;
+            text-align: center;
+        }
+        
+        .tagline {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price {
+            text-align: center;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+        
+        .price .amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .starter .price .amount { color: var(--starter-primary); }
+        .smart .price .amount { color: var(--smart-primary); }
+        .premium .price .amount { color: var(--premium-primary); }
+        
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .features li.not-included {
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .ideal-for {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .ideal-for strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn-starter {
+            background: var(--starter-primary);
+            color: white;
+        }
+        
+        .btn-smart {
+            background: var(--smart-primary);
+            color: white;
+        }
+        
+        .btn-premium {
+            background: var(--premium-primary);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-cta-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card.smart.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NEW HERO SECTION -->
+    <section class="hero-new">
+        <div class="hero-content">
+            <h1>Định Hình Không Gian Sống <span class="highlight">Trong 30-90 Ngày</span></h1>
+            <p class="hero-subtitle">
+                3 Giải pháp nhà thép tiền chế - Từ cơ bản đến cao cấp<br>
+                Phù hợp mọi ngân sách, mọi phong cách sống
+            </p>
+            
+            <!-- 3 Quick CTAs -->
+            <div class="hero-cta-grid">
+                <button class="cta-starter" onclick="scrollToProduct('starter')">
+                    <span class="price">Từ 8tr/m²</span>
+                    <span class="label">Nhà trong 30 ngày</span>
+                </button>
+                <button class="cta-smart" onclick="scrollToProduct('smart')">
+                    <span class="price">Từ 12tr/m²</span>
+                    <span class="label">Nhà thông minh</span>
+                </button>
+                <button class="cta-premium" onclick="scrollToProduct('premium')">
+                    <span class="price">Theo yêu cầu</span>
+                    <span class="label">Kiến trúc độc quyền</span>
+                </button>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="hero-trust">
+                <span>✓ 100+ dự án hoàn thành</span>
+                <span>✓ Bảo hành 50 năm</span>
+                <span>✓ Thi công toàn quốc</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NEW PRODUCT SECTION -->
+    <section class="products-new">
+        <div class="container">
+            <h2 class="section-title">Chọn Giải Pháp Phù Hợp Với Bạn</h2>
+            
+            <!-- Product Cards -->
+            <div class="product-grid">
+                
+                <!-- STARTER -->
+                <div class="product-card starter" id="product-starter">
+                    <div class="badge">Phổ biến nhất</div>
+                    <h3>FrameX STARTER</h3>
+                    <p class="tagline">"Khởi đầu thông minh"</p>
+                    
+                    <div class="price">
+                        <span class="from">Từ</span>
+                        <span class="amount">8tr</span>
+                        <span class="unit">/m²</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>✓ Nhà <150m² (1 tầng) hoặc 50m²/tầng (2-3 tầng)</li>
+                        <li>✓ Kết cấu thép tiêu chuẩn hóa</li>
+                        <li>✓ Cách nhiệt & chống thấm cơ bản</li>
+                        <li>✓ Hoàn thiện trong 30 ngày</li>
+                        <li>✓ 90% vật liệu tái chế</li>
+                        <li class="not-included">✗ Không có smart features</li>
+                    </ul>
+                    
+                    <div class="ideal-for">
+                        <strong>Lý tưởng cho:</strong>
+                        <p>Nhà phố nhỏ, nhà cho thuê, văn phòng</p>
+                    </div>
+                    
+                    <button class="btn btn-starter">
+                        Xem Mẫu Nhà & Báo Giá
+                    </button>
+                </div>
+                
+                <!-- SMART -->
+                <div class="product-card smart featured" id="product-smart">
+                    <div class="badge">Giá trị tốt nhất</div>
+                    <h3>FrameX SMART</h3>
+                    <p class="tagline">"Sống thông minh bền vững"</p>
+                    
+                    <div class="price">
+                        <span class="from">Từ</span>
+                        <span class="amount">12tr</span>
+                        <span class="unit">/m²</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>✓ Nhà <225m² (1 tầng) hoặc 75m²/tầng (2-3 tầng)</li>
+                        <li>✓ Toàn bộ tính năng STARTER</li>
+                        <li>✓ Thiết kế tùy biến linh hoạt</li>
+                        <li>✓ Smart Security: Camera, báo động, báo cháy</li>
+                        <li>✓ Internet & Smart home ready</li>
+                        <li>✓ Hoàn thiện trong 45-60 ngày</li>
+                    </ul>
+                    
+                    <div class="ideal-for">
+                        <strong>Lý tưởng cho:</strong>
+                        <p>Villa gia đình, nhà ở hiện đại</p>
+                    </div>
+                    
+                    <button class="btn btn-smart">
+                        Tư Vấn Thiết Kế Miễn Phí
+                    </button>
+                </div>
+                
+                <!-- PREMIUM -->
+                <div class="product-card premium" id="product-premium">
+                    <div class="badge">Cao cấp</div>
+                    <h3>FrameX PREMIUM</h3>
+                    <p class="tagline">"Kiến trúc đẳng cấp"</p>
+                    
+                    <div class="price">
+                        <span class="from">Giá</span>
+                        <span class="amount">Theo dự án</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>✓ Nhà >300m² sàn, >150m²/tầng</li>
+                        <li>✓ Toàn bộ tính năng SMART nâng cao</li>
+                        <li>✓ Thiết kế độc quyền bởi kiến trúc sư</li>
+                        <li>✓ Thép nghệ thuật & chống cháy</li>
+                        <li>✓ Smart home tùy biến không giới hạn</li>
+                        <li>✓ White-glove service</li>
+                    </ul>
+                    
+                    <div class="ideal-for">
+                        <strong>Lý tưởng cho:</strong>
+                        <p>Biệt thự cao cấp, công trình nghệ thuật</p>
+                    </div>
+                    
+                    <button class="btn btn-premium">
+                        Đặt Lịch Tư Vấn VIP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Simple scroll function
+        function scrollToProduct(productType) {
+            const element = document.getElementById('product-' + productType);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Add highlight effect
+                element.style.animation = 'highlight 1s';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 1000);
+            }
+        }
+        
+        // Add highlight animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
