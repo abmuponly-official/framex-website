@@ -1,0 +1,750 @@
+/* FrameX Unified Design System - Standardized Typography & Colors */
+
+/* ========================================
+   1. ROOT VARIABLES - Brand Design System
+   ======================================== */
+:root {
+    /* Brand Colors - FrameX Identity */
+    --framex-black: #1a1a1a;      /* Primary text color */
+    --framex-white: #ffffff;      /* Background */
+    --framex-orange: #ff6b35;     /* Brand accent color */
+    --framex-orange-dark: #e55a2b;/* Hover state for orange */
+    
+    /* Gray Scale - Consistent throughout */
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+    
+    /* Typography - Standardized */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    --font-secondary: 'Inter', sans-serif; /* Fallback */
+    
+    /* Font Sizes - Consistent Scale */
+    --text-xs: 0.75rem;     /* 12px */
+    --text-sm: 0.875rem;    /* 14px */
+    --text-base: 1rem;      /* 16px */
+    --text-lg: 1.125rem;    /* 18px */
+    --text-xl: 1.25rem;     /* 20px */
+    --text-2xl: 1.5rem;     /* 24px */
+    --text-3xl: 1.875rem;   /* 30px */
+    --text-4xl: 2.25rem;    /* 36px */
+    --text-5xl: 3rem;       /* 48px */
+    --text-6xl: 3.75rem;    /* 60px */
+    
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+    
+    /* Font Weights */
+    --font-thin: 100;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+    
+    /* Spacing Scale */
+    --space-0: 0;
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-5: 1.25rem;    /* 20px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-8: 2rem;       /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+    
+    /* Border Radius */
+    --radius-none: 0;
+    --radius-sm: 0.125rem;
+    --radius-base: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    /* Z-Index Scale */
+    --z-negative: -1;
+    --z-0: 0;
+    --z-10: 10;
+    --z-20: 20;
+    --z-30: 30;
+    --z-40: 40;
+    --z-50: 50;
+    --z-auto: auto;
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+}
+
+/* ========================================
+   2. GLOBAL TYPOGRAPHY RESET
+   ======================================== */
+* {
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Body Default Typography */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
+    color: var(--framex-black);
+    background-color: var(--framex-white);
+}
+
+/* ========================================
+   3. HEADING STYLES
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--framex-black);
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-extrabold);
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.015em;
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+}
+
+h5 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+/* ========================================
+   4. PARAGRAPH & TEXT STYLES
+   ======================================== */
+p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--gray-700);
+    margin-bottom: var(--space-4);
+}
+
+.text-large {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+}
+
+.text-small {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+}
+
+/* Text Colors */
+.text-primary { color: var(--framex-black); }
+.text-secondary { color: var(--gray-600); }
+.text-muted { color: var(--gray-500); }
+.text-accent { color: var(--framex-orange); }
+.text-white { color: var(--framex-white); }
+
+/* Text Weights */
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+/* ========================================
+   5. LINK STYLES
+   ======================================== */
+a {
+    color: var(--framex-black);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--framex-orange);
+}
+
+a.link-accent {
+    color: var(--framex-orange);
+}
+
+a.link-accent:hover {
+    color: var(--framex-orange-dark);
+}
+
+/* ========================================
+   6. BUTTON STYLES
+   ======================================== */
+.btn {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-none);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--framex-orange);
+    color: var(--framex-white);
+    border-color: var(--framex-orange);
+}
+
+.btn-primary:hover {
+    background-color: var(--framex-orange-dark);
+    border-color: var(--framex-orange-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--framex-black);
+    border-color: var(--framex-black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--framex-black);
+    color: var(--framex-white);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--framex-orange);
+    border-color: var(--framex-orange);
+}
+
+.btn-outline:hover {
+    background-color: var(--framex-orange);
+    color: var(--framex-white);
+}
+
+/* ========================================
+   7. ENHANCED FOOTER DESIGN
+   ======================================== */
+.footer {
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--framex-white) 100%);
+    border-top: 1px solid var(--gray-200);
+    padding: var(--space-16) 0 var(--space-8);
+    margin-top: var(--space-20);
+    font-family: var(--font-primary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+}
+
+/* Footer About Section */
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-4);
+}
+
+.footer-logo img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-description {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--gray-600);
+    max-width: 320px;
+}
+
+/* Footer Social Links */
+.footer-social {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-600);
+    transition: all var(--transition-base);
+}
+
+.footer-social a:hover {
+    background-color: var(--framex-orange);
+    border-color: var(--framex-orange);
+    color: var(--framex-white);
+    transform: translateY(-2px);
+}
+
+/* Footer Columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.footer-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--framex-black);
+    margin-bottom: var(--space-2);
+    position: relative;
+    padding-bottom: var(--space-2);
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--framex-orange);
+}
+
+/* Footer Lists */
+.footer-list,
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.footer-list li,
+.footer-contact-list li {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.footer-list a,
+.footer-contact-list a {
+    color: var(--gray-600);
+    transition: color var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.footer-list a:hover,
+.footer-contact-list a:hover {
+    color: var(--framex-orange);
+    transform: translateX(4px);
+}
+
+/* Footer Contact Icons */
+.footer-contact-list i {
+    color: var(--framex-orange);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-copyright,
+.footer-tagline {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin: 0;
+}
+
+.footer-tagline {
+    font-style: italic;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   8. RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-10);
+    }
+    
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+    
+    h1 { font-size: var(--text-4xl); }
+    h2 { font-size: var(--text-3xl); }
+    h3 { font-size: var(--text-2xl); }
+}
+
+/* Mobile (320px - 767px) */
+@media (max-width: 767px) {
+    :root {
+        --text-base: 0.9375rem; /* 15px on mobile */
+    }
+    
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .footer-about {
+        align-items: center;
+    }
+    
+    .footer-description {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-list,
+    .footer-contact-list {
+        align-items: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+    
+    h1 { font-size: var(--text-3xl); }
+    h2 { font-size: var(--text-2xl); }
+    h3 { font-size: var(--text-xl); }
+    h4 { font-size: var(--text-lg); }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .footer {
+        padding: var(--space-10) var(--space-4) var(--space-6);
+    }
+    
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .btn {
+        font-size: var(--text-sm);
+        padding: var(--space-2) var(--space-4);
+    }
+}
+
+/* ========================================
+   9. UTILITY CLASSES
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Display Utilities */
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+
+/* Margin Utilities */
+.m-0 { margin: 0; }
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mt-8 { margin-top: var(--space-8); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+/* Padding Utilities */
+.p-0 { padding: 0; }
+.pt-0 { padding-top: 0; }
+.pb-0 { padding-bottom: 0; }
+.pt-4 { padding-top: var(--space-4); }
+.pb-4 { padding-bottom: var(--space-4); }
+.pt-8 { padding-top: var(--space-8); }
+.pb-8 { padding-bottom: var(--space-8); }
+
+/* ========================================
+   10. NAVIGATION BAR FIXES
+   ======================================== */
+.navbar {
+    font-family: var(--font-primary);
+    background-color: var(--framex-white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.nav-menu a {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--framex-black);
+    transition: color var(--transition-base);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--framex-orange);
+}
+
+/* Language Switcher */
+.language-switcher button {
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    background-color: transparent;
+    color: var(--gray-600);
+    border: 1px solid var(--gray-300);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.language-switcher button.active {
+    background-color: var(--framex-orange);
+    color: var(--framex-white);
+    border-color: var(--framex-orange);
+}
+
+.language-switcher button:hover:not(.active) {
+    border-color: var(--framex-orange);
+    color: var(--framex-orange);
+}
+
+/* ========================================
+   11. FORM ELEMENTS
+   ======================================== */
+input,
+textarea,
+select {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--framex-black);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gray-400);
+}
+
+/* ========================================
+   12. CARD COMPONENTS
+   ======================================== */
+.card {
+    background-color: var(--framex-white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-base);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--framex-black);
+    margin-bottom: var(--space-3);
+}
+
+.card-description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: var(--leading-relaxed);
+}
+
+/* ========================================
+   13. SECTION STYLES
+   ======================================== */
+.section {
+    padding: var(--space-20) 0;
+}
+
+.section-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--framex-black);
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--framex-orange);
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+    line-height: var(--leading-relaxed);
+}
+
+/* ========================================
+   14. TABLE STYLES
+   ======================================== */
+table {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    color: var(--framex-black);
+}
+
+th {
+    font-weight: var(--font-semibold);
+    color: var(--framex-black);
+    background-color: var(--gray-50);
+}
+
+td {
+    color: var(--gray-700);
+}
+
+/* ========================================
+   15. PRINT STYLES
+   ======================================== */
+@media print {
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+    
+    .footer {
+        page-break-inside: avoid;
+    }
+}
