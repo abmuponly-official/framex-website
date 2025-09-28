@@ -73,16 +73,18 @@ const translations = {
         
         // About Page
         'about-title': 'About FrameX',
-        'about-subtitle': 'An asset-light startup revolutionizing steel construction with smart prefabricated structures',
-        'about-part-of': 'Part of ABM Architectural Material Co., Ltd',
+        'about-subtitle': 'We are pioneering modern steel construction through innovative prefabrication technology, bringing sustainable and smart living spaces to everyone.',
+        'about-who-we-are': 'Who We Are',
+        'about-company-intro': 'FrameX is part of ABM Architectural Material Co., Ltd - the leading smart prefabricated steel construction company in Vietnam. We combine modern technology with 10+ years of experience to create unique FrameX solutions.',
+        'about-for-buyers': 'For Home Buyers',
+        'about-buyers-content': 'You will own a home built 70% faster, cost-effective, pre-integrated with smart technology, and guaranteed for 50+ years lifespan. From compact studios to luxury villas - we have solutions for every need and budget.',
+        'about-for-developers': 'For Project Developers',
+        'about-developers-content': 'Trusted partner for large-scale projects with rapid deployment capability, strict quality control, and comprehensive technical support. Our asset-light model keeps us agile, cost-effective, and responsive to the most demanding project schedules.',
+        'about-vision': '"Shaping tomorrow\'s living with smart prefabricated steel structures"',
         'stat-experience': 'Years Experience',
         'stat-projects': 'Projects Completed',
         'stat-faster': 'Faster Construction',
         'stat-satisfaction': 'Customer Satisfaction',
-        'mission-title': 'Our Mission',
-        'mission-desc': 'To democratize modern steel construction through innovative prefabrication technology, making sustainable and smart living spaces accessible to everyone.',
-        'model-title': 'Asset-Light Model',
-        'model-desc': 'We focus on design, technology, and partnerships rather than heavy manufacturing assets, allowing us to be agile, innovative, and cost-effective for our customers.',
         
         // Investor Relations Page
         'investor-title': 'Investor & Partner Relations',
@@ -184,16 +186,18 @@ const translations = {
         
         // About Page
         'about-title': 'Giới Thiệu FrameX',
-        'about-subtitle': 'Startup vốn nhẹ cách mạng hóa xây dựng thép với kết cấu tiền chế thông minh',
-        'about-part-of': 'Thuộc Công ty TNHH Vật liệu kiến trúc ABM',
+        'about-subtitle': 'Chúng tôi đang dẫn đầu trong xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh cho mọi người.',
+        'about-who-we-are': 'Chúng Tôi Là Ai',
+        'about-company-intro': 'FrameX thuộc ABM Architectural Material Co., Ltd - đơn vị tiên phong trong lĩnh vực kết cấu thép tiền chế thông minh tại Việt Nam. Chúng tôi kết hợp công nghệ hiện đại với kinh nghiệm 10+ năm để tạo ra những giải pháp FrameX độc đáo.',
+        'about-for-buyers': 'Dành Cho Người Mua Nhà',
+        'about-buyers-content': 'Bạn sẽ sở hữu ngôi nhà xây nhanh hơn 70%, tiết kiệm chi phí, tích hợp sẵn công nghệ thông minh và đảm bảo tuổi thọ 50+ năm. Từ studio nhỏ gọn đến biệt thự cao cấp - chúng tôi có giải pháp phù hợp với mọi nhu cầu và ngân sách.',
+        'about-for-developers': 'Dành Cho Nhà Phát Triển Dự Án',
+        'about-developers-content': 'Đối tác tin cậy cho các dự án quy mô lớn với khả năng triển khai nhanh chóng, kiểm soát chất lượng nghiêm ngặt và hỗ trợ kỹ thuật toàn diện. Mô hình asset-light giúp chúng tôi linh hoạt, hiệu quả chi phí và đáp ứng tiến độ dự án khắt khe nhất.',
+        'about-vision': '"Định hình không gian sống tương lai với kết cấu thép tiền chế thông minh"',
         'stat-experience': 'Năm Kinh Nghiệm',
         'stat-projects': 'Dự Án Hoàn Thành',
         'stat-faster': 'Thi Công Nhanh Hơn',
         'stat-satisfaction': 'Sự Hài Lòng Khách Hàng',
-        'mission-title': 'Sứ Mệnh Của Chúng Tôi',
-        'mission-desc': 'Dân chủ hóa xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh cho mọi người.',
-        'model-title': 'Mô Hình Vốn Nhẹ',
-        'model-desc': 'Chúng tôi tập trung vào thiết kế, công nghệ và đối tác thay vì tài sản sản xuất nặng, cho phép chúng tôi linh hoạt, sáng tạo và tiết kiệm chi phí cho khách hàng.',
         
         // Investor Relations Page
         'investor-title': 'Quan Hệ Đầu Tư & Đối Tác',
