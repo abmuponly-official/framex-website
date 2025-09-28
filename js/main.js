@@ -117,6 +117,12 @@ const translations = {
         'footer-company-name': 'ABM Architectural Material Co., Ltd',
         'footer-copyright': '© 2024 FrameX. All rights reserved.',
         'footer-tagline': 'Shaping Tomorrow\'s Living',
+        'footer-services-title': 'Services',
+        'footer-service-1': 'FrameX STARTER',
+        'footer-service-2': 'FrameX SMART',
+        'footer-service-3': 'FrameX PREMIUM',
+        'footer-service-consulting': 'Consulting Services',
+        'footer-service-support': 'Technical Support',
         
         // About Page
         'about-title': 'About FrameX',
@@ -277,6 +283,12 @@ const translations = {
         'footer-company-name': 'Công ty TNHH Vật liệu kiến trúc ABM',
         'footer-copyright': '© 2024 FrameX. Tất cả quyền được bảo vệ.',
         'footer-tagline': 'Định hình không gian sống tương lai',
+        'footer-services-title': 'Dịch vụ',
+        'footer-service-1': 'FrameX STARTER',
+        'footer-service-2': 'FrameX SMART',
+        'footer-service-3': 'FrameX PREMIUM',
+        'footer-service-consulting': 'Dịch vụ tư vấn',
+        'footer-service-support': 'Hỗ trợ kỹ thuật',
         
         // About Page
         'about-title': 'Giới Thiệu FrameX',
