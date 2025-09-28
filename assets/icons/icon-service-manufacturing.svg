@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="48" height="48" rx="10" ry="10" fill="#ff6b35"/>
+  <!-- Manufacturing icon - Gear -->
+  <g transform="translate(24, 24)">
+    <circle cx="0" cy="0" r="5" fill="none" stroke="white" stroke-width="2"/>
+    <!-- Gear teeth -->
+    <path d="M0,-10 L2,-8 L0,-6 L-2,-8 Z
+             M10,0 L8,2 L6,0 L8,-2 Z
+             M0,10 L-2,8 L0,6 L2,8 Z
+             M-10,0 L-8,-2 L-6,0 L-8,2 Z
+             M7.07,-7.07 L7.07,-4.24 L4.24,-7.07 Z
+             M7.07,7.07 L4.24,7.07 L7.07,4.24 Z
+             M-7.07,7.07 L-7.07,4.24 L-4.24,7.07 Z
+             M-7.07,-7.07 L-4.24,-7.07 L-7.07,-4.24 Z"
+          fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+  </g>
+</svg>

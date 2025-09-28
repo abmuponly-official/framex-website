@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-09-28T18:00:54.201Z",
+  "section": "Dịch vụ trọn gói hoàn hảo",
+  "changes": {
+    "iconStyle": "Rounded square with white glyphs on orange background",
+    "services": [
+      {
+        "name": "Design & Planning",
+        "oldIcon": "fa-drafting-compass",
+        "newIcon": "Pencil/Ruler crossed",
+        "file": "icon-service-design.svg"
+      },
+      {
+        "name": "Manufacturing",
+        "oldIcon": "fa-industry",
+        "newIcon": "Gear/Cog",
+        "file": "icon-service-manufacturing.svg"
+      },
+      {
+        "name": "Installation",
+        "oldIcon": "fa-tools",
+        "newIcon": "Wrench",
+        "file": "icon-service-installation.svg"
+      },
+      {
+        "name": "Smart Integration",
+        "oldIcon": "fa-microchip",
+        "newIcon": "CPU/Chip",
+        "file": "icon-service-smart.svg"
+      }
+    ],
+    "cssImplementation": "CSS pseudo-elements with data URIs",
+    "svgAssets": "4 SVG files created in assets/icons/"
+  },
+  "specs": {
+    "size": "48x48px (desktop), 40x40px (mobile)",
+    "borderRadius": "10px (~20% of size)",
+    "background": "#ff6b35 (brand orange)",
+    "glyphColor": "#ffffff",
+    "glyphSize": "~60% of container",
+    "hover": "Elevation + slight darken"
+  }
+}
