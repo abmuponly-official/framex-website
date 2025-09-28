@@ -1,0 +1,358 @@
+/**
+ * Comparison Table White Background Theme
+ * Clean white background with appropriate text colors
+ * Date: 2025-09-28
+ * Based on the provided screenshot design
+ */
+
+/* ========================================
+   DESIGN TOKENS - WHITE BACKGROUND
+   ======================================== */
+:root {
+    --table-bg: #FFFFFF;
+    --table-header-bg: #2B3440; /* Dark header from screenshot */
+    --table-header-text: #FFFFFF;
+    --table-row-bg: #FFFFFF;
+    --table-row-alt-bg: #F7F8F9; /* Very subtle gray for alternating rows */
+    --table-border: #E2E5E8;
+    --table-text-primary: #1F2937; /* Dark text for features */
+    --table-text-secondary: #4B5563; /* Medium gray for values */
+    --table-text-muted: #6B7280; /* Light gray for dashes */
+    --table-accent: #FF6B35; /* Brand orange for highlights */
+    --table-featured-bg: rgba(255, 107, 53, 0.04); /* Very subtle orange tint */
+}
+
+/* ========================================
+   RESET PREVIOUS STYLES
+   ======================================== */
+.comparison-table,
+.comparison-table * {
+    background-image: none !important;
+}
+
+/* Remove all previous dark backgrounds and gradients */
+.comparison-table tbody td,
+.comparison-table tbody th,
+.comparison-table thead,
+.comparison-table thead th {
+    background: none !important;
+}
+
+/* ========================================
+   TABLE BASE - WHITE BACKGROUND
+   ======================================== */
+.comparison-table-wrapper {
+    background: var(--table-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin: 2rem 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--table-bg) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: hidden;
+}
+
+/* ========================================
+   HEADER - DARK BACKGROUND LIKE SCREENSHOT
+   ======================================== */
+.comparison-table thead {
+    background: var(--table-header-bg) !important;
+}
+
+.comparison-table thead tr {
+    background: var(--table-header-bg) !important;
+}
+
+.comparison-table thead th {
+    background: var(--table-header-bg) !important;
+    color: var(--table-header-text) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 16px 20px !important;
+    text-align: left;
+    border: none !important;
+    position: relative;
+}
+
+/* Product name headers - centered and larger */
+.comparison-table thead th:not(:first-child) {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+
+/* First header - "FEATURE" label */
+.comparison-table thead th:first-child {
+    font-size: 0.75rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Vertical separators in header */
+.comparison-table thead th:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   BODY - WHITE BACKGROUND
+   ======================================== */
+.comparison-table tbody {
+    background: var(--table-bg) !important;
+}
+
+.comparison-table tbody tr {
+    background: var(--table-bg) !important;
+    border-bottom: 1px solid var(--table-border);
+}
+
+/* Remove border from last row */
+.comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* ========================================
+   CELLS - WHITE BACKGROUND
+   ======================================== */
+.comparison-table tbody td,
+.comparison-table tbody th[scope="row"] {
+    background: var(--table-bg) !important;
+    padding: 14px 20px !important;
+    border: none !important;
+    vertical-align: middle;
+}
+
+/* Feature names (first column) */
+.comparison-table tbody td:first-child,
+.comparison-table tbody th[scope="row"] {
+    font-weight: 600 !important;
+    color: var(--table-text-primary) !important;
+    font-size: 0.9rem !important;
+    background: var(--table-row-alt-bg) !important;
+    position: relative;
+}
+
+/* Add subtle left accent to feature cells */
+.comparison-table tbody td:first-child::before,
+.comparison-table tbody th[scope="row"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    bottom: 10%;
+    width: 3px;
+    background: var(--table-accent);
+    opacity: 0.6;
+}
+
+/* Product value cells */
+.comparison-table tbody td:not(:first-child) {
+    text-align: center !important;
+    color: var(--table-text-secondary) !important;
+    font-size: 0.875rem !important;
+    background: var(--table-bg) !important;
+}
+
+/* Bold/strong text */
+.comparison-table tbody strong,
+.comparison-table tbody b {
+    color: var(--table-text-primary) !important;
+    font-weight: 600 !important;
+}
+
+/* Empty value indicators (dashes) */
+.comparison-table tbody td:contains("–"),
+.comparison-table tbody td:contains("—"),
+.comparison-table tbody td:contains("-") {
+    color: var(--table-text-muted) !important;
+    font-size: 1.1rem !important;
+}
+
+/* ========================================
+   FEATURED COLUMN (SMART)
+   ======================================== */
+.comparison-table .featured,
+.comparison-table tbody .featured {
+    background: var(--table-featured-bg) !important;
+    position: relative;
+}
+
+/* Add top accent to featured column in header */
+.comparison-table thead .featured {
+    background: var(--table-header-bg) !important;
+}
+
+.comparison-table thead .featured::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: var(--table-accent);
+}
+
+/* ========================================
+   ALTERNATING ROW COLORS (SUBTLE)
+   ======================================== */
+.comparison-table tbody tr:nth-child(even) td:not(:first-child) {
+    background: var(--table-row-alt-bg) !important;
+}
+
+/* ========================================
+   HOVER EFFECTS
+   ======================================== */
+@media (hover: hover) {
+    .comparison-table tbody tr:hover td {
+        background: rgba(255, 107, 53, 0.03) !important;
+        transition: background-color 0.2s ease;
+    }
+    
+    .comparison-table tbody tr:hover td:first-child {
+        background: rgba(255, 107, 53, 0.06) !important;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .comparison-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 1rem -1rem;
+        padding: 0 1rem;
+        border-radius: 0;
+    }
+    
+    .comparison-table {
+        min-width: 700px;
+        font-size: 0.875rem;
+    }
+    
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 12px 16px !important;
+    }
+    
+    /* Show scroll indicator */
+    .comparison-table-wrapper::after {
+        content: "→ Scroll";
+        position: sticky;
+        right: 0;
+        bottom: 10px;
+        padding: 4px 8px;
+        background: var(--table-accent);
+        color: white;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        opacity: 0.8;
+    }
+}
+
+/* ========================================
+   TYPOGRAPHY IMPROVEMENTS
+   ======================================== */
+
+/* Line breaks in cells */
+.comparison-table br {
+    line-height: 0.4;
+}
+
+/* Small text or notes */
+.comparison-table small,
+.comparison-table .note {
+    color: var(--table-text-muted) !important;
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Focus states */
+.comparison-table a:focus,
+.comparison-table button:focus {
+    outline: 2px solid var(--table-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .comparison-table {
+        border: 2px solid #000;
+    }
+    
+    .comparison-table thead {
+        background: #000 !important;
+    }
+    
+    .comparison-table thead th {
+        background: #000 !important;
+        color: #FFF !important;
+    }
+    
+    .comparison-table tbody td {
+        border: 1px solid #000 !important;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (INVERTED)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --table-bg: #1F2937;
+        --table-header-bg: #111827;
+        --table-row-alt-bg: #111827;
+        --table-border: #374151;
+        --table-text-primary: #F3F4F6;
+        --table-text-secondary: #D1D5DB;
+        --table-text-muted: #6B7280;
+        --table-featured-bg: rgba(255, 107, 53, 0.1);
+    }
+    
+    .comparison-table-wrapper {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .comparison-table-wrapper {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .comparison-table thead {
+        background: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .comparison-table thead th {
+        color: #FFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .comparison-table tbody tr:nth-child(even) td {
+        background: #F5F5F5 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
