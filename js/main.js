@@ -102,12 +102,21 @@ const translations = {
         'cta-subtitle': 'Join homeowners and developers who choose integrated prefabricated innovation with FrameX',
         'start-project': 'Start Your Project',
         
-        // Footer
-        'footer-products': 'Products',
-        'footer-company': 'Company',
-        'footer-contact': 'Contact',
-        'company-name': 'ABM Architectural Material Co., Ltd',
+        // Footer - Enhanced
+        'footer-about-desc': 'FrameX pioneers modern steel construction through innovative prefabrication technology, delivering sustainable and smart living spaces with integrated solutions.',
+        'footer-quick-links': 'Quick Links',
+        'footer-link-home': 'Home',
+        'footer-link-products': 'Products',
+        'footer-link-about': 'About',
+        'footer-link-projects': 'Projects',
+        'footer-link-blog': 'Blog',
+        'footer-link-contact': 'Contact',
+        'footer-link-investor': 'Investor Relations',
+        'footer-contact-title': 'Contact',
+        'footer-address': '150/52A Phú Định, TP. Hồ Chí Minh, Vietnam',
+        'footer-company-name': 'ABM Architectural Material Co., Ltd',
         'footer-copyright': '© 2024 FrameX. All rights reserved.',
+        'footer-tagline': 'Shaping Tomorrow\'s Living',
         
         // About Page
         'about-title': 'About FrameX',
@@ -253,12 +262,21 @@ const translations = {
         'service4-feat2': 'Ứng dụng hệ thống cách nhiệt và chống thấm thông minh.',
         'service4-feat3': 'Mang lại cuộc sống tiện nghi, an toàn và tiết kiệm năng lượng.',
         
-        // Footer
-        'footer-products': 'Sản phẩm',
-        'footer-company': 'Công ty',
-        'footer-contact': 'Liên hệ',
-        'company-name': 'Công ty TNHH Vật liệu kiến trúc ABM',
+        // Footer - Enhanced Vietnamese
+        'footer-about-desc': 'FrameX tiên phong xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh với giải pháp tích hợp.',
+        'footer-quick-links': 'Liên Kết Nhanh',
+        'footer-link-home': 'Trang chủ',
+        'footer-link-products': 'Sản phẩm',
+        'footer-link-about': 'Giới thiệu',
+        'footer-link-projects': 'Dự án',
+        'footer-link-blog': 'Tin tức',
+        'footer-link-contact': 'Liên hệ',
+        'footer-link-investor': 'Quan hệ đầu tư',
+        'footer-contact-title': 'Liên Hệ',
+        'footer-address': '150/52A Phú Định, TP. Hồ Chí Minh, Việt Nam',
+        'footer-company-name': 'Công ty TNHH Vật liệu kiến trúc ABM',
         'footer-copyright': '© 2024 FrameX. Tất cả quyền được bảo vệ.',
+        'footer-tagline': 'Định hình không gian sống tương lai',
         
         // About Page
         'about-title': 'Giới Thiệu FrameX',
