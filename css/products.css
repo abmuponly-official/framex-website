@@ -2,7 +2,7 @@
 
 /* Products Section */
 .products-section {
-    padding: var(--space-xl) 0;
+    padding: var(--space-2xl) 0;
 }
 
 /* Page Header */
@@ -60,12 +60,12 @@
     border-color: var(--black);
 }
 
-/* Products Grid - Optimized for better layout */
+/* Products Grid - Optimized 3 columns layout */
 .products-full-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    margin-top: var(--space-xl);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
 }
 
 /* Product Detail Card - Compact design */
@@ -390,5 +390,134 @@
     .price-range {
         flex-direction: column;
         gap: 0;
+    }
+}
+
+/* Work Process Section */
+.work-process {
+    padding: var(--space-3xl) 0;
+    background: var(--gray-100);
+}
+
+.work-process .section-title {
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-2xl);
+    color: var(--black);
+}
+
+/* Process Timeline */
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Process Step */
+.process-step {
+    grid-column: span 1;
+    text-align: center;
+    position: relative;
+}
+
+/* Process Connector */
+.process-connector {
+    grid-column: span 1;
+    height: 2px;
+    background: var(--orange);
+    position: relative;
+}
+
+.process-connector::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+/* Step Number */
+.step-number {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--space-md);
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+/* Step Content */
+.step-content h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+    color: var(--black);
+}
+
+.step-duration {
+    font-size: var(--font-size-sm);
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.step-desc {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    line-height: 1.5;
+    padding: 0 var(--space-sm);
+}
+
+/* Responsive Process Timeline */
+@media (max-width: 1024px) {
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .process-connector {
+        display: none;
+    }
+    
+    .process-step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--space-md);
+    }
+    
+    .step-number {
+        flex-shrink: 0;
+    }
+    
+    .step-content {
+        flex-grow: 1;
+    }
+    
+    .step-desc {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-process {
+        padding: var(--space-2xl) 0;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }

@@ -21,21 +21,52 @@ const translations = {
         'get-quote': 'Get Quote',
         
         // Value Proposition
-        'why-framex': 'Complete Solutions for Every Need',
-        'value-1-title': 'For Homeowners',
-        'value-1-desc': 'Move in 50% faster with our integrated prefabricated solutions - quality homes built rapidly',
-        'value-2-title': 'For Developers',
-        'value-2-desc': 'Complete package: Steel structure + Insulation + Waterproofing + Smart systems - all integrated',
-        'value-3-title': 'Smart & Sustainable',
-        'value-3-desc': 'Eco-friendly materials with smart home technology for sustainable and intelligent living spaces',
-        'value-4-title': 'Optimized Investment',
-        'value-4-desc': 'Maximum value for your investment - premium quality construction at optimized costs',
+        'why-framex': 'Why FrameX',
+        
+        // Modular Design
+        'modular-title': 'Modular Design',
+        'modular-1': 'High standardization, optimized production',
+        'modular-2': 'Flexible adjustment to customer needs',
+        'modular-3': 'Strong load-bearing, tropical weather resistant',
+        'modular-4': 'Easy future expansion',
+        
+        // Smart Integration
+        'smart-title': 'Smart Integration',
+        'smart-1': 'IoT integration from design phase',
+        'smart-2': 'Smart energy management',
+        'smart-3': 'Remote security and monitoring',
+        'smart-4': 'Automated system controls',
+        
+        // Turnkey Services
+        'turnkey-title': 'Turnkey Services',
+        'turnkey-1': 'Customized design consultation',
+        'turnkey-2': 'Production through trusted partners',
+        'turnkey-3': 'Professional installation',
+        'turnkey-4': 'Warranty and technical support',
+        
+        // Key Advantages
+        'advantages-title': 'Key Advantages',
+        'advantage-1': 'reduction in construction time compared to traditional methods',
+        'advantage-2': 'savings in total lifecycle costs',
+        'advantage-3': 'High customization to fit all needs and budgets',
         
         // Product Range
         'product-range': 'Product Range',
-        'starter-desc': 'Perfect for small homes and studios',
-        'family-desc': 'Ideal for family residences',
-        'custom-desc': 'Tailored solutions for unique projects',
+        'starter-tagline': 'Smart Beginning',
+        'starter-desc': 'Standard prefabricated steel solution with basic waterproofing and insulation systems. Optimized design for small townhouses, fast construction, reasonable costs.',
+        'starter-feat-1': 'International standard prefab steel',
+        'starter-feat-2': '50% faster construction',
+        'starter-feat-3': 'Optimized cost, 15-year warranty',
+        'smart-tagline': 'Smart Sustainable Living',
+        'smart-desc': 'Comprehensive upgrade with customizable design, basic SmartHome integration. Perfect for small villas with high utility and personalization requirements.',
+        'smart-feat-1': 'Customizable structural design',
+        'smart-feat-2': 'SmartHome: Camera, fire alarm, anti-theft',
+        'smart-feat-3': 'Villa <225m² or 75m²/floor',
+        'premium-tagline': 'Premium Architecture',
+        'premium-desc': 'Premium solution with exclusive architectural design, artistic steel, advanced SmartHome. For large villas and special projects.',
+        'premium-feat-1': 'Exclusive architectural design',
+        'premium-feat-2': 'Artistic steel & fire protection',
+        'premium-feat-3': 'Large villa >300m² floor area',
         'learn-more': 'Learn More →',
         
         // Services
@@ -134,21 +165,52 @@ const translations = {
         'get-quote': 'Nhận báo giá',
         
         // Value Proposition
-        'why-framex': 'Giải Pháp Hoàn Hảo Cho Mọi Nhu Cầu',
-        'value-1-title': 'Dành Cho Người Mua Nhà',
-        'value-1-desc': 'Nhận nhà nhanh hơn 50% với giải pháp tiền chế tích hợp - nhà chất lượng xây nhanh',
-        'value-2-title': 'Dành Cho Nhà Phát Triển',
-        'value-2-desc': 'Gói trọn gói: Kết cấu thép + Cách nhiệt + Chống thấm + Hệ thống thông minh tích hợp',
-        'value-3-title': 'Thông Minh & Bền Vững',
-        'value-3-desc': 'Vật liệu thân thiện môi trường với công nghệ nhà thông minh cho không gian sống hiện đại',
-        'value-4-title': 'Đầu Tư Tối Ưu',
-        'value-4-desc': 'Giá trị tối đa cho đầu tư của bạn - công trình chất lượng cao với chi phí tối ưu',
+        'why-framex': 'Tại Sao Chọn FrameX',
+        
+        // Modular Design
+        'modular-title': 'Thiết Kế Module',
+        'modular-1': 'Tiêu chuẩn hóa cao, tối ưu sản xuất',
+        'modular-2': 'Linh hoạt điều chỉnh theo nhu cầu khách hàng',
+        'modular-3': 'Chịu tải mạnh, chống thời tiết nhiệt đới',
+        'modular-4': 'Dễ dàng mở rộng trong tương lai',
+        
+        // Smart Integration
+        'smart-title': 'Tích Hợp Thông Minh',
+        'smart-1': 'Tích hợp IoT từ giai đoạn thiết kế',
+        'smart-2': 'Quản lý năng lượng thông minh',
+        'smart-3': 'Giám sát an ninh từ xa',
+        'smart-4': 'Điều khiển hệ thống tự động',
+        
+        // Turnkey Services
+        'turnkey-title': 'Dịch Vụ Trọn Gói',
+        'turnkey-1': 'Tư vấn thiết kế tùy chỉnh',
+        'turnkey-2': 'Sản xuất thông qua đối tác uy tín',
+        'turnkey-3': 'Lắp đặt chuyên nghiệp',
+        'turnkey-4': 'Bảo hành và hỗ trợ kỹ thuật',
+        
+        // Key Advantages
+        'advantages-title': 'Ưu Điểm Chính',
+        'advantage-1': 'giảm thời gian xây dựng so với phương pháp truyền thống',
+        'advantage-2': 'tiết kiệm tổng chi phí vòng đời',
+        'advantage-3': 'Tùy chỉnh cao phù hợp mọi nhu cầu và ngân sách',
         
         // Product Range
-        'product-range': 'Dòng sản phẩm',
-        'starter-desc': 'Hoàn hảo cho nhà nhỏ và studio',
-        'family-desc': 'Lý tưởng cho nhà gia đình',
-        'custom-desc': 'Giải pháp tùy chỉnh cho dự án độc đáo',
+        'product-range': 'Dòng Sản Phẩm',
+        'starter-tagline': 'Khởi Đầu Thông Minh',
+        'starter-desc': 'Giải pháp nhà thép tiền chế tiêu chuẩn với hệ thống chống thấm, cách nhiệt cơ bản. Thiết kế tối ưu cho nhà phố nhỏ, xây dựng nhanh, chi phí hợp lý.',
+        'starter-feat-1': 'Nhà thép tiền chế chuẩn quốc tế',
+        'starter-feat-2': 'Xây dựng nhanh hơn 50%',
+        'starter-feat-3': 'Chi phí tối ưu, bảo hành 15 năm',
+        'smart-tagline': 'Sống Thông Minh Bền Vững',
+        'smart-desc': 'Nâng cấp toàn diện với thiết kế tùy biến, tích hợp SmartHome cơ bản. Hoàn hảo cho villa nhỏ với yêu cầu tiện ích và cá nhân hóa cao.',
+        'smart-feat-1': 'Thiết kế tùy biến kết cấu',
+        'smart-feat-2': 'SmartHome: Camera, báo cháy, chống trộm',
+        'smart-feat-3': 'Villa <225m² hoặc 75m²/tầng',
+        'premium-tagline': 'Kiến Trúc Đẳng Cấp',
+        'premium-desc': 'Giải pháp cao cấp với thiết kế kiến trúc độc quyền, thép nghệ thuật, SmartHome nâng cao. Dành cho biệt thự lớn và công trình đặc biệt.',
+        'premium-feat-1': 'Thiết kế kiến trúc độc quyền',
+        'premium-feat-2': 'Thép nghệ thuật & chống cháy',
+        'premium-feat-3': 'Biệt thự lớn >300m² sàn',
         'learn-more': 'Tìm hiểu thêm →',
         
         // Features
