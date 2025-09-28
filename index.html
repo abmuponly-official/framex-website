@@ -51,10 +51,25 @@
     <!-- Lazy Load Non-Critical CSS -->
     <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FrameX">
+    <meta property="og:title" content="FrameX - Shaping Tomorrow's Living | Smart Prefabricated Steel Structures">
+    <meta property="og:description" content="FrameX pioneers modern steel construction with smart prefabricated structures. Complete integrated solutions for homeowners and developers.">
+    <meta property="og:url" content="https://framex.vn/index.html">
+    <meta property="og:image" content="https://framex.vn/assets/images/og-image.jpg">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FrameX - Shaping Tomorrow's Living | Smart Prefabricated Steel Structures">
+    <meta name="twitter:description" content="FrameX pioneers modern steel construction with smart prefabricated structures. Complete integrated solutions for homeowners and developers.">
+    <meta name="twitter:image" content="https://framex.vn/assets/images/twitter-card.jpg">
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" style="position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px;z-index:10000;text-decoration:none;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav role="navigation" aria-label="Main navigation" class="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo" aria-label="FrameX Home">
@@ -78,10 +93,10 @@
                 </ul>
                 
                 <div class="nav-actions">
-                    <button class="lang-switch" onclick="toggleLanguage()">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="lang-switch" onclick="toggleLanguage()">
                         <span class="lang-text">VN</span>
                     </button>
-                    <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="mobile-toggle" onclick="toggleMobileMenu()">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -90,6 +105,9 @@
             </div>
         </div>
     </nav>
+
+    <main id="main" role="main">
+
     
     <!-- Hero Section -->
     <section class="hero">
@@ -458,7 +476,10 @@
     </section>
     
     <!-- Footer -->
-    <footer class="footer">
+    
+    </main>
+
+<footer role="contentinfo" aria-label="Footer" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">

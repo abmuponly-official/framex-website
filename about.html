@@ -18,9 +18,24 @@
         .stat-label { color: var(--gray-600); font-size: var(--font-size-sm); }
         .team-section { padding: var(--space-3xl) 0; }
     </style>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FrameX">
+    <meta property="og:title" content="About | FrameX - Pioneering Steel Construction">
+    <meta property="og:description" content="Learn about FrameX, Vietnam's leading integrated prefabricated steel construction solutions provider.">
+    <meta property="og:url" content="https://framex.vn/about.html">
+    <meta property="og:image" content="https://framex.vn/assets/images/og-image.jpg">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | FrameX - Pioneering Steel Construction">
+    <meta name="twitter:description" content="Learn about FrameX, Vietnam's leading integrated prefabricated steel construction solutions provider.">
+    <meta name="twitter:image" content="https://framex.vn/assets/images/twitter-card.jpg">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" style="position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px;z-index:10000;text-decoration:none;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+    <nav role="navigation" aria-label="Main navigation" class="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
@@ -42,16 +57,19 @@
                     <li><a href="contact.html" data-lang="contact">Contact</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="lang-switch" onclick="toggleLanguage()">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="lang-switch" onclick="toggleLanguage()">
                         <span class="lang-text">VN</span>
                     </button>
-                    <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="mobile-toggle" onclick="toggleMobileMenu()">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <main id="main" role="main">
+
 
     <section class="about-hero">
         <div class="container">
@@ -107,7 +125,10 @@
         </div>
     </section>
 
-    <footer class="footer">
+    
+    </main>
+
+<footer role="contentinfo" aria-label="Footer" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">

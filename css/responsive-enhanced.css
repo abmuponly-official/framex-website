@@ -1,0 +1,443 @@
+/* Enhanced Responsive Design for FrameX */
+/* Mobile-first approach with improved breakpoints */
+
+/* ========================================
+   Extra Small Devices (320px - 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    /* Typography */
+    body { font-size: 14px; }
+    h1 { font-size: 1.75rem; line-height: 1.2; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    p { font-size: 0.95rem; line-height: 1.6; }
+    
+    /* Container & Layout */
+    .container { 
+        padding: 0 15px; 
+        width: 100%;
+    }
+    
+    /* Navigation */
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: white;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        z-index: 999;
+    }
+    
+    .navbar-menu.active {
+        left: 0;
+    }
+    
+    .navbar-menu ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .navbar-menu li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .navbar-menu a {
+        display: block;
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: 60vh;
+        padding: 40px 0;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    /* Grid Layouts */
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Cards */
+    .card {
+        padding: 20px;
+    }
+    
+    .product-card,
+    .service-card,
+    .project-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Forms */
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-control {
+        padding: 12px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Tables - Make responsive */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+    
+    /* Utilities */
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .w-full-mobile {
+        width: 100% !important;
+    }
+}
+
+/* ========================================
+   Small Tablets (481px - 768px)
+   ======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Typography */
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    /* Container */
+    .container {
+        padding: 0 20px;
+        max-width: 720px;
+    }
+    
+    /* Grid Layouts */
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 50px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    /* Navigation - Still mobile menu */
+    .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 300px;
+        height: calc(100vh - 70px);
+        background: white;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+    }
+    
+    .navbar-menu.active {
+        left: 0;
+    }
+    
+    /* Buttons */
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+    }
+    
+    /* Utilities */
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   Large Tablets & Small Laptops (769px - 1024px)
+   ======================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Typography */
+    body { font-size: 16px; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.875rem; }
+    
+    /* Container */
+    .container {
+        max-width: 960px;
+        padding: 0 30px;
+    }
+    
+    /* Grid Layouts */
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Navigation - Desktop style */
+    .navbar-toggle {
+        display: none;
+    }
+    
+    .navbar-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        display: block !important;
+    }
+    
+    .navbar-menu ul {
+        flex-direction: row;
+        padding: 0;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 75vh;
+    }
+}
+
+/* ========================================
+   Desktop (1025px - 1440px)
+   ======================================== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Container */
+    .container {
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+    
+    /* Grid Layouts */
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Typography */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+}
+
+/* ========================================
+   Large Desktop (1441px+)
+   ======================================== */
+@media (min-width: 1441px) {
+    /* Container */
+    .container {
+        max-width: 1400px;
+    }
+    
+    /* Typography - Slightly larger for big screens */
+    body { font-size: 17px; }
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2.25rem; }
+}
+
+/* ========================================
+   Touch Device Optimizations
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    button, 
+    a.btn,
+    .navbar-menu a,
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    button:hover,
+    a:hover {
+        background-color: inherit;
+    }
+    
+    /* Improve form inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevent zoom on iOS */
+        padding: 12px;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+    /* Hide navigation and footer */
+    .navbar,
+    .footer,
+    .navbar-toggle,
+    .skip-to-content {
+        display: none !important;
+    }
+    
+    /* Reset colors for print */
+    body {
+        color: black;
+        background: white;
+    }
+    
+    /* Ensure links are visible */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    /* Page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   Accessibility & Motion Preferences
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --black: #000000;
+        --white: #ffffff;
+        --orange: #ff5722;
+    }
+    
+    * {
+        border-color: currentColor !important;
+    }
+}
+
+/* ========================================
+   Orientation Specific
+   ======================================== */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Optimize for landscape mobile */
+    .hero {
+        min-height: 90vh;
+    }
+    
+    .navbar {
+        padding: 5px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   Utility Classes for Responsive
+   ======================================== */
+/* Show/Hide utilities */
+@media (max-width: 767px) {
+    .show-mobile { display: block !important; }
+    .hide-mobile { display: none !important; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .show-tablet { display: block !important; }
+    .hide-tablet { display: none !important; }
+}
+
+@media (min-width: 1024px) {
+    .show-desktop { display: block !important; }
+    .hide-desktop { display: none !important; }
+}
+
+/* Responsive spacing utilities */
+@media (max-width: 767px) {
+    .p-mobile-0 { padding: 0 !important; }
+    .p-mobile-1 { padding: 0.5rem !important; }
+    .p-mobile-2 { padding: 1rem !important; }
+    .m-mobile-0 { margin: 0 !important; }
+    .m-mobile-1 { margin: 0.5rem !important; }
+    .m-mobile-2 { margin: 1rem !important; }
+}
