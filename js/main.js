@@ -15,21 +15,21 @@ const translations = {
         'contact': 'Contact',
         
         // Hero
-        'hero-title': 'Pioneering Modern Steel Construction',
-        'hero-subtitle': 'FrameX pioneers modern steel construction through innovative prefabrication technology, delivering sustainable and smart living spaces. We integrate prefabricated steel structures with insulation, waterproofing and smart home solutions for high-quality, rapid and cost-optimized construction.',
+        'hero-title': 'Shaping Tomorrow\'s Living',
+        'hero-subtitle': 'Pioneering modern steel construction through innovative prefabrication technology. We integrate steel structures with thermal insulation, waterproofing, and smart home solutions - delivering high-quality, rapid, and cost-optimized construction for homeowners and developers.',
         'explore-products': 'Explore Products',
         'get-quote': 'Get Quote',
         
         // Value Proposition
-        'why-framex': 'Complete Integrated Solutions',
-        'value-1-title': 'Rapid Construction',
-        'value-1-desc': 'High-quality construction 50% faster with innovative prefabrication technology',
-        'value-2-title': 'Complete Integration',
-        'value-2-desc': 'Steel structure + Insulation + Waterproofing + Smart home systems in one solution',
-        'value-3-title': 'Sustainable Living',
-        'value-3-desc': 'Sustainable construction with eco-friendly materials and smart energy solutions',
-        'value-4-title': 'Cost Optimized',
-        'value-4-desc': 'Optimal investment costs while ensuring premium quality and 50+ years durability',
+        'why-framex': 'Complete Solutions for Every Need',
+        'value-1-title': 'For Homeowners',
+        'value-1-desc': 'Move in 50% faster with our integrated prefabricated solutions - quality homes built rapidly',
+        'value-2-title': 'For Developers',
+        'value-2-desc': 'Complete package: Steel structure + Insulation + Waterproofing + Smart systems - all integrated',
+        'value-3-title': 'Smart & Sustainable',
+        'value-3-desc': 'Eco-friendly materials with smart home technology for sustainable and intelligent living spaces',
+        'value-4-title': 'Optimized Investment',
+        'value-4-desc': 'Maximum value for your investment - premium quality construction at optimized costs',
         
         // Product Range
         'product-range': 'Product Range',
@@ -40,7 +40,7 @@ const translations = {
         
         // Services
         'services-title': 'Our Services',
-        'services-subtitle': 'We provide end-to-end solutions for smart prefabricated steel construction.',
+        'services-subtitle': 'Complete solutions from design to delivery for homeowners and developers seeking quality, speed, and innovation.',
         'service1-title': 'Design & Planning',
         'service1-desc': 'Complete architectural design and BIM modeling with structural engineering expertise',
         'service2-title': 'Manufacturing',
@@ -52,16 +52,16 @@ const translations = {
         'view-all-services': 'View All Services',
         
         // Features
-        'tech-title': 'Innovative Prefabrication Technology',
-        'tech-desc': 'We integrate prefabricated steel structures with thermal insulation, waterproofing, and smart home solutions. Our innovative approach creates high-quality constructions that are rapid to build and cost-optimized while maintaining premium standards.',
+        'tech-title': 'Integrated Construction Innovation',
+        'tech-desc': 'FrameX pioneers modern steel construction by seamlessly integrating prefabricated steel structures with thermal insulation, waterproofing, and smart home solutions. This innovative approach delivers high-quality constructions rapidly and cost-effectively for both individual homeowners and large-scale developers.',
         'feature-1': 'Integrated steel structure with insulation systems',
         'feature-2': 'Advanced waterproofing and weatherproofing',
         'feature-3': 'Built-in smart home infrastructure',
         'feature-4': 'Sustainable and eco-friendly materials',
         
         // CTA
-        'cta-title': 'Build Sustainable & Smart Living Spaces',
-        'cta-subtitle': 'Experience the innovation of integrated prefabricated construction with FrameX',
+        'cta-title': 'Ready to Shape Your Tomorrow?',
+        'cta-subtitle': 'Join homeowners and developers who choose integrated prefabricated innovation with FrameX',
         'start-project': 'Start Your Project',
         
         // Footer
@@ -128,21 +128,21 @@ const translations = {
         'contact': 'Liên hệ',
         
         // Hero
-        'hero-title': 'Tiên Phong Xây Dựng Thép Hiện Đại',
-        'hero-subtitle': 'FrameX tiên phong xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh. Chúng tôi tích hợp kết cấu thép tiền chế với các giải pháp cách nhiệt, chống thấm và nhà thông minh, tạo ra công trình chất lượng cao, nhanh chóng và tối ưu chi phí.',
+        'hero-title': 'Định Hình Không Gian Sống Tương Lai',
+        'hero-subtitle': 'Tiên phong xây dựng thép hiện đại với công nghệ tiền chế đổi mới. Chúng tôi tích hợp kết cấu thép với cách nhiệt, chống thấm và nhà thông minh - mang đến giải pháp chất lượng cao, nhanh chóng và tối ưu chi phí cho người mua nhà và nhà phát triển.',
         'explore-products': 'Khám phá sản phẩm',
         'get-quote': 'Nhận báo giá',
         
         // Value Proposition
-        'why-framex': 'Giải Pháp Tích Hợp Toàn Diện',
-        'value-1-title': 'Thi Công Nhanh Chóng',
-        'value-1-desc': 'Công trình chất lượng cao, nhanh hơn 50% với công nghệ tiền chế đổi mới',
-        'value-2-title': 'Tích Hợp Hoàn Chỉnh',
-        'value-2-desc': 'Kết cấu thép + Cách nhiệt + Chống thấm + Hệ thống thông minh trong một giải pháp',
-        'value-3-title': 'Sống Bền Vững',
-        'value-3-desc': 'Xây dựng bền vững với vật liệu thân thiện môi trường và giải pháp năng lượng thông minh',
-        'value-4-title': 'Tối Ưu Chi Phí',
-        'value-4-desc': 'Chi phí đầu tư tối ưu nhưng đảm bảo chất lượng cao cấp và bền vững 50+ năm',
+        'why-framex': 'Giải Pháp Hoàn Hảo Cho Mọi Nhu Cầu',
+        'value-1-title': 'Dành Cho Người Mua Nhà',
+        'value-1-desc': 'Nhận nhà nhanh hơn 50% với giải pháp tiền chế tích hợp - nhà chất lượng xây nhanh',
+        'value-2-title': 'Dành Cho Nhà Phát Triển',
+        'value-2-desc': 'Gói trọn gói: Kết cấu thép + Cách nhiệt + Chống thấm + Hệ thống thông minh tích hợp',
+        'value-3-title': 'Thông Minh & Bền Vững',
+        'value-3-desc': 'Vật liệu thân thiện môi trường với công nghệ nhà thông minh cho không gian sống hiện đại',
+        'value-4-title': 'Đầu Tư Tối Ưu',
+        'value-4-desc': 'Giá trị tối đa cho đầu tư của bạn - công trình chất lượng cao với chi phí tối ưu',
         
         // Product Range
         'product-range': 'Dòng sản phẩm',
@@ -152,21 +152,21 @@ const translations = {
         'learn-more': 'Tìm hiểu thêm →',
         
         // Features
-        'tech-title': 'Công Nghệ Tiền Chế Đổi Mới',
-        'tech-desc': 'Chúng tôi tích hợp kết cấu thép tiền chế với các giải pháp cách nhiệt, chống thấm và nhà thông minh. Phương pháp đổi mới của chúng tôi tạo ra công trình chất lượng cao, xây dựng nhanh chóng và tối ưu chi phí nhưng vẫn đảm bảo tiêu chuẩn cao cấp.',
+        'tech-title': 'Đổi Mới Xây Dựng Tích Hợp',
+        'tech-desc': 'FrameX tiên phong xây dựng thép hiện đại bằng việc tích hợp liền mạch kết cấu thép tiền chế với cách nhiệt, chống thấm và giải pháp nhà thông minh. Phương pháp đổi mới này mang đến công trình chất lượng cao một cách nhanh chóng và hiệu quả chi phí cho cả khách hàng cá nhân và nhà phát triển quy mô lớn.',
         'feature-1': 'Kết cấu thép tích hợp với hệ thống cách nhiệt',
         'feature-2': 'Giải pháp chống thấm và chống thời tiết tiên tiến',
         'feature-3': 'Hạ tầng nhà thông minh tích hợp sẵn',
         'feature-4': 'Vật liệu bền vững và thân thiện môi trường',
         
         // CTA
-        'cta-title': 'Xây Dựng Không Gian Sống Bền Vững & Thông Minh',
-        'cta-subtitle': 'Trải nghiệm đổi mới của xây dựng tiền chế tích hợp cùng FrameX',
+        'cta-title': 'Sẵn Sàng Định Hình Tương Lai Của Bạn?',
+        'cta-subtitle': 'Cùng người mua nhà và nhà phát triển chọn đổi mới tiền chế tích hợp với FrameX',
         'start-project': 'Bắt đầu dự án',
         
         // Services
         'services-title': 'Dịch Vụ Của Chúng Tôi',
-        'services-subtitle': 'Chúng tôi cung cấp giải pháp toàn diện cho xây dựng thép tiền chế thông minh.',
+        'services-subtitle': 'Giải pháp trọn gói từ thiết kế đến bàn giao cho người mua nhà và nhà phát triển tìm kiếm chất lượng, tốc độ và đổi mới.',
         'service1-title': 'Thiết Kế & Quy Hoạch',
         'service1-desc': 'Thiết kế kiến trúc hoàn chỉnh và mô hình BIM với chuyên môn kỹ thuật kết cấu',
         'service2-title': 'Sản Xuất',
