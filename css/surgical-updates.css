@@ -1,0 +1,279 @@
+/**
+ * Surgical Display Updates for FrameX
+ * CSS-only overrides for minimal visual refinements
+ * Date: 2025-09-28
+ * 
+ * Changes:
+ * 1. Lighter footer background with WCAG AA compliance
+ * 2. Added 3D Warehouse social icon
+ * 3. Updated product page "target-title" text
+ * 4. Changed bullet icons to checkmarks
+ * 5. Hide decorative section tile headers
+ */
+
+/* ========================================
+   1. FOOTER BACKGROUND - LIGHTER VARIANT
+   ======================================== */
+.footer-v2 {
+    /* Lighter background options (choose one):
+       Option A: Very light gray #F7F7F9 - subtle, modern
+       Option B: Off-white #FAFAFA - warmer tone
+       Option C: Light blue-gray #F8F9FA - professional */
+    background-color: #F7F7F9 !important; /* Option A selected for best contrast */
+    
+    /* Ensure good contrast with dark text */
+    color: #2a2a2a;
+}
+
+/* Adjust border to complement lighter background */
+.footer-v2 {
+    border-top-color: #e5e5e7 !important;
+}
+
+/* Ensure links remain accessible with WCAG AA contrast */
+.footer-v2 a {
+    color: #000000;
+}
+
+.footer-v2 a:hover,
+.footer-v2 a:focus {
+    color: #ff6b35;
+}
+
+/* Muted text adjustments for better contrast on light bg */
+.footer-v2__tagline,
+.footer-v2__copyright {
+    color: #4a4a4a !important;
+}
+
+/* ========================================
+   2. ADD 3D WAREHOUSE SOCIAL ICON
+   ======================================== */
+
+/* Add 3D Warehouse icon after LinkedIn using CSS */
+.footer-v2__social a[aria-label="LinkedIn"]::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7l-10-5z'/%3E%3Cpath d='M12 22V12'/%3E%3Cpath d='M22 7l-10 5L2 7'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.footer-v2__social a[aria-label="LinkedIn"]:hover::after {
+    opacity: 0.7;
+}
+
+/* Alternative: Add via pseudo-element for better control */
+.footer-v2__social {
+    position: relative;
+}
+
+.footer-v2__social::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7l-10-5z'/%3E%3Cpath d='M12 22V12'/%3E%3Cpath d='M22 7l-10 5L2 7'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    pointer-events: all;
+    transition: opacity 0.2s ease;
+}
+
+.footer-v2__social:hover::after {
+    opacity: 0.7;
+}
+
+/* ========================================
+   3. UPDATE PRODUCT PAGE TARGET TITLE TEXT
+   ======================================== */
+
+/* Vietnamese version */
+h3[data-lang="target-title"]:lang(vi)::before,
+h3[data-lang="target-title"]:not(:lang(en))::before {
+    content: "Dành cho";
+}
+
+h3[data-lang="target-title"]:lang(vi),
+h3[data-lang="target-title"]:not(:lang(en)) {
+    font-size: 0;
+    line-height: 0;
+}
+
+h3[data-lang="target-title"]:lang(vi)::before,
+h3[data-lang="target-title"]:not(:lang(en))::before {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    display: block;
+}
+
+/* English version */
+h3[data-lang="target-title"]:lang(en)::before {
+    content: "Designed For";
+}
+
+h3[data-lang="target-title"]:lang(en) {
+    font-size: 0;
+    line-height: 0;
+}
+
+h3[data-lang="target-title"]:lang(en)::before {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    display: block;
+}
+
+/* ========================================
+   4. CHANGE BULLET ICONS TO CHECKMARKS
+   ======================================== */
+
+/* Replace all fa-user icons with fa-check style */
+.target-list li i.fas.fa-user {
+    display: none;
+}
+
+.target-list li {
+    position: relative;
+    padding-left: 28px;
+}
+
+.target-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%234CAF50' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Alternative style with circle background */
+.product-target .target-list li::before {
+    background-color: #e8f5e9;
+    border-radius: 50%;
+    padding: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234CAF50' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+/* ========================================
+   5. HIDE DECORATIVE SECTION TILE HEADERS
+   ======================================== */
+
+/* Hide any decorative tile headers while keeping content accessible */
+.section-tile,
+.section__tile,
+[class*="tile-header"],
+[class*="tile-decoration"],
+.decorative-tile {
+    display: none !important;
+}
+
+/* Alternative: Make them visually hidden but screen-reader accessible */
+.section-header-tile,
+.hero-tile,
+.content-tile-decoration {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Ensure footer remains readable on mobile */
+    .footer-v2 {
+        background-color: #F7F7F9 !important;
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    /* Adjust social icon positioning on mobile */
+    .footer-v2__social::after {
+        display: none; /* Hide 3D Warehouse on mobile if space constrained */
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (if enabled)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .footer-v2 {
+        /* Keep slightly lighter background in dark mode too */
+        background-color: #1a1a1c !important;
+        border-top-color: #2a2a2c !important;
+    }
+    
+    .footer-v2__tagline,
+    .footer-v2__copyright {
+        color: #a0a0a0 !important;
+    }
+    
+    /* Adjust 3D Warehouse icon for dark mode */
+    .footer-v2__social::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7l-10-5z'/%3E%3Cpath d='M12 22V12'/%3E%3Cpath d='M22 7l-10 5L2 7'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E");
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Ensure focus states are visible */
+.footer-v2 a:focus,
+.footer-v2__social::after:focus {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .footer-v2 {
+        background-color: #ffffff !important;
+        border-top: 2px solid #000000 !important;
+    }
+    
+    .footer-v2 a {
+        text-decoration: underline;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .footer-v2 {
+        background-color: white !important;
+        border-top: 1px solid #000 !important;
+    }
+    
+    /* Hide social icons in print */
+    .footer-v2__social {
+        display: none !important;
+    }
+}
