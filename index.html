@@ -13,14 +13,38 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
     <link rel="alternate icon" type="image/x-icon" href="https://page.gensparksite.com/v1/base64_upload/b4816b144a03d9ca1f6db33367fe5133">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS - Above the fold styles */
+        :root{--black:#000;--white:#fff;--orange:#ff6b35;--gray-100:#f8f8f8;--gray-600:#4a4a4a;--font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--nav-height:72px;--max-width:1200px}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:var(--font-primary);line-height:1.6;color:var(--black);background:var(--white);font-display:swap}
+        .container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+        .navbar{position:fixed;top:0;left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-100);z-index:1000;height:var(--nav-height)}
+        .nav-wrapper{display:flex;align-items:center;justify-content:space-between;height:100%}
+        .logo img{height:40px;width:auto}
+        .nav-menu{display:flex;list-style:none;gap:2rem;margin:0}
+        .nav-menu a{text-decoration:none;color:var(--black);font-weight:500;transition:color .2s}
+        .nav-menu a:hover,.nav-menu a.active{color:var(--orange)}
+        .hero{padding:calc(var(--nav-height) + 2rem) 0 2rem;text-align:center;min-height:80vh;display:flex;align-items:center}
+        .hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:1rem}
+        .btn{display:inline-block;padding:12px 24px;background:var(--orange);color:var(--white);text-decoration:none;border-radius:4px;font-weight:600;transition:all .2s;margin:0 0.5rem}
+        .btn:hover{background:var(--black);transform:translateY(-2px)}
+        .btn-outline{background:transparent;color:var(--black);border:2px solid var(--black)}
+        .btn-outline:hover{background:var(--black);color:var(--white)}
+        .mobile-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer}
+        .mobile-toggle span{width:25px;height:3px;background:var(--black);margin:3px 0;transition:.3s}
+        .lang-switch{background:var(--gray-100);border:none;padding:8px 12px;border-radius:4px;cursor:pointer;font-weight:500}
+        @media (max-width:768px){.nav-menu{display:none}.mobile-toggle{display:flex}.hero{padding-top:calc(var(--nav-height) + 1rem)}.btn{display:block;margin:0.5rem 0;text-align:center}}
+    </style>
     
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Lazy Load Non-Critical CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -415,7 +439,9 @@
         </div>
     </footer>
     
-    <script src="js/image-loader.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Load scripts optimized -->
+    <script src="js/performance.js" defer></script>
+    <script src="js/image-loader.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
