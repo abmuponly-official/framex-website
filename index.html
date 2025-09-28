@@ -117,21 +117,242 @@
             }
         }
     
-        /* Enhanced Footer Styles */
+        /* Enhanced Footer Styles with Improved Typography */
         .footer {
-            background: #000;
-            color: #fff;
-            padding: 60px 0 0;
-            margin-top: 80px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 70px 0 0;
+            margin-top: 100px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 40px;
+            gap: 60px;
+            margin-bottom: 50px;
         }
         
+        /* About Column with Logo */
+        .footer-about .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .footer-about .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            display: block;
+        }
+        
+        .footer-description {
+            line-height: 1.7;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .footer-social a:hover {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Footer Columns Typography */
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-list,
+        .footer-contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-list li,
+        .footer-contact-list li {
+            margin-bottom: 14px;
+        }
+        
+        .footer-list a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+        
+        .footer-list a:hover {
+            color: #ff6b35;
+            padding-left: 5px;
+        }
+        
+        /* Contact List with Icons */
+        .footer-contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .footer-contact-list i {
+            color: #ff6b35;
+            margin-top: 3px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact-list a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-contact-list a:hover {
+            color: #ff6b35;
+        }
+        
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copyright,
+        .footer-tagline {
+            margin: 0;
+            color: #808080;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .footer-tagline {
+            font-style: italic;
+            color: #999;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+            
+            .footer-about {
+                grid-column: span 2;
+            }
+            
+            .footer-about .footer-logo img {
+                max-width: 160px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                padding: 50px 0 0;
+                margin-top: 60px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-about {
+                grid-column: span 1;
+                text-align: center;
+            }
+            
+            .footer-about .footer-logo {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .footer-about .footer-logo img {
+                max-width: 150px;
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+            
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+            
+            .footer-list a:hover {
+                padding-left: 0;
+            }
+            
+            .footer-contact-list li {
+                justify-content: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-title {
+                font-size: 1.15rem;
+            }
+            
+            .footer-description,
+            .footer-list a,
+            .footer-contact-list li {
+                font-size: 0.9rem;
+            }
+            
+            .footer-social a {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            
+            .footer-about .footer-logo img {
+                max-width: 140px;
+            }
+        }
         /* About Column */
         .footer-about .footer-logo {
             margin-bottom: 20px;
@@ -726,13 +947,14 @@
     </main>
 
     <!-- Footer -->
+        <!-- Enhanced Footer with Logo -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <!-- About FrameX Column -->
                 <div class="footer-column footer-about">
                     <div class="footer-logo">
-                        <img src="assets/images/framex-logo.svg" alt="FrameX Logo" width="120" height="40">
+                        <img src="assets/images/framex-logo-footer.png" alt="FrameX - Shaping Tomorrow's Living" width="180" height="auto">
                     </div>
                     <p class="footer-description" data-lang="footer-about-desc">
                         FrameX pioneers modern steel construction through innovative prefabrication technology, delivering sustainable and smart living spaces with integrated solutions.
