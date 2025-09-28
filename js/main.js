@@ -73,16 +73,18 @@ const translations = {
         
         // About Page
         'about-title': 'About FrameX',
-        'about-subtitle': 'An asset-light startup revolutionizing steel construction with smart prefabricated structures',
-        'about-part-of': 'Part of ABM Architectural Material Co., Ltd',
+        'about-subtitle': 'FrameX pioneers modern steel construction through innovative prefabrication technology, bringing sustainable and smart living spaces to everyone. We integrate prefabricated steel structures with thermal insulation, waterproofing, and smart home solutions, creating high-quality, rapid, and cost-optimized constructions.',
+        'about-who-we-are': 'About FrameX',
+        'about-company-intro': 'Part of ABM Architectural Material Co., Ltd, FrameX is Vietnam\'s leading integrated prefabricated steel construction solutions provider. With 10+ years of experience, we offer not just steel frames but a complete ecosystem including thermal insulation, waterproofing, and smart home systems.',
+        'about-for-buyers': 'For Home Buyers',
+        'about-buyers-content': 'Own a complete home with solid steel frame, effective thermal insulation, absolute waterproofing, and pre-installed smart home technology. 70% faster construction time, optimized costs while maintaining premium quality and 50+ years durability. From studio apartments to villas - comprehensive solutions for every need.',
+        'about-for-developers': 'For Project Developers',
+        'about-developers-content': 'Total solutions from design to handover: prefabricated steel + insulation + waterproofing + smart systems. Save 40-60% construction time, ensure consistent quality, and reduce project risks. Trusted partner for projects from social housing to premium developments.',
+        'about-vision': '"Steel Structure + Insulation + Waterproofing + Smart Home = Perfect Solution"',
         'stat-experience': 'Years Experience',
         'stat-projects': 'Projects Completed',
         'stat-faster': 'Faster Construction',
         'stat-satisfaction': 'Customer Satisfaction',
-        'mission-title': 'Our Mission',
-        'mission-desc': 'To democratize modern steel construction through innovative prefabrication technology, making sustainable and smart living spaces accessible to everyone.',
-        'model-title': 'Asset-Light Model',
-        'model-desc': 'We focus on design, technology, and partnerships rather than heavy manufacturing assets, allowing us to be agile, innovative, and cost-effective for our customers.',
         
         // Investor Relations Page
         'investor-title': 'Investor & Partner Relations',
@@ -184,16 +186,18 @@ const translations = {
         
         // About Page
         'about-title': 'Giới Thiệu FrameX',
-        'about-subtitle': 'Startup vốn nhẹ cách mạng hóa xây dựng thép với kết cấu tiền chế thông minh',
-        'about-part-of': 'Thuộc Công ty TNHH Vật liệu kiến trúc ABM',
+        'about-subtitle': 'FrameX tiên phong xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh cho mọi người. Chúng tôi tích hợp kết cấu thép tiền chế với các giải pháp cách nhiệt, chống thấm và nhà thông minh, tạo ra công trình chất lượng cao, nhanh chóng và tối ưu chi phí.',
+        'about-who-we-are': 'Về FrameX',
+        'about-company-intro': 'Thuộc ABM Architectural Material Co., Ltd, FrameX là đơn vị hàng đầu Việt Nam chuyên về giải pháp kết cấu thép tiền chế tích hợp. Với 10+ năm kinh nghiệm, chúng tôi không chỉ cung cấp khung thép mà còn là hệ sinh thái hoàn chỉnh bao gồm cách nhiệt, chống thấm và hệ thống nhà thông minh.',
+        'about-for-buyers': 'Dành Cho Người Mua Nhà',
+        'about-buyers-content': 'Sở hữu ngôi nhà hoàn thiện với khung thép chắc chắn, hệ thống cách nhiệt hiệu quả, chống thấm tuyệt đối và công nghệ nhà thông minh sẵn có. Thời gian xây dựng nhanh hơn 70%, chi phí tối ưu nhưng chất lượng cao cấp và bền vững 50+ năm. Từ căn hộ studio đến biệt thự - giải pháp toàn diện cho mọi nhu cầu.',
+        'about-for-developers': 'Dành Cho Nhà Phát Triển Dự Án',
+        'about-developers-content': 'Giải pháp tổng thể từ thiết kế đến bàn giao: kết cấu thép tiền chế + cách nhiệt + chống thấm + hệ thống thông minh. Tiết kiệm 40-60% thời gian thi công, đảm bảo chất lượng đồng nhất và giảm thiểu rủi ro dự án. Đối tác đáng tin cậy cho các dự án từ nhà ở xã hội đến cao cấp.',
+        'about-vision': '"Kết cấu thép + Cách nhiệt + Chống thấm + Nhà thông minh = Giải pháp hoàn hảo"',
         'stat-experience': 'Năm Kinh Nghiệm',
         'stat-projects': 'Dự Án Hoàn Thành',
         'stat-faster': 'Thi Công Nhanh Hơn',
         'stat-satisfaction': 'Sự Hài Lòng Khách Hàng',
-        'mission-title': 'Sứ Mệnh Của Chúng Tôi',
-        'mission-desc': 'Dân chủ hóa xây dựng thép hiện đại thông qua công nghệ tiền chế đổi mới, mang đến không gian sống bền vững và thông minh cho mọi người.',
-        'model-title': 'Mô Hình Vốn Nhẹ',
-        'model-desc': 'Chúng tôi tập trung vào thiết kế, công nghệ và đối tác thay vì tài sản sản xuất nặng, cho phép chúng tôi linh hoạt, sáng tạo và tiết kiệm chi phí cho khách hàng.',
         
         // Investor Relations Page
         'investor-title': 'Quan Hệ Đầu Tư & Đối Tác',
