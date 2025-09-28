@@ -3,6 +3,30 @@
     "terser": "^5.44.0"
   },
   "devDependencies": {
-    "clean-css-cli": "^5.6.3"
-  }
+    "clean-css-cli": "^5.6.3",
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.10"
+  },
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "A professional minimalist website for FrameX, an innovative steel construction startup specializing in smart prefabricated structures with IoT integration.",
+  "main": "apply-optimizations.js",
+  "scripts": {
+    "dev": "concurrently \"npm:server\" \"npm:watch\"",
+    "server": "live-server --port=8080 --host=0.0.0.0 --no-browser",
+    "watch": "nodemon --watch *.html --watch css/*.css --watch js/*.js -e html,css,js --exec \"echo 'Files changed, reload browser'\"",
+    "editor": "node dev-environment.js start",
+    "optimize": "node optimize-website.js",
+    "build": "npm run optimize",
+    "preview": "cd dist && live-server --port=8081 --host=0.0.0.0",
+    "backup": "node dev-environment.js backup",
+    "validate": "node dev-environment.js validate",
+    "format": "node dev-environment.js format",
+    "pr": "node dev-environment.js pr",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
