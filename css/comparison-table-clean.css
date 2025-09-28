@@ -1,0 +1,286 @@
+/**
+ * Clean Comparison Table Styling
+ * Minimal, modern design with subtle brand accent
+ * Date: 2025-09-28
+ * Scope: Vietnamese locale only
+ */
+
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+:root {
+    --table-accent: #ff6b35;
+    --table-border: #e5e7eb;
+    --table-header-bg: #f9fafb;
+    --table-row-hover: #f9fafb;
+    --table-text: #1a1a1a;
+    --table-text-muted: #4a4a4a;
+    --table-zebra: #fafafa;
+    --table-radius: 8px;
+}
+
+/* ========================================
+   BASE TABLE STYLES - Vietnamese Only
+   ======================================== */
+html[lang="vi"] .comparison-table,
+body.lang-vi .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border: 1px solid var(--table-border);
+    border-radius: var(--table-radius);
+    overflow: hidden;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   HEADER STYLING
+   ======================================== */
+html[lang="vi"] .comparison-table thead,
+body.lang-vi .comparison-table thead {
+    background: var(--table-header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+html[lang="vi"] .comparison-table thead th,
+body.lang-vi .comparison-table thead th {
+    padding: 1rem 0.75rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--table-text);
+    border-bottom: 2px solid var(--table-border);
+    vertical-align: middle;
+}
+
+/* Product name headers - centered and emphasized */
+html[lang="vi"] .comparison-table thead th:not(:first-child),
+body.lang-vi .comparison-table thead th:not(:first-child) {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* First column header - feature label */
+html[lang="vi"] .comparison-table thead th:first-child,
+body.lang-vi .comparison-table thead th:first-child {
+    font-weight: 600;
+    color: var(--table-text-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   BODY STYLING
+   ======================================== */
+html[lang="vi"] .comparison-table tbody tr,
+body.lang-vi .comparison-table tbody tr {
+    border-bottom: 1px solid var(--table-border);
+    transition: background-color 0.2s ease;
+}
+
+/* Zebra striping */
+html[lang="vi"] .comparison-table tbody tr:nth-child(even),
+body.lang-vi .comparison-table tbody tr:nth-child(even) {
+    background-color: var(--table-zebra);
+}
+
+/* Hover effect */
+html[lang="vi"] .comparison-table tbody tr:hover,
+body.lang-vi .comparison-table tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+/* Remove bottom border from last row */
+html[lang="vi"] .comparison-table tbody tr:last-child,
+body.lang-vi .comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* ========================================
+   CELL STYLING
+   ======================================== */
+html[lang="vi"] .comparison-table tbody td,
+body.lang-vi .comparison-table tbody td {
+    padding: 1rem 0.75rem;
+    vertical-align: top;
+    color: var(--table-text);
+}
+
+/* Feature name cells - first column with accent */
+html[lang="vi"] .comparison-table tbody td:first-child,
+body.lang-vi .comparison-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--table-text);
+    border-left: 3px solid var(--table-accent);
+    padding-left: 1rem;
+    background: linear-gradient(90deg, rgba(255, 107, 53, 0.03) 0%, transparent 100%);
+}
+
+/* Product value cells - centered */
+html[lang="vi"] .comparison-table tbody td:not(:first-child),
+body.lang-vi .comparison-table tbody td:not(:first-child) {
+    text-align: center;
+    color: var(--table-text-muted);
+}
+
+/* Empty value indicator */
+html[lang="vi"] .comparison-table tbody td:contains("–"),
+body.lang-vi .comparison-table tbody td:contains("—") {
+    color: #d1d5db;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* ========================================
+   FEATURED COLUMN (SMART)
+   ======================================== */
+html[lang="vi"] .comparison-table .featured,
+body.lang-vi .comparison-table .featured {
+    background: linear-gradient(180deg, rgba(255, 107, 53, 0.04) 0%, rgba(255, 107, 53, 0.02) 100%);
+    position: relative;
+}
+
+html[lang="vi"] .comparison-table thead .featured,
+body.lang-vi .comparison-table thead .featured {
+    background: rgba(255, 107, 53, 0.08);
+}
+
+/* Add top accent to featured column header */
+html[lang="vi"] .comparison-table thead .featured::before,
+body.lang-vi .comparison-table thead .featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--table-accent);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    /* Allow horizontal scroll on mobile */
+    html[lang="vi"] .comparison-table-wrapper,
+    body.lang-vi .comparison-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+    
+    html[lang="vi"] .comparison-table,
+    body.lang-vi .comparison-table {
+        min-width: 600px;
+        font-size: 0.875rem;
+    }
+    
+    html[lang="vi"] .comparison-table thead th,
+    body.lang-vi .comparison-table thead th,
+    html[lang="vi"] .comparison-table tbody td,
+    body.lang-vi .comparison-table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    /* Scroll indicator */
+    html[lang="vi"] .comparison-table-wrapper::after,
+    body.lang-vi .comparison-table-wrapper::after {
+        content: '→';
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--table-accent);
+        font-size: 1.5rem;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+/* ========================================
+   TYPOGRAPHY ENHANCEMENTS
+   ======================================== */
+html[lang="vi"] .comparison-table strong,
+body.lang-vi .comparison-table strong,
+html[lang="vi"] .comparison-table b,
+body.lang-vi .comparison-table b {
+    font-weight: 600;
+    color: var(--table-text);
+}
+
+/* Line breaks styling */
+html[lang="vi"] .comparison-table br,
+body.lang-vi .comparison-table br {
+    line-height: 0.5;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+html[lang="vi"] .comparison-table:focus-within,
+body.lang-vi .comparison-table:focus-within {
+    outline: 2px solid var(--table-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    html[lang="vi"] .comparison-table,
+    body.lang-vi .comparison-table {
+        border: 2px solid #000;
+    }
+    
+    html[lang="vi"] .comparison-table tbody td:first-child,
+    body.lang-vi .comparison-table tbody td:first-child {
+        border-left-width: 4px;
+        border-left-color: #000;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --table-border: #374151;
+        --table-header-bg: #1f2937;
+        --table-row-hover: #1f2937;
+        --table-text: #e5e7eb;
+        --table-text-muted: #9ca3af;
+        --table-zebra: #111827;
+    }
+    
+    html[lang="vi"] .comparison-table,
+    body.lang-vi .comparison-table {
+        background: #0f172a;
+    }
+    
+    html[lang="vi"] .comparison-table .featured,
+    body.lang-vi .comparison-table .featured {
+        background: rgba(255, 107, 53, 0.1);
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    html[lang="vi"] .comparison-table,
+    body.lang-vi .comparison-table {
+        border: 1px solid #000;
+        font-size: 10pt;
+    }
+    
+    html[lang="vi"] .comparison-table tbody tr:nth-child(even),
+    body.lang-vi .comparison-table tbody tr:nth-child(even) {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
