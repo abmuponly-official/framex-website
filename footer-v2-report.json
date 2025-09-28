@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-28T17:55:42.316Z",
+  "changes": {
+    "footerDesign": "Replaced with minimalist v2.0 design",
+    "cssFile": "Added footer-v2.css",
+    "htmlFiles": [
+      "index.html",
+      "products.html",
+      "services.html",
+      "projects.html",
+      "blog.html",
+      "contact.html",
+      "about.html",
+      "investor-relations.html",
+      "404.html"
+    ],
+    "features": [
+      "Simplified 3-zone layout",
+      "Outline SVG icons",
+      "Vietnamese language support",
+      "Responsive design",
+      "Dark mode ready",
+      "WCAG AA compliant"
+    ]
+  },
+  "backup": "backups/footer-v2-2025-09-28T17-55-42-267Z",
+  "rollback": "Restore files from backups/footer-v2-2025-09-28T17-55-42-267Z"
+}

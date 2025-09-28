@@ -515,3 +515,34 @@ window.FrameX = {
     translations,
     currentLang: () => currentLang
 };
+// Footer v2 translations
+const footerTranslations = {
+    en: {
+        'footer-tagline': 'Shaping Tomorrow\'s Living',
+        'footer-cta': 'Get Quote',
+        'footer-products': 'Products',
+        'footer-services': 'Services',
+        'footer-projects': 'Projects',
+        'footer-about': 'About',
+        'footer-blog': 'Blog',
+        'footer-investor': 'Investors',
+        'footer-address': '150/52A Phu Dinh, HCMC',
+        'footer-copyright': '© 2024 FrameX - ABM Architectural Material Co., Ltd',
+        'footer-privacy': 'Privacy Policy',
+        'footer-terms': 'Terms of Service'
+    },
+    vi: {
+        'footer-tagline': 'Định hình không gian sống tương lai',
+        'footer-cta': 'Nhận báo giá',
+        'footer-products': 'Sản phẩm',
+        'footer-services': 'Dịch vụ',
+        'footer-projects': 'Dự án',
+        'footer-about': 'Về chúng tôi',
+        'footer-blog': 'Blog',
+        'footer-investor': 'Nhà đầu tư',
+        'footer-address': '150/52A Phú Định, TP.HCM',
+        'footer-copyright': '© 2024 FrameX - ABM Architectural Material Co., Ltd',
+        'footer-privacy': 'Chính sách bảo mật',
+        'footer-terms': 'Điều khoản sử dụng'
+    }
+};
