@@ -43,8 +43,8 @@
     </style>
     
     <!-- Lazy Load Non-Critical CSS -->
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -440,8 +440,19 @@
     </footer>
     
     <!-- Load scripts optimized -->
-    <script src="js/performance.js" defer></script>
-    <script src="js/image-loader.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/performance.min.js" defer></script>
+    <script src="js/image-loader.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker registered'))
+            .catch(err => console.log('Service Worker registration failed'));
+        });
+      }
+    </script>
 </body>
 </html>

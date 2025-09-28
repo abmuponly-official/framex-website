@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact FrameX - Get in touch for smart steel construction solutions. Customer inquiries and partner applications.">
+    <meta name="keywords" content="contact FrameX, steel construction inquiry, partner application, sales@framex.vn">
+    
+    <title>Contact | FrameX - Get Your Project Started</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
+    <link rel="alternate icon" type="image/x-icon" href="https://page.gensparksite.com/v1/base64_upload/b4816b144a03d9ca1f6db33367fe5133">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/contact.min.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="preload" href="js/main.min.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
+                         alt="FrameX Logo" 
+                         width="120" 
+                         height="40" 
+                         loading="eager"
+                         onerror="this.onerror=null; this.src='assets/images/logo-placeholder.svg';">
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-lang="home">Home</a></li>
+                    <li><a href="products.html" data-lang="products">Products</a></li>
+                    <li><a href="services.html" data-lang="services">Services</a></li>
+                    <li><a href="about.html" data-lang="about">About</a></li>
+                    <li><a href="projects.html" data-lang="projects">Projects</a></li>
+                    <li><a href="blog.html" data-lang="blog">Blog</a></li>
+                    <li><a href="investor-relations.html" data-lang="investor">Investor Relations</a></li>
+                    <li><a href="contact.html" class="active" data-lang="contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="lang-switch" onclick="toggleLanguage()">
+                        <span class="lang-text">VN</span>
+                    </button>
+                    <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-lang="contact-title">Get in Touch</h1>
+            <p data-lang="contact-subtitle">We're here to help with your steel construction needs</p>
+        </div>
+    </section>
+    
+    <!-- Contact Info -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 data-lang="phone-title">Phone</h3>
+                    <p>+84 909 005 683</p>
+                    <a href="tel:+84909005683" class="btn-link" data-lang="call-now">Call Now →</a>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>sales@framex.vn</p>
+                    <a href="mailto:sales@framex.vn" class="btn-link" data-lang="send-email">Send Email →</a>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 data-lang="address-title">Office</h3>
+                    <p>150/52A Phú Định<br>TP. Hồ Chí Minh, Vietnam</p>
+                    <a href="#map" class="btn-link" data-lang="view-map">View Map →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Dual Pathway Contact Forms -->
+    <section class="contact-forms">
+        <div class="container">
+            <h2 class="section-title" data-lang="contact-form-title">How Can We Help?</h2>
+            
+            <!-- Pathway Selector -->
+            <div class="pathway-selector">
+                <button class="pathway-btn active" data-pathway="customer">
+                    <i class="fas fa-home"></i>
+                    <span data-lang="pathway-customer">I'm a Customer</span>
+                </button>
+                <button class="pathway-btn" data-pathway="partner">
+                    <i class="fas fa-handshake"></i>
+                    <span data-lang="pathway-partner">I'm a Partner</span>
+                </button>
+            </div>
+            
+            <!-- Customer Form -->
+            <div class="form-container active" id="customer-form">
+                <h3 data-lang="customer-form-title">Project Inquiry</h3>
+                <p data-lang="customer-form-desc">Tell us about your construction project</p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-lang="form-name">Full Name *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-lang="form-phone">Phone Number *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="form-location">Project Location</label>
+                            <input type="text" name="location">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-product">Product Interest</label>
+                        <select name="product">
+                            <option value="" data-lang="form-select">Select a product</option>
+                            <option value="starter">FrameX Starter (800M - 1.2B)</option>
+                            <option value="family">FrameX Family (1.5B - 2.5B)</option>
+                            <option value="custom">FrameX Custom (3B+)</option>
+                            <option value="pro">FrameX PRO</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-timeline">Project Timeline</label>
+                        <select name="timeline">
+                            <option value="" data-lang="form-select-timeline">Select timeline</option>
+                            <option value="immediate" data-lang="timeline-immediate">Immediate (Within 1 month)</option>
+                            <option value="soon" data-lang="timeline-soon">Soon (1-3 months)</option>
+                            <option value="planning" data-lang="timeline-planning">Planning (3-6 months)</option>
+                            <option value="future" data-lang="timeline-future">Future (6+ months)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-message">Project Details</label>
+                        <textarea name="message" rows="5" placeholder="Describe your project requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="customer-consent" name="consent">
+                        <label for="customer-consent" data-lang="form-consent">I agree to receive communications from FrameX</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-lang="form-submit">Submit Inquiry</button>
+                </form>
+            </div>
+            
+            <!-- Partner Form -->
+            <div class="form-container" id="partner-form">
+                <h3 data-lang="partner-form-title">Partner Application</h3>
+                <p data-lang="partner-form-desc">Join our network of contractors and suppliers</p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-lang="form-company">Company Name *</label>
+                            <input type="text" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="form-contact-person">Contact Person *</label>
+                            <input type="text" name="contact_person" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="form-phone">Phone Number *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-partner-type">Partnership Type</label>
+                        <select name="partner_type">
+                            <option value="" data-lang="form-select-partner">Select partnership type</option>
+                            <option value="contractor" data-lang="partner-contractor">Contractor</option>
+                            <option value="supplier" data-lang="partner-supplier">Material Supplier</option>
+                            <option value="technology" data-lang="partner-technology">Technology Partner</option>
+                            <option value="distributor" data-lang="partner-distributor">Distributor</option>
+                            <option value="investor" data-lang="partner-investor">Investor</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-website">Company Website</label>
+                        <input type="url" name="website" placeholder="https://">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-experience">Years in Business</label>
+                        <select name="experience">
+                            <option value="" data-lang="form-select-experience">Select experience</option>
+                            <option value="startup" data-lang="exp-startup">Startup (0-2 years)</option>
+                            <option value="growing" data-lang="exp-growing">Growing (2-5 years)</option>
+                            <option value="established" data-lang="exp-established">Established (5-10 years)</option>
+                            <option value="mature" data-lang="exp-mature">Mature (10+ years)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-lang="form-proposal">Business Proposal</label>
+                        <textarea name="proposal" rows="5" placeholder="Describe your partnership proposal..."></textarea>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="partner-consent" name="consent">
+                        <label for="partner-consent" data-lang="form-consent">I agree to receive communications from FrameX</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-lang="form-submit-partner">Submit Application</button>
+                </form>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="form-success" id="form-success">
+                <i class="fas fa-check-circle"></i>
+                <h3 data-lang="success-title">Thank You!</h3>
+                <p data-lang="success-message">We've received your message and will contact you within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <h2 class="section-title" data-lang="visit-us">Visit Our Office</h2>
+            <div class="map-wrapper">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>150/52A Phú Định, TP. Hồ Chí Minh, Vietnam</p>
+                    <a href="https://maps.google.com/?q=150/52A+Phu+Dinh+Ho+Chi+Minh+City+Vietnam" target="_blank" class="btn btn-outline" data-lang="open-maps">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
+                         alt="FrameX Logo" 
+                         class="footer-logo" 
+                         width="120" 
+                         height="40" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='assets/images/logo-placeholder.svg';">
+                    <p data-lang="company-name">ABM Architectural Material Co., Ltd</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 data-lang="footer-products">Products</h4>
+                        <a href="products.html#starter">FrameX Starter</a>
+                        <a href="products.html#family">FrameX Family</a>
+                        <a href="products.html#custom">FrameX Custom</a>
+                        <a href="products.html#pro">PRO Series</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 data-lang="footer-company">Company</h4>
+                        <a href="about.html" data-lang="about">About</a>
+                        <a href="projects.html" data-lang="projects">Projects</a>
+                        <a href="blog.html" data-lang="blog">Blog</a>
+                        <a href="investor-relations.html" data-lang="investor">Investor Relations</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 data-lang="footer-contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> sales@framex.vn</p>
+                        <p><i class="fas fa-phone"></i> +84 909 005 683</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 150/52A Phú Định, TP.HCM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.pinterest.com/FRAMEXVN/" target="_blank" aria-label="Pinterest">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a href="https://3dwarehouse.sketchup.com/by/Framexvn" target="_blank" aria-label="3D Warehouse">
+                        <i class="fas fa-cube"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-lang="footer-copyright">&copy; 2024 FrameX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.min.js"></script>
+    <script src="js/contact.min.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker registered'))
+            .catch(err => console.log('Service Worker registration failed'));
+        });
+      }
+    </script>
+</body>
+</html>
