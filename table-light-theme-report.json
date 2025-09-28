@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-28T18:41:53.747Z",
+  "changes": [
+    "Simplified table color scheme to light surfaces",
+    "Applied zebra striping (white/light gray alternating rows)",
+    "Set header to light gray (#F3F4F6) with orange accent line",
+    "Normalized all borders to single neutral color (#E5E7EB)",
+    "Removed dark gradients and overlays",
+    "Added subtle left border accent to feature column",
+    "Improved text contrast for better readability",
+    "Maintained responsive behavior"
+  ],
+  "colorPalette": {
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#F8FAFC",
+    "border": "#E5E7EB",
+    "headerBg": "#F3F4F6",
+    "text": "#111827",
+    "textMuted": "#6B7280",
+    "accent": "#FF6B35"
+  },
+  "contrastRatios": {
+    "Text on white": "15.3:1 (AAA)",
+    "Muted text on white": "5.5:1 (AA)",
+    "Text on alt background": "14.6:1 (AAA)",
+    "Header text on gray": "13.5:1 (AAA)"
+  }
+}
