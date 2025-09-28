@@ -58,19 +58,15 @@ const productTranslations = {
         'premium-target-1': 'Large villas >300m² floor area (or >150m²/floor for 2-story houses)',
         'premium-target-2': 'Commercial housing, artistic projects, special design requirements',
         
-        // PRO specs
-        'pro-spec-1': 'Area: 500+ m²',
-        'pro-spec-2': 'Type: Warehouse/Office',
-        'pro-spec-3': 'Build time: Custom timeline',
-        'pro-spec-4': 'Scale: Unlimited',
+        // Benefits headers
+        'starter-benefits-header': 'Key Benefits',
+        'smart-benefits-header': 'Key Benefits',
+        'premium-benefits-header': 'Key Benefits',
         
-        // PRO features
-        'pro-feat-1': 'Industrial grade',
-        'pro-feat-2': 'Fire safety systems',
-        'pro-feat-3': 'Loading docks',
-        'pro-feat-4': 'HVAC systems',
-        'pro-feat-5': 'Access control',
-        'pro-feat-6': '25 year warranty',
+        // Target headers  
+        'starter-target-header': 'Target Customers',
+        'smart-target-header': 'Target Customers',
+        'premium-target-header': 'Target Customers',
         
         // Comparison
         'compare-title': 'Compare Products',
@@ -113,47 +109,42 @@ const productTranslations = {
         'cat-enterprise': 'Doanh nghiệp',
         
         // Taglines
-        'starter-tagline': 'Không gian sống nhỏ gọn được định nghĩa lại',
-        'family-tagline': 'Không gian sống gia đình hoàn hảo',
-        'custom-tagline': 'Thiết kế theo tầm nhìn của bạn',
-        'pro-tagline': 'Xuất sắc cho công nghiệp và thương mại',
+        'starter-tagline': 'Khởi đầu thông minh',
+        'smart-tagline': 'Sống bền vững thông minh',
+        'premium-tagline': 'Kiến trúc cao cấp',
         
         // Common
-        'specs-title': 'Thông số kỹ thuật',
+        'specs-title': 'Đặc điểm sản phẩm',
         'features-title': 'Tính năng',
+        'benefits-title': 'Lợi ích chính',
+        'target-title': 'Khách hàng mục tiêu',
         'get-quote': 'Nhận báo giá',
         'download-specs': 'Tải thông số',
         'contact-sales': 'Liên hệ bán hàng',
         'request-consultation': 'Yêu cầu tư vấn',
         'price-contact': 'Liên hệ để biết giá',
         
-        // Starter specs
-        'starter-spec-1': 'Diện tích: 50-80 m²',
-        'starter-spec-2': 'Phòng ngủ: 1-2',
-        'starter-spec-3': 'Thời gian xây: 30-45 ngày',
-        'starter-spec-4': 'Tầng: 1-2',
+        // Starter
+        'starter-main-desc': 'Giải pháp thép tiền chế chuẩn với hệ thống chống thấm và cách nhiệt cơ bản. Thiết kế tối ưu cho nhà phố nhỏ, thi công nhanh, chi phí hợp lý.',
+        'starter-spec-1': 'Thép tiền chế với hệ thống chống thấm & cách nhiệt cơ bản tích hợp',
+        'starter-spec-2': 'Cầu thang thép trong nhà đơn giản',
+        'starter-spec-3': 'Kết cấu tiêu chuẩn quốc tế, bảo hành 15 năm',
+        'starter-spec-4': '90% vật liệu tái chế, tiết kiệm năng lượng',
+        'starter-benefit-1': 'Thi công nhanh hơn 50%',
+        'starter-benefit-2': 'Chi phí thấp hơn nhờ giải pháp và vật liệu chuẩn hóa',
+        'starter-target-1': 'Nhà phố nhỏ <150m² (1 tầng) hoặc 50m²/tầng (2-3 tầng)',
+        'starter-target-2': 'Công trình chuẩn, không phức tạp về kiến trúc/kết cấu',
+        'starter-target-3': 'Không yêu cầu smart home',
         
-        // Starter features
-        'starter-feat-1': 'Sẵn sàng nhà thông minh',
-        'starter-feat-2': 'Thiết kế tiết kiệm năng lượng',
-        'starter-feat-3': 'Mở rộng theo module',
-        'starter-feat-4': 'Kiểm soát khí hậu',
-        'starter-feat-5': 'Hệ thống an ninh',
-        'starter-feat-6': 'Bảo hành 10 năm',
-        
-        // Family specs
-        'family-spec-1': 'Diện tích: 100-150 m²',
-        'family-spec-2': 'Phòng ngủ: 3-4',
-        'family-spec-3': 'Thời gian xây: 45-60 ngày',
-        'family-spec-4': 'Tầng: 2-3',
-        
-        // Family features
-        'family-feat-1': 'Hệ thống nhà thông minh đầy đủ',
-        'family-feat-2': 'Sẵn sàng lắp pin năng lượng mặt trời',
-        'family-feat-3': 'Cách nhiệt cao cấp',
-        'family-feat-4': 'Tích hợp sân vườn',
-        'family-feat-5': 'Bao gồm nhà xe',
-        'family-feat-6': 'Bảo hành 15 năm',
+        // Smart
+        'smart-main-desc': 'Nâng cấp toàn diện với thiết kế tùy biến, tích hợp SmartHome cơ bản. Hoàn hảo cho biệt thự nhỏ với yêu cầu tiện ích và cá nhân hóa cao.',
+        'smart-spec-1': 'Bao gồm toàn bộ giải pháp Starter',
+        'smart-spec-2': 'Thiết kế nâng cao, kết cấu tùy biến',
+        'smart-spec-3': 'Tích hợp SmartHome cơ bản: chống trộm, báo cháy, camera an ninh, internet',
+        'smart-benefit-1': 'Nâng cao tiện nghi và an ninh',
+        'smart-benefit-2': 'Hiệu quả năng lượng nhờ hệ thống thông minh',
+        'smart-target-1': 'Biệt thự nhỏ <225m² (1 tầng) hoặc 75m²/tầng (2-3 tầng)',
+        'smart-target-2': 'Khách hàng cần nâng cấp tiện ích & cá nhân hóa thiết kế',
         
         // Premium
         'premium-main-desc': 'Giải pháp cao cấp với thiết kế kiến trúc độc quyền, thép nghệ thuật, SmartHome nâng cao. Dành cho biệt thự lớn và công trình đặc biệt.',
