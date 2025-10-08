@@ -2,12 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- NEW UNIFIED DESIGN SYSTEM -->
-    <link rel="stylesheet" href="css/design-system.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive-grid.css">
-    <link rel="stylesheet" href="css/table-system.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact FrameX - Get in touch for smart steel construction solutions. Customer inquiries and partner applications.">
     <meta name="keywords" content="contact FrameX, steel construction inquiry, partner application, sales@framex.vn">
@@ -25,6 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     
     <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/unified-design.css">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
@@ -38,16 +35,19 @@
     <meta name="twitter:title" content="Contact | FrameX - Get Your Project Started">
     <meta name="twitter:description" content="Contact FrameX for your steel construction project. Get a quote, schedule consultation, or become a partner.">
     <meta name="twitter:image" content="https://framex.vn/assets/images/twitter-card.jpg">
+    <link rel="stylesheet" href="css/footer-v2.css">
+    <link rel="stylesheet" href="css/surgical-updates.css">
+    <link rel="stylesheet" href="css/footer-white-override.css">
+    <link rel="stylesheet" href="css/footer-fixes.css">
     </head>
 <body>
     <!-- Skip to main content for accessibility -->
     <a href="#main" style="position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px;z-index:10000;text-decoration:none;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
     <!-- Navigation -->
-        <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav role="navigation" aria-label="Main navigation" class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="nav-brand">
+                <a href="index.html" class="logo">
                     <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
                          alt="FrameX Logo" 
                          width="120" 
@@ -57,20 +57,20 @@
                 </a>
                 
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link" data-lang="home">Home</a></li>
-                    <li class="nav-item"><a href="products.html" class="nav-link" data-lang="products">Products</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link" data-lang="about">About</a></li>
-                    <li class="nav-item"><a href="projects.html" class="nav-link" data-lang="projects">Projects</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link" data-lang="blog">Blog</a></li>
-                    <li class="nav-item"><a href="investor-relations.html" class="nav-link" data-lang="investor">Investor Relations</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link" data-lang="contact">Contact</a></li>
+                    <li><a href="index.html" data-lang="home">Home</a></li>
+                    <li><a href="products.html" data-lang="products">Products</a></li>
+                    <li><a href="about.html" data-lang="about">About</a></li>
+                    <li><a href="projects.html" data-lang="projects">Projects</a></li>
+                    <li><a href="blog.html" data-lang="blog">Blog</a></li>
+                    <li><a href="investor-relations.html" data-lang="investor">Investor Relations</a></li>
+                    <li><a href="contact.html" class="active" data-lang="contact">Contact</a></li>
                 </ul>
                 
                 <div class="nav-actions">
-                    <button class="lang-switch" onclick="toggleLanguage()" aria-label="Switch language">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="lang-switch" onclick="toggleLanguage()">
                         <span class="lang-text">VN</span>
                     </button>
-                    <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="mobile-toggle" onclick="toggleMobileMenu()">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -174,10 +174,10 @@
                         <label data-lang="form-product">Product Interest</label>
                         <select name="product">
                             <option value="" data-lang="form-select">Select a product</option>
-                            <option value="starter">FrameX STARTER (800M - 1.2B VND)</option>
-                            <option value="smart">FrameX SMART (1.5B - 2.5B VND)</option>
-                            <option value="premium">FrameX PREMIUM (3B+ VND)</option>
-                            <option value="pro">FrameX PRO (Custom Quote)</option>
+                            <option value="starter">FrameX Starter (800M - 1.2B)</option>
+                            <option value="family">FrameX Family (1.5B - 2.5B)</option>
+                            <option value="custom">FrameX Custom (3B+)</option>
+                            <option value="pro">FrameX PRO</option>
                         </select>
                     </div>
                     
@@ -305,71 +305,107 @@
 
     <!-- Footer -->    <!-- Enhanced Footer with Logo -->
         <!-- Footer v2.0 - Minimalist Design -->
-        <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo mb-6">
-                        <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
-                             alt="FrameX Logo" 
-                             width="150" 
-                             height="50" 
-                             loading="lazy"
-                             onerror="this.onerror=null; this.src='assets/images/logo-placeholder.svg';">
-                    </div>
-                    <p class="mb-6" data-lang="footer-description">FrameX pioneers smart prefabricated steel construction with IoT integration. Building tomorrow's living spaces today.</p>
-                    <div class="social-links">
-                        <a href="https://www.pinterest.com/FRAMEXVN/" target="_blank" rel="noopener" aria-label="Pinterest">
-                            <i class="fab fa-pinterest" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://3dwarehouse.sketchup.com/by/Framexvn" target="_blank" rel="noopener" aria-label="3D Warehouse">
-                            <i class="fas fa-cube" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                    </div>
+    <footer class="footer-v2" role="contentinfo">
+        <div class="footer-v2__container">
+            <!-- Top Section: Brand & Quick Actions -->
+            <div class="footer-v2__top">
+                <div class="footer-v2__brand">
+                    <a href="/" class="footer-v2__logo" aria-label="FrameX - Trang chủ">
+                        <img src="http://framex.vn/assets/images/framex-logo-footer.png" 
+                             alt="FrameX" 
+                             width="140" 
+                             height="36"
+                             loading="lazy">
+                    </a>
+                    <p class="footer-v2__tagline" data-lang="footer-tagline">Định hình không gian sống tương lai</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3 data-lang="footer-products-title">Products</h3>
-                    <ul class="list-none">
-                        <li class="mb-2"><a href="products.html#starter" data-lang="footer-product-starter">FrameX Starter</a></li>
-                        <li class="mb-2"><a href="products.html#smart" data-lang="footer-product-smart">FrameX Smart</a></li>
-                        <li class="mb-2"><a href="products.html#premium" data-lang="footer-product-premium">FrameX Premium</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 data-lang="footer-company-title">Company</h3>
-                    <ul class="list-none">
-                        <li class="mb-2"><a href="about.html" data-lang="footer-about">About Us</a></li>
-                        <li class="mb-2"><a href="projects.html" data-lang="footer-projects">Projects</a></li>
-                        <li class="mb-2"><a href="blog.html" data-lang="footer-blog">Blog</a></li>
-                        <li class="mb-2"><a href="investor-relations.html" data-lang="footer-investors">Investors</a></li>
-                        <li class="mb-2"><a href="contact.html" data-lang="footer-contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 data-lang="footer-contact-title">Contact Info</h3>
-                    <p class="mb-2">
-                        <strong>Email:</strong> sales@framex.vn
-                    </p>
-                    <p class="mb-2">
-                        <strong>Phone:</strong> +84 909 005 683
-                    </p>
-                    <p class="mb-4">
-                        <strong>Address:</strong><br>
-                        150/52A Phú Định<br>
-                        TP. Hồ Chí Minh, Vietnam
-                    </p>
+                <div class="footer-v2__cta">
+                    <a href="/contact.html?source=footer" class="footer-v2__button" data-lang="footer-cta">
+                        <span>Nhận báo giá</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 ABM Architectural Material Co., Ltd. All rights reserved.</p>
+            <!-- Main Section: Navigation & Contact -->
+            <div class="footer-v2__main">
+                <!-- Primary Navigation -->
+                <nav class="footer-v2__nav" aria-label="Footer navigation">
+                    <ul class="footer-v2__nav-list">
+                        <li><a href="/products.html" data-lang="footer-products">Sản phẩm</a></li>
+                        <li><a href="/services.html" data-lang="footer-services">Dịch vụ</a></li>
+                        <li><a href="/projects.html" data-lang="footer-projects">Dự án</a></li>
+                        <li><a href="/about.html" data-lang="footer-about">Về chúng tôi</a></li>
+                        <li><a href="/blog.html" data-lang="footer-blog">Blog</a></li>
+                        <li><a href="/investor-relations.html" data-lang="footer-investor">Nhà đầu tư</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Contact Information -->
+                <address class="footer-v2__contact">
+                    <a href="tel:+84909005683" class="footer-v2__contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>0909 005 683</span>
+                    </a>
+                    
+                    <a href="mailto:sales@framex.vn" class="footer-v2__contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>sales@framex.vn</span>
+                    </a>
+                    
+                    <div class="footer-v2__contact-item footer-v2__contact-item--address">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span data-lang="footer-address">150/52A Phú Định, TP.HCM</span>
+                    </div>
+                </address>
+            </div>
+            
+            <!-- Bottom Section: Legal & Social -->
+            <div class="footer-v2__bottom">
+                <div class="footer-v2__legal">
+                    <p class="footer-v2__copyright" data-lang="footer-copyright">© 2024 FrameX - ABM Architectural Material Co., Ltd</p>
+                    <ul class="footer-v2__legal-links">
+                        <li><a href="/privacy" data-lang="footer-privacy">Chính sách bảo mật</a></li>
+                        <li><a href="/terms" data-lang="footer-terms">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                
+                                <div class="footer-v2__social">
+                    <a href="https://3dwarehouse.sketchup.com/by/framexvn" target="_blank" rel="noopener noreferrer" aria-label="3D Warehouse">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7l-10-5z"></path>
+                            <path d="M12 22V12"></path>
+                            <path d="M22 7l-10 5L2 7"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.pinterest.com/FRAMEXVN/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 11.973c0-2.483 1.826-4.505 4.08-4.505 2.254 0 4.08 2.022 4.08 4.505 0 2.483-1.826 4.505-4.08 4.505-.522 0-1.023-.109-1.479-.311"></path>
+                            <path d="M9.56 15.51l1.528-5.572"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/framexvn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
