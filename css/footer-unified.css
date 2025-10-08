@@ -1,0 +1,860 @@
+/**
+ * FrameX Footer v2.0
+ * Minimalist, content-focused global footer
+ * Supports Vietnamese content and responsive design
+ */
+
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+:root {
+    /* Inherit existing tokens, add footer-specific ones */
+    --footer-bg: var(--white, #ffffff);
+    --footer-border: var(--gray-200, #e8e8e8);
+    --footer-text: var(--gray-700, #2a2a2a);
+    --footer-text-muted: var(--gray-600, #4a4a4a);
+    --footer-link: var(--black, #000000);
+    --footer-link-hover: var(--orange, #ff6b35);
+    --footer-spacing-unit: 1rem;
+    --footer-max-width: var(--max-width, 1200px);
+}
+
+/* Dark mode preparation */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --footer-bg: var(--gray-900, #0a0a0a);
+        --footer-border: var(--gray-800, #1a1a1a);
+        --footer-text: var(--gray-300, #d4d4d4);
+        --footer-text-muted: var(--gray-400, #a0a0a0);
+        --footer-link: var(--white, #ffffff);
+    }
+}
+
+/* ========================================
+   BASE STRUCTURE
+   ======================================== */
+.footer-v2 {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--footer-border);
+    font-family: var(--font-primary, 'Inter', -apple-system, sans-serif);
+    font-size: var(--font-size-sm, 0.875rem);
+    line-height: 1.6;
+    color: var(--footer-text);
+    padding: calc(var(--footer-spacing-unit) * 3) 0 calc(var(--footer-spacing-unit) * 2);
+    position: relative;
+    width: 100%;
+}
+
+.footer-v2__container {
+    max-width: var(--footer-max-width);
+    margin: 0 auto;
+    padding: 0 var(--footer-spacing-unit);
+}
+
+/* ========================================
+   TOP SECTION: Brand & CTA
+   ======================================== */
+.footer-v2__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: calc(var(--footer-spacing-unit) * 2);
+    margin-bottom: calc(var(--footer-spacing-unit) * 2);
+    border-bottom: 1px solid var(--footer-border);
+}
+
+.footer-v2__brand {
+    flex: 1;
+}
+
+.footer-v2__logo {
+    display: inline-block;
+    margin-bottom: calc(var(--footer-spacing-unit) * 0.5);
+    transition: opacity 0.2s ease;
+}
+
+.footer-v2__logo:hover {
+    opacity: 0.7;
+}
+
+.footer-v2__logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.footer-v2__tagline {
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--footer-text-muted);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.footer-v2__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--black, #000000);
+    color: var(--white, #ffffff);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--font-size-sm, 0.875rem);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.footer-v2__button:hover {
+    background-color: var(--orange, #ff6b35);
+    transform: translateX(2px);
+}
+
+.footer-v2__button svg {
+    transition: transform 0.2s ease;
+}
+
+.footer-v2__button:hover svg {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   MAIN SECTION: Navigation & Contact
+   ======================================== */
+.footer-v2__main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: calc(var(--footer-spacing-unit) * 3);
+    padding-bottom: calc(var(--footer-spacing-unit) * 2);
+}
+
+/* Navigation */
+.footer-v2__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--footer-spacing-unit) * 1.5);
+}
+
+.footer-v2__nav-list a {
+    color: var(--footer-link);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+    padding: 2px 0;
+}
+
+.footer-v2__nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--footer-link-hover);
+    transition: width 0.2s ease;
+}
+
+.footer-v2__nav-list a:hover,
+.footer-v2__nav-list a:focus-visible {
+    color: var(--footer-link-hover);
+}
+
+.footer-v2__nav-list a:hover::after,
+.footer-v2__nav-list a:focus-visible::after {
+    width: 100%;
+}
+
+/* Contact */
+.footer-v2__contact {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--footer-spacing-unit) * 0.75);
+}
+
+.footer-v2__contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-v2__contact-item:hover {
+    color: var(--footer-link-hover);
+}
+
+.footer-v2__contact-item svg {
+    flex-shrink: 0;
+    color: var(--footer-text-muted);
+}
+
+.footer-v2__contact-item--address {
+    color: var(--footer-text-muted);
+}
+
+/* ========================================
+   BOTTOM SECTION: Legal & Social
+   ======================================== */
+.footer-v2__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: calc(var(--footer-spacing-unit) * 2);
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer-v2__legal {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--footer-spacing-unit) * 2);
+    flex-wrap: wrap;
+}
+
+.footer-v2__copyright {
+    margin: 0;
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--footer-text-muted);
+}
+
+.footer-v2__legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: calc(var(--footer-spacing-unit) * 1.5);
+}
+
+.footer-v2__legal-links a {
+    color: var(--footer-text-muted);
+    text-decoration: none;
+    font-size: var(--font-size-xs, 0.75rem);
+    transition: color 0.2s ease;
+}
+
+.footer-v2__legal-links a:hover {
+    color: var(--footer-link-hover);
+}
+
+/* Social Links */
+.footer-v2__social {
+    display: flex;
+    gap: calc(var(--footer-spacing-unit) * 0.75);
+}
+
+.footer-v2__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--footer-border);
+    border-radius: 50%;
+    color: var(--footer-text);
+    transition: all 0.2s ease;
+}
+
+.footer-v2__social a:hover {
+    border-color: var(--footer-link-hover);
+    color: var(--footer-link-hover);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   COMPACT VARIANT
+   ======================================== */
+.footer-v2--compact {
+    padding: calc(var(--footer-spacing-unit) * 1.5) 0;
+}
+
+.footer-v2--compact .footer-v2__top,
+.footer-v2--compact .footer-v2__main {
+    display: none;
+}
+
+.footer-v2__compact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-v2__compact-brand {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--footer-spacing-unit) * 1.5);
+}
+
+.footer-v2__compact-brand img {
+    height: 30px;
+    width: auto;
+}
+
+.footer-v2__compact-nav {
+    display: flex;
+    gap: calc(var(--footer-spacing-unit) * 1.5);
+}
+
+.footer-v2__compact-nav a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-v2__compact-nav a:hover {
+    color: var(--footer-link-hover);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+    .footer-v2__main {
+        grid-template-columns: 1fr;
+        gap: calc(var(--footer-spacing-unit) * 2);
+    }
+    
+    .footer-v2__nav-list {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-v2__contact {
+        align-items: center;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    .footer-v2 {
+        padding: calc(var(--footer-spacing-unit) * 2) 0;
+    }
+    
+    .footer-v2__top {
+        flex-direction: column;
+        text-align: center;
+        gap: calc(var(--footer-spacing-unit) * 1.5);
+    }
+    
+    .footer-v2__brand {
+        text-align: center;
+    }
+    
+    .footer-v2__logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-v2__button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-v2__nav-list {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--footer-spacing-unit);
+    }
+    
+    .footer-v2__contact {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-v2__bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: calc(var(--footer-spacing-unit) * 1.5);
+    }
+    
+    .footer-v2__legal {
+        flex-direction: column;
+        gap: var(--footer-spacing-unit);
+    }
+    
+    /* Compact variant on mobile */
+    .footer-v2__compact-wrapper {
+        flex-direction: column;
+        gap: var(--footer-spacing-unit);
+        text-align: center;
+    }
+    
+    .footer-v2__compact-brand {
+        flex-direction: column;
+    }
+}
+
+/* Small mobile (< 400px) */
+@media (max-width: 399px) {
+    .footer-v2__container {
+        padding: 0 calc(var(--footer-spacing-unit) * 0.75);
+    }
+    
+    .footer-v2__nav-list {
+        font-size: var(--font-size-xs, 0.75rem);
+    }
+    
+    .footer-v2__contact-item span {
+        font-size: var(--font-size-xs, 0.75rem);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & INTERACTIONS
+   ======================================== */
+
+/* Focus states */
+.footer-v2 a:focus-visible {
+    outline: 2px solid var(--footer-link-hover);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Skip link compatibility */
+.footer-v2:target {
+    scroll-margin-top: var(--nav-height, 72px);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .footer-v2 {
+        border-top-width: 2px;
+    }
+    
+    .footer-v2__top,
+    .footer-v2__bottom {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .footer-v2 * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .footer-v2 {
+        border-top: 1px solid #000;
+        padding: 20px 0;
+    }
+    
+    .footer-v2__button,
+    .footer-v2__social {
+        display: none;
+    }
+    
+    .footer-v2__contact-item,
+    .footer-v2__nav-list a {
+        color: #000;
+    }
+}
+/* ========== FOOTER FIXES ========== */
+ * Footer Social Links and CTA Button Fixes
+ * Surgical updates for consistent styling and accessibility
+ * Date: 2025-09-28
+ */
+
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+:root {
+    --fx-text: #111111;
+    --fx-muted: #6B7280;
+    --fx-border: #E5E7EB;
+    --fx-primary: #FF6B35;
+    --fx-black: #000000;
+    --fx-white: #FFFFFF;
+    --social-size: 40px;
+    --social-icon-size: 22px;
+    --social-gap: 12px;
+}
+
+/* ========================================
+   SOCIAL MEDIA LINKS
+   ======================================== */
+
+/* Container adjustments */
+.footer-v2__social {
+    display: flex;
+    gap: var(--social-gap);
+    align-items: center;
+}
+
+/* Social link base styles */
+.footer-v2__social a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: var(--social-size) !important;
+    height: var(--social-size) !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    background-color: transparent !important;
+    color: var(--fx-muted) !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+}
+
+/* Remove any pseudo-elements that were adding extra icons */
+.footer-v2__social a::after,
+.footer-v2__social a::before {
+    display: none !important;
+}
+
+/* Social icon sizing */
+.footer-v2__social svg {
+    width: var(--social-icon-size) !important;
+    height: var(--social-icon-size) !important;
+    stroke: currentColor !important;
+    fill: none !important;
+    stroke-width: 1.5 !important;
+}
+
+/* Hover and focus states */
+.footer-v2__social a:hover,
+.footer-v2__social a:focus-visible {
+    color: var(--fx-primary) !important;
+    background-color: rgba(255, 107, 53, 0.08) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.25) !important;
+}
+
+/* Active state */
+.footer-v2__social a:active {
+    transform: scale(0.95) !important;
+}
+
+/* Ensure proper rendering on all backgrounds */
+.footer-v2__social a svg path,
+.footer-v2__social a svg rect,
+.footer-v2__social a svg circle,
+.footer-v2__social a svg line,
+.footer-v2__social a svg polyline {
+    vector-effect: non-scaling-stroke;
+}
+
+/* ========================================
+   CTA BUTTON - "NHẬN BÁO GIÁ"
+   ======================================== */
+
+/* Primary CTA button styling */
+.footer-v2__button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background-color: var(--fx-black) !important;
+    color: var(--fx-white) !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    border: 2px solid transparent !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+/* Button text */
+.footer-v2__button span {
+    color: inherit !important;
+}
+
+/* Button arrow icon */
+.footer-v2__button svg {
+    width: 16px !important;
+    height: 16px !important;
+    stroke: currentColor !important;
+    fill: none !important;
+    transition: transform 0.2s ease !important;
+}
+
+/* Hover state */
+.footer-v2__button:hover {
+    background-color: #1a1a1a !important; /* Slightly lighter black */
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.footer-v2__button:hover svg {
+    transform: translateX(2px) !important;
+}
+
+/* Active/pressed state */
+.footer-v2__button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Focus state for accessibility */
+.footer-v2__button:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3) !important;
+    border-color: var(--fx-primary) !important;
+}
+
+/* Disabled state (if needed) */
+.footer-v2__button:disabled,
+.footer-v2__button.disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+/* Alternative: Brand Primary Color Option */
+.footer-v2__button--primary {
+    background-color: var(--fx-primary) !important;
+    color: var(--fx-white) !important;
+}
+
+.footer-v2__button--primary:hover {
+    background-color: #e85f31 !important; /* 10% darker */
+}
+
+.footer-v2__button--primary:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3) !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .footer-v2__social {
+        justify-content: center !important;
+    }
+    
+    .footer-v2__button {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .footer-v2__social a,
+    .footer-v2__button,
+    .footer-v2__button svg {
+        transition: none !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .footer-v2__social a {
+        border: 1px solid currentColor !important;
+    }
+    
+    .footer-v2__button {
+        border: 2px solid currentColor !important;
+    }
+}
+
+/* ========================================
+   DARK MODE ADJUSTMENTS
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .footer-v2__social a {
+        color: #9CA3AF !important;
+    }
+    
+    .footer-v2__social a:hover {
+        color: var(--fx-primary) !important;
+        background-color: rgba(255, 107, 53, 0.15) !important;
+    }
+    
+    .footer-v2__button {
+        background-color: var(--fx-white) !important;
+        color: var(--fx-black) !important;
+    }
+    
+    .footer-v2__button:hover {
+        background-color: #f0f0f0 !important;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .footer-v2__social,
+    .footer-v2__cta {
+        display: none !important;
+    }
+}
+/* ========== WHITE OVERRIDE ========== */
+ * Footer White Background Override
+ * Minimal CSS to change footer background to pure white
+ * Date: 2025-09-28
+ * 
+ * Scope: Global footer (.footer-v2)
+ * Priority: Load after surgical-updates.css to ensure override
+ */
+
+/* ========================================
+   TOKEN-BASED APPROACH (Recommended)
+   ======================================== */
+
+/* Override CSS custom properties for clean theming */
+:root {
+    --footer-bg: #FFFFFF !important;
+    --footer-border: #E5E7EB !important; /* Slightly visible border on white */
+    --footer-text: #2A2A2A !important; /* Dark gray for WCAG AA (12.6:1 ratio) */
+    --footer-text-muted: #4A4A4A !important; /* Medium gray for secondary text (7.5:1 ratio) */
+    --footer-link: #1A1A1A !important; /* Near-black for links (15.3:1 ratio) */
+    --footer-link-hover: #FF6B35 !important; /* Orange accent maintained (3.5:1 ratio - AA for large text) */
+}
+
+/* ========================================
+   HARD-CODED FALLBACK APPROACH
+   ======================================== */
+
+/* Direct overrides if CSS variables aren't working */
+.footer-v2 {
+    background-color: #FFFFFF !important;
+    background-image: none !important; /* Remove any background patterns */
+    border-top-color: #E5E7EB !important;
+    color: #2A2A2A !important;
+}
+
+/* Text and link contrast adjustments for white background */
+.footer-v2 a,
+.footer-v2__nav a,
+.footer-v2__legal-links a {
+    color: #1A1A1A !important;
+}
+
+.footer-v2 a:hover,
+.footer-v2 a:focus,
+.footer-v2__nav a:hover,
+.footer-v2__nav a:focus {
+    color: #FF6B35 !important;
+}
+
+/* Secondary/muted text elements */
+.footer-v2__tagline,
+.footer-v2__copyright,
+.footer-v2 .text-muted,
+.footer-v2 [data-lang] {
+    color: #4A4A4A !important;
+}
+
+/* Social icon adjustments for better visibility on white */
+.footer-v2__social svg {
+    stroke: #4A4A4A !important;
+}
+
+.footer-v2__social a:hover svg,
+.footer-v2__social a:focus svg {
+    stroke: #FF6B35 !important;
+}
+
+/* Contact items text color */
+.footer-v2__contact-item {
+    color: #2A2A2A !important;
+}
+
+.footer-v2__contact-item svg {
+    stroke: #4A4A4A !important;
+}
+
+/* ========================================
+   FOCUS & ACCESSIBILITY STATES
+   ======================================== */
+
+/* Ensure focus indicators remain visible on white */
+.footer-v2 a:focus,
+.footer-v2 button:focus {
+    outline: 2px solid #FF6B35 !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .footer-v2 {
+        background-color: #FFFFFF !important;
+        border-top: 2px solid #000000 !important;
+    }
+    
+    .footer-v2 a {
+        text-decoration: underline !important;
+    }
+}
+
+/* ========================================
+   DARK MODE HANDLING (Optional)
+   ======================================== */
+
+/* Option 1: Keep footer white even in dark mode (uncomment if desired) */
+/*
+@media (prefers-color-scheme: dark) {
+    :root {
+        --footer-bg: #FFFFFF !important;
+        --footer-text: #2A2A2A !important;
+        --footer-text-muted: #4A4A4A !important;
+        --footer-link: #1A1A1A !important;
+    }
+    
+    .footer-v2 {
+        background-color: #FFFFFF !important;
+        color: #2A2A2A !important;
+    }
+}
+*/
+
+/* Option 2: Slightly off-white in dark mode for less harsh contrast */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --footer-bg: #FAFAFA !important; /* Softer than pure white */
+        --footer-border: #E0E0E0 !important;
+    }
+    
+    .footer-v2 {
+        background-color: #FAFAFA !important;
+    }
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Ensure readability on mobile with white background */
+@media (max-width: 768px) {
+    .footer-v2 {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* Increase touch target contrast on mobile */
+    .footer-v2__cta .footer-v2__button {
+        background-color: #FF6B35 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .footer-v2 {
+        background-color: #FFFFFF !important;
+        border-top: 1px solid #000000 !important;
+    }
+}
