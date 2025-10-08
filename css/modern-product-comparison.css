@@ -1,0 +1,557 @@
+/* FrameX Modern Product Comparison System - Card-Based Responsive Design */
+
+/* ========================================
+   1. COMPARISON CONTAINER & LAYOUT
+   ======================================== */
+
+.comparison-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b35' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+}
+
+.comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.comparison-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--black, #1a1a1a);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.comparison-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600, #525252);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ========================================
+   2. FILTER & CONTROLS
+   ======================================== */
+
+.comparison-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.comparison-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--gray-300, #d4d4d4);
+    background: var(--white, #ffffff);
+    color: var(--gray-700, #404040);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.875rem;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--orange, #ff6b35);
+    border-color: var(--orange, #ff6b35);
+    color: var(--white, #ffffff);
+    transform: translateY(-1px);
+}
+
+.view-toggle {
+    display: flex;
+    background: var(--white, #ffffff);
+    border: 2px solid var(--gray-200, #e5e5e5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.view-btn {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--gray-600, #525252);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-btn.active {
+    background: var(--orange, #ff6b35);
+    color: var(--white, #ffffff);
+}
+
+/* ========================================
+   3. CARD-BASED COMPARISON LAYOUT
+   ======================================== */
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Product Comparison Cards */
+.product-card {
+    background: var(--white, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-200, #e5e5e5);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--orange, #ff6b35);
+}
+
+.product-card.featured {
+    border-color: var(--orange, #ff6b35);
+    border-width: 2px;
+}
+
+.product-card.featured::before {
+    content: 'Recommended';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--orange, #ff6b35);
+    color: var(--white, #ffffff);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom-left-radius: 8px;
+    z-index: 2;
+}
+
+/* Card Header */
+.card-header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--gray-100, #f5f5f5);
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black, #1a1a1a);
+    margin-bottom: 0.5rem;
+}
+
+.product-type {
+    font-size: 0.875rem;
+    color: var(--gray-500, #737373);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--orange, #ff6b35);
+    margin-bottom: 0.5rem;
+}
+
+.price-unit {
+    font-size: 0.875rem;
+    color: var(--gray-500, #737373);
+    font-weight: 400;
+}
+
+/* Card Body - Specifications */
+.card-body {
+    padding: 1.5rem;
+}
+
+.spec-section {
+    margin-bottom: 2rem;
+}
+
+.spec-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black, #1a1a1a);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gray-100, #f5f5f5);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-100, #f5f5f5);
+    font-size: 0.9375rem;
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    color: var(--gray-600, #525252);
+    font-weight: 500;
+    flex: 1;
+}
+
+.spec-value {
+    color: var(--black, #1a1a1a);
+    font-weight: 600;
+    text-align: right;
+    flex: 0 0 auto;
+}
+
+.spec-value.highlight {
+    color: var(--orange, #ff6b35);
+    font-weight: 700;
+}
+
+/* Features with checkmarks */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 0.9375rem;
+    color: var(--gray-700, #404040);
+}
+
+.feature-item::before {
+    content: '✓';
+    color: var(--orange, #ff6b35);
+    font-weight: bold;
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+}
+
+.feature-item.unavailable {
+    color: var(--gray-400, #a3a3a3);
+    text-decoration: line-through;
+}
+
+.feature-item.unavailable::before {
+    content: '✗';
+    color: var(--gray-400, #a3a3a3);
+}
+
+/* Card Footer - CTA */
+.card-footer {
+    padding: 1.5rem;
+    background: var(--gray-50, #fafafa);
+    border-top: 1px solid var(--gray-100, #f5f5f5);
+}
+
+.card-cta {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: var(--orange, #ff6b35);
+    color: var(--white, #ffffff);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card-cta:hover {
+    background: var(--orange-dark, #e55a2b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.card-cta.secondary {
+    background: transparent;
+    color: var(--orange, #ff6b35);
+    border: 2px solid var(--orange, #ff6b35);
+}
+
+.card-cta.secondary:hover {
+    background: var(--orange, #ff6b35);
+    color: var(--white, #ffffff);
+}
+
+/* ========================================
+   4. TABLE VIEW (LEGACY SUPPORT)
+   ======================================== */
+
+.comparison-table {
+    width: 100%;
+    background: var(--white, #ffffff);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-200, #e5e5e5);
+    margin-top: 2rem;
+    display: none; /* Hidden by default, shown when table view is active */
+}
+
+.comparison-table.active {
+    display: block;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, var(--gray-100, #f5f5f5) 0%, var(--gray-50, #fafafa) 100%);
+}
+
+.comparison-table th {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--black, #1a1a1a);
+    border-bottom: 2px solid var(--gray-200, #e5e5e5);
+    font-size: 0.9375rem;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-100, #f5f5f5);
+    color: var(--gray-700, #404040);
+    font-size: 0.9375rem;
+}
+
+.comparison-table tr:hover {
+    background: var(--gray-50, #fafafa);
+}
+
+/* ========================================
+   5. RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small Mobile (390px+) */
+@media (min-width: 390px) {
+    .comparison-container {
+        padding: 0 1.25rem;
+    }
+    
+    .product-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .comparison-controls {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .card-header {
+        padding: 2.5rem 2rem 1.5rem;
+    }
+    
+    .card-body {
+        padding: 2rem;
+    }
+    
+    .card-footer {
+        padding: 2rem;
+    }
+    
+    .product-image {
+        height: 240px;
+    }
+}
+
+/* Large Tablet (912px+) */
+@media (min-width: 912px) {
+    .comparison-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .comparison-section {
+        padding: 4rem 0;
+    }
+}
+
+/* Desktop (1280px+) */
+@media (min-width: 1280px) {
+    .comparison-container {
+        max-width: 1400px;
+        padding: 0 2rem;
+    }
+    
+    .comparison-grid {
+        gap: 2.5rem;
+    }
+    
+    .product-card {
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-body {
+        flex: 1;
+    }
+    
+    .product-image {
+        height: 280px;
+    }
+}
+
+/* ========================================
+   6. ANIMATION & TRANSITIONS
+   ======================================== */
+
+.comparison-grid {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: slideInUp 0.5s ease forwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   7. ACCESSIBILITY & FOCUS STATES
+   ======================================== */
+
+.product-card:focus-within {
+    outline: 3px solid rgba(255, 107, 53, 0.3);
+    outline-offset: 2px;
+}
+
+.filter-btn:focus,
+.view-btn:focus,
+.card-cta:focus {
+    outline: 3px solid rgba(255, 107, 53, 0.3);
+    outline-offset: 2px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    .product-card {
+        border-width: 2px;
+    }
+    
+    .spec-item {
+        border-bottom-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .comparison-grid,
+    .card-cta {
+        animation: none;
+        transition: none;
+    }
+    
+    .product-card:hover,
+    .card-cta:hover {
+        transform: none;
+    }
+}

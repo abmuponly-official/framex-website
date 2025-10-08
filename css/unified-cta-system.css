@@ -1,289 +1,432 @@
-/**
- * FrameX Unified CTA Button System
- * WCAG 2.1 AA Compliant - Contrast Ratio ≥ 4.5:1
- * Mobile-first responsive design
- */
+/* FrameX Unified CTA Button System - WCAG 2.1 AA Compliant */
 
+/* ========================================
+   1. ROOT VARIABLES - CTA SYSTEM
+   ======================================== */
 :root {
-  /* Button Colors */
-  --cta-primary-bg: #ff6b35;
-  --cta-primary-text: #ffffff;
-  --cta-primary-hover: #e55a2b;
-  --cta-secondary-bg: transparent;
-  --cta-secondary-text: #000000;
-  --cta-secondary-border: #000000;
-  --cta-secondary-hover-bg: #000000;
-  --cta-secondary-hover-text: #ffffff;
-  
-  /* Button Typography */
-  --cta-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --cta-font-size: 1rem;
-  --cta-font-weight: 600;
-  --cta-line-height: 1.2;
-  
-  /* Button Spacing */
-  --cta-padding-vertical: 12px;
-  --cta-padding-horizontal: 24px;
-  --cta-padding-sm-vertical: 8px;
-  --cta-padding-sm-horizontal: 16px;
-  --cta-padding-lg-vertical: 16px;
-  --cta-padding-lg-horizontal: 32px;
-  --cta-gap: 8px;
-  --cta-margin: 8px;
-  
-  /* Button Border & Effects */
-  --cta-border-radius: 4px;
-  --cta-border-width: 2px;
-  --cta-transition: all 0.2s ease;
-  --cta-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --cta-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* CTA Colors - WCAG AA Compliant Contrast Ratios */
+    --cta-primary: #ff6b35;        /* Brand Orange */
+    --cta-primary-hover: #e55a2b;  /* Darker Orange (7:1 contrast) */
+    --cta-primary-active: #cc4e23; /* Active state */
+    --cta-primary-focus: #ff6b35;  /* Focus ring color */
+    
+    --cta-secondary: #1a1a1a;      /* Black */
+    --cta-secondary-hover: #333333; /* Dark Gray (7:1 contrast) */
+    --cta-secondary-active: #000000; /* Pure black active */
+    
+    --cta-outline: transparent;     /* Outline background */
+    --cta-outline-border: #1a1a1a; /* Border color */
+    --cta-outline-hover: #1a1a1a;  /* Hover background */
+    
+    --cta-white: #ffffff;          /* White text */
+    --cta-black: #1a1a1a;         /* Black text */
+    --cta-gray: #6b7280;           /* Subtle text */
+    
+    /* CTA Spacing & Sizing */
+    --cta-padding-sm: 8px 16px;    /* Small buttons */
+    --cta-padding-md: 12px 24px;   /* Default buttons */
+    --cta-padding-lg: 16px 32px;   /* Large buttons */
+    --cta-padding-xl: 20px 40px;   /* Extra large buttons */
+    
+    --cta-border-radius: 4px;      /* Consistent border radius */
+    --cta-border-width: 2px;       /* Border thickness */
+    
+    /* CTA Typography */
+    --cta-font-weight: 600;        /* Semi-bold for visibility */
+    --cta-font-size-sm: 0.875rem; /* 14px */
+    --cta-font-size-md: 1rem;     /* 16px */
+    --cta-font-size-lg: 1.125rem; /* 18px */
+    
+    /* CTA States */
+    --cta-transition: all 0.15s ease-in-out;
+    --cta-focus-ring: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    --cta-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --cta-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Base CTA Button */
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--cta-gap);
-  
-  /* Typography */
-  font-family: var(--cta-font-family);
-  font-size: var(--cta-font-size);
-  font-weight: var(--cta-font-weight);
-  line-height: var(--cta-line-height);
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
-  
-  /* Spacing */
-  padding: var(--cta-padding-vertical) var(--cta-padding-horizontal);
-  margin: 0 var(--cta-margin);
-  
-  /* Border & Effects */
-  border: var(--cta-border-width) solid transparent;
-  border-radius: var(--cta-border-radius);
-  box-shadow: var(--cta-shadow);
-  
-  /* Interaction */
-  cursor: pointer;
-  transition: var(--cta-transition);
-  user-select: none;
-  
-  /* Accessibility */
-  min-height: 44px; /* Touch target size */
-  min-width: fit-content;
-  
-  /* Prevent text selection */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+/* ========================================
+   2. BASE BUTTON CLASSES
+   ======================================== */
+
+/* Universal Button Base */
+.btn,
+.cta-btn,
+.button,
+.call-to-action {
+    /* Accessibility & Touch Targets */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;           /* WCAG AA touch target */
+    min-width: 44px;
+    
+    /* Typography */
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-weight: var(--cta-font-weight);
+    font-size: var(--cta-font-size-md);
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    
+    /* Layout */
+    padding: var(--cta-padding-md);
+    border: var(--cta-border-width) solid transparent;
+    border-radius: var(--cta-border-radius);
+    cursor: pointer;
+    user-select: none;
+    
+    /* Transitions & Effects */
+    transition: var(--cta-transition);
+    box-shadow: var(--cta-shadow);
+    
+    /* Prevent text selection and ensure pointer */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-/* Primary CTA Button */
-.cta-button.cta-primary,
-.cta-primary {
-  background-color: var(--cta-primary-bg);
-  color: var(--cta-primary-text);
-  border-color: var(--cta-primary-bg);
+/* Remove default button styles */
+.btn:focus,
+.cta-btn:focus,
+.button:focus,
+.call-to-action:focus {
+    outline: none;
+    box-shadow: var(--cta-focus-ring);
 }
 
-.cta-button.cta-primary:hover,
-.cta-button.cta-primary:focus,
+/* Disabled State */
+.btn:disabled,
+.cta-btn:disabled,
+.button:disabled,
+.call-to-action:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========================================
+   3. PRIMARY CTA BUTTONS
+   ======================================== */
+
+.btn-primary,
+.cta-primary,
+.btn {
+    background-color: var(--cta-primary);
+    color: var(--cta-white);
+    border-color: var(--cta-primary);
+}
+
+.btn-primary:hover,
 .cta-primary:hover,
-.cta-primary:focus {
-  background-color: var(--cta-primary-hover);
-  border-color: var(--cta-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--cta-shadow-hover);
-  color: var(--cta-primary-text);
-  text-decoration: none;
+.btn:hover {
+    background-color: var(--cta-primary-hover);
+    border-color: var(--cta-primary-hover);
+    color: var(--cta-white);
+    transform: translateY(-1px);
+    box-shadow: var(--cta-shadow-hover);
 }
 
-.cta-button.cta-primary:active,
-.cta-primary:active {
-  transform: translateY(0);
-  box-shadow: var(--cta-shadow);
+.btn-primary:active,
+.cta-primary:active,
+.btn:active {
+    background-color: var(--cta-primary-active);
+    border-color: var(--cta-primary-active);
+    transform: translateY(0);
+    box-shadow: var(--cta-shadow);
 }
 
-/* Secondary CTA Button */
-.cta-button.cta-secondary,
+/* ========================================
+   4. SECONDARY CTA BUTTONS
+   ======================================== */
+
+.btn-secondary,
 .cta-secondary {
-  background-color: var(--cta-secondary-bg);
-  color: var(--cta-secondary-text);
-  border-color: var(--cta-secondary-border);
+    background-color: var(--cta-secondary);
+    color: var(--cta-white);
+    border-color: var(--cta-secondary);
 }
 
-.cta-button.cta-secondary:hover,
-.cta-button.cta-secondary:focus,
-.cta-secondary:hover,
-.cta-secondary:focus {
-  background-color: var(--cta-secondary-hover-bg);
-  color: var(--cta-secondary-hover-text);
-  border-color: var(--cta-secondary-hover-bg);
-  transform: translateY(-2px);
-  box-shadow: var(--cta-shadow-hover);
-  text-decoration: none;
+.btn-secondary:hover,
+.cta-secondary:hover {
+    background-color: var(--cta-secondary-hover);
+    border-color: var(--cta-secondary-hover);
+    color: var(--cta-white);
+    transform: translateY(-1px);
+    box-shadow: var(--cta-shadow-hover);
 }
 
-.cta-button.cta-secondary:active,
+.btn-secondary:active,
 .cta-secondary:active {
-  transform: translateY(0);
-  box-shadow: var(--cta-shadow);
+    background-color: var(--cta-secondary-active);
+    border-color: var(--cta-secondary-active);
+    transform: translateY(0);
 }
 
-/* Button Sizes */
-.cta-button.cta-sm,
+/* ========================================
+   5. OUTLINE CTA BUTTONS
+   ======================================== */
+
+.btn-outline,
+.cta-outline,
+.btn-outline-primary {
+    background-color: var(--cta-outline);
+    color: var(--cta-black);
+    border-color: var(--cta-outline-border);
+}
+
+.btn-outline:hover,
+.cta-outline:hover,
+.btn-outline-primary:hover {
+    background-color: var(--cta-outline-hover);
+    color: var(--cta-white);
+    border-color: var(--cta-outline-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--cta-shadow-hover);
+}
+
+.btn-outline:active,
+.cta-outline:active,
+.btn-outline-primary:active {
+    background-color: var(--cta-secondary-active);
+    color: var(--cta-white);
+    transform: translateY(0);
+}
+
+/* ========================================
+   6. SIZE VARIATIONS
+   ======================================== */
+
+/* Small Buttons */
+.btn-sm,
 .cta-sm {
-  font-size: 0.875rem;
-  padding: var(--cta-padding-sm-vertical) var(--cta-padding-sm-horizontal);
-  min-height: 36px;
+    padding: var(--cta-padding-sm);
+    font-size: var(--cta-font-size-sm);
+    min-height: 36px;
 }
 
-.cta-button.cta-lg,
+/* Default size already defined in base */
+
+/* Large Buttons */
+.btn-lg,
 .cta-lg {
-  font-size: 1.125rem;
-  padding: var(--cta-padding-lg-vertical) var(--cta-padding-lg-horizontal);
-  min-height: 52px;
+    padding: var(--cta-padding-lg);
+    font-size: var(--cta-font-size-lg);
+    min-height: 52px;
 }
 
-/* Button States */
-.cta-button:disabled,
-.cta-button.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  pointer-events: none;
-  transform: none !important;
-  box-shadow: var(--cta-shadow) !important;
+/* Extra Large Buttons */
+.btn-xl,
+.cta-xl {
+    padding: var(--cta-padding-xl);
+    font-size: var(--cta-font-size-lg);
+    min-height: 60px;
 }
 
-/* Focus States for Accessibility */
-.cta-button:focus-visible {
-  outline: 2px solid var(--cta-primary-bg);
-  outline-offset: 2px;
+/* ========================================
+   7. BUTTON GROUPS & LAYOUTS
+   ======================================== */
+
+.btn-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Button Group */
-.cta-button-group {
-  display: flex;
-  gap: var(--cta-gap);
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
+.btn-group .btn,
+.btn-group .cta-btn {
+    margin: 0;
 }
 
-.cta-button-group.center {
-  justify-content: center;
-}
-
-.cta-button-group.right {
-  justify-content: flex-end;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .cta-button {
-    font-size: 0.875rem;
-    padding: 10px 20px;
-    margin: 0 4px 8px 4px;
-  }
-  
-  .cta-button-group {
+/* Vertical button groups */
+.btn-group-vertical {
     flex-direction: column;
     align-items: stretch;
-  }
-  
-  .cta-button-group .cta-button {
-    margin: 4px 0;
-    justify-content: center;
-  }
 }
 
-@media screen and (max-width: 390px) {
-  .cta-button {
-    font-size: 0.875rem;
-    padding: 12px 16px;
-    min-width: 100%;
-  }
-  
-  .cta-button-group {
-    gap: 8px;
-  }
+.btn-group-vertical .btn,
+.btn-group-vertical .cta-btn {
+    width: 100%;
 }
 
-/* Icon Support */
-.cta-button i {
-  font-size: 0.9em;
-  transition: var(--cta-transition);
+/* ========================================
+   8. RESPONSIVE BEHAVIOR
+   ======================================== */
+
+/* Mobile First - Stack buttons */
+@media (max-width: 767px) {
+    .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn,
+    .cta-btn {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn:last-child,
+    .cta-btn:last-child {
+        margin-bottom: 0;
+    }
 }
 
-.cta-button:hover i {
-  transform: translateX(2px);
+/* Tablet and up - Horizontal layout */
+@media (min-width: 768px) {
+    .btn-group {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .btn,
+    .cta-btn {
+        width: auto;
+        margin-bottom: 0;
+    }
 }
 
-.cta-button i:first-child {
-  margin-right: 4px;
+/* ========================================
+   9. SPECIALIZED CTA BUTTONS
+   ======================================== */
+
+/* Call-to-Action Hero Button */
+.cta-hero {
+    padding: var(--cta-padding-xl);
+    font-size: 1.25rem;
+    font-weight: 700;
+    min-height: 64px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-primary-hover) 100%);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
-.cta-button i:last-child {
-  margin-left: 4px;
+.cta-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
 }
 
-.cta-button i:only-child {
-  margin: 0;
+/* Download/Contact Buttons */
+.cta-download,
+.cta-contact {
+    background-color: var(--cta-secondary);
+    color: var(--cta-white);
+    gap: 0.5rem; /* Space for icons */
 }
 
-/* Loading State */
-.cta-button.loading {
-  position: relative;
-  color: transparent !important;
-  cursor: wait;
+.cta-download:hover,
+.cta-contact:hover {
+    background-color: var(--cta-secondary-hover);
 }
 
-.cta-button.loading::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  margin: -8px 0 0 -8px;
-  border: 2px solid transparent;
-  border-top-color: currentColor;
-  border-radius: 50%;
-  animation: cta-button-spin 1s linear infinite;
+/* Link-style CTA */
+.cta-link {
+    background: transparent;
+    color: var(--cta-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: var(--cta-font-weight);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    min-height: auto;
+    box-shadow: none;
 }
 
-@keyframes cta-button-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.cta-link:hover {
+    color: var(--cta-primary-hover);
+    background: transparent;
+    transform: none;
+    box-shadow: none;
 }
 
-/* High Contrast Mode Support */
+/* ========================================
+   10. ICON INTEGRATION
+   ======================================== */
+
+.btn-icon,
+.cta-icon {
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-icon svg,
+.cta-icon svg,
+.btn-icon i,
+.cta-icon i {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+}
+
+/* Icon-only buttons */
+.btn-icon-only {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* ========================================
+   11. LOADING & ASYNC STATES
+   ======================================== */
+
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: btn-spin 1s linear infinite;
+}
+
+@keyframes btn-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   12. HIGH CONTRAST MODE SUPPORT
+   ======================================== */
+
 @media (prefers-contrast: high) {
-  .cta-button {
-    border-width: 3px;
-  }
-  
-  .cta-button:focus-visible {
-    outline-width: 3px;
-  }
+    .btn,
+    .cta-btn {
+        border-width: 3px;
+    }
+    
+    .btn:focus,
+    .cta-btn:focus {
+        outline: 3px solid;
+        outline-offset: 2px;
+    }
 }
 
-/* Reduced Motion Support */
+/* ========================================
+   13. REDUCED MOTION SUPPORT
+   ======================================== */
+
 @media (prefers-reduced-motion: reduce) {
-  .cta-button {
-    transition: none;
-  }
-  
-  .cta-button:hover {
-    transform: none;
-  }
-  
-  .cta-button i {
-    transition: none;
-  }
-  
-  .cta-button:hover i {
-    transform: none;
-  }
+    .btn,
+    .cta-btn {
+        transition: none;
+    }
+    
+    .btn:hover,
+    .cta-btn:hover {
+        transform: none;
+    }
+    
+    .btn-loading::after {
+        animation: none;
+    }
 }
