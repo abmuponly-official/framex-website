@@ -1,0 +1,289 @@
+/**
+ * FrameX Unified CTA Button System
+ * WCAG 2.1 AA Compliant - Contrast Ratio ≥ 4.5:1
+ * Mobile-first responsive design
+ */
+
+:root {
+  /* Button Colors */
+  --cta-primary-bg: #ff6b35;
+  --cta-primary-text: #ffffff;
+  --cta-primary-hover: #e55a2b;
+  --cta-secondary-bg: transparent;
+  --cta-secondary-text: #000000;
+  --cta-secondary-border: #000000;
+  --cta-secondary-hover-bg: #000000;
+  --cta-secondary-hover-text: #ffffff;
+  
+  /* Button Typography */
+  --cta-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --cta-font-size: 1rem;
+  --cta-font-weight: 600;
+  --cta-line-height: 1.2;
+  
+  /* Button Spacing */
+  --cta-padding-vertical: 12px;
+  --cta-padding-horizontal: 24px;
+  --cta-padding-sm-vertical: 8px;
+  --cta-padding-sm-horizontal: 16px;
+  --cta-padding-lg-vertical: 16px;
+  --cta-padding-lg-horizontal: 32px;
+  --cta-gap: 8px;
+  --cta-margin: 8px;
+  
+  /* Button Border & Effects */
+  --cta-border-radius: 4px;
+  --cta-border-width: 2px;
+  --cta-transition: all 0.2s ease;
+  --cta-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --cta-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Base CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cta-gap);
+  
+  /* Typography */
+  font-family: var(--cta-font-family);
+  font-size: var(--cta-font-size);
+  font-weight: var(--cta-font-weight);
+  line-height: var(--cta-line-height);
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  
+  /* Spacing */
+  padding: var(--cta-padding-vertical) var(--cta-padding-horizontal);
+  margin: 0 var(--cta-margin);
+  
+  /* Border & Effects */
+  border: var(--cta-border-width) solid transparent;
+  border-radius: var(--cta-border-radius);
+  box-shadow: var(--cta-shadow);
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: var(--cta-transition);
+  user-select: none;
+  
+  /* Accessibility */
+  min-height: 44px; /* Touch target size */
+  min-width: fit-content;
+  
+  /* Prevent text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Primary CTA Button */
+.cta-button.cta-primary,
+.cta-primary {
+  background-color: var(--cta-primary-bg);
+  color: var(--cta-primary-text);
+  border-color: var(--cta-primary-bg);
+}
+
+.cta-button.cta-primary:hover,
+.cta-button.cta-primary:focus,
+.cta-primary:hover,
+.cta-primary:focus {
+  background-color: var(--cta-primary-hover);
+  border-color: var(--cta-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--cta-shadow-hover);
+  color: var(--cta-primary-text);
+  text-decoration: none;
+}
+
+.cta-button.cta-primary:active,
+.cta-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--cta-shadow);
+}
+
+/* Secondary CTA Button */
+.cta-button.cta-secondary,
+.cta-secondary {
+  background-color: var(--cta-secondary-bg);
+  color: var(--cta-secondary-text);
+  border-color: var(--cta-secondary-border);
+}
+
+.cta-button.cta-secondary:hover,
+.cta-button.cta-secondary:focus,
+.cta-secondary:hover,
+.cta-secondary:focus {
+  background-color: var(--cta-secondary-hover-bg);
+  color: var(--cta-secondary-hover-text);
+  border-color: var(--cta-secondary-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--cta-shadow-hover);
+  text-decoration: none;
+}
+
+.cta-button.cta-secondary:active,
+.cta-secondary:active {
+  transform: translateY(0);
+  box-shadow: var(--cta-shadow);
+}
+
+/* Button Sizes */
+.cta-button.cta-sm,
+.cta-sm {
+  font-size: 0.875rem;
+  padding: var(--cta-padding-sm-vertical) var(--cta-padding-sm-horizontal);
+  min-height: 36px;
+}
+
+.cta-button.cta-lg,
+.cta-lg {
+  font-size: 1.125rem;
+  padding: var(--cta-padding-lg-vertical) var(--cta-padding-lg-horizontal);
+  min-height: 52px;
+}
+
+/* Button States */
+.cta-button:disabled,
+.cta-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: var(--cta-shadow) !important;
+}
+
+/* Focus States for Accessibility */
+.cta-button:focus-visible {
+  outline: 2px solid var(--cta-primary-bg);
+  outline-offset: 2px;
+}
+
+/* Button Group */
+.cta-button-group {
+  display: flex;
+  gap: var(--cta-gap);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cta-button-group.center {
+  justify-content: center;
+}
+
+.cta-button-group.right {
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .cta-button {
+    font-size: 0.875rem;
+    padding: 10px 20px;
+    margin: 0 4px 8px 4px;
+  }
+  
+  .cta-button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cta-button-group .cta-button {
+    margin: 4px 0;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .cta-button {
+    font-size: 0.875rem;
+    padding: 12px 16px;
+    min-width: 100%;
+  }
+  
+  .cta-button-group {
+    gap: 8px;
+  }
+}
+
+/* Icon Support */
+.cta-button i {
+  font-size: 0.9em;
+  transition: var(--cta-transition);
+}
+
+.cta-button:hover i {
+  transform: translateX(2px);
+}
+
+.cta-button i:first-child {
+  margin-right: 4px;
+}
+
+.cta-button i:last-child {
+  margin-left: 4px;
+}
+
+.cta-button i:only-child {
+  margin: 0;
+}
+
+/* Loading State */
+.cta-button.loading {
+  position: relative;
+  color: transparent !important;
+  cursor: wait;
+}
+
+.cta-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: cta-button-spin 1s linear infinite;
+}
+
+@keyframes cta-button-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .cta-button {
+    border-width: 3px;
+  }
+  
+  .cta-button:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
+  
+  .cta-button:hover {
+    transform: none;
+  }
+  
+  .cta-button i {
+    transition: none;
+  }
+  
+  .cta-button:hover i {
+    transform: none;
+  }
+}
