@@ -3,53 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FrameX Products - Smart Prefabricated Steel Structures. Starter, Family, Custom, and PRO series for all construction needs.">
+    <meta name="description" content="FrameX Products - Smart Prefabricated Steel Structures. Starter, Smart, Premium series for all construction needs.">
     <meta name="keywords" content="FrameX products, steel structures, prefabricated homes, smart construction, kết cấu thép tiền chế">
     
     <title>Products | FrameX - Smart Steel Construction Solutions</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
     <link rel="alternate icon" type="image/x-icon" href="https://page.gensparksite.com/v1/base64_upload/b4816b144a03d9ca1f6db33367fe5133">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/unified-design.css">
+    <!-- NEW UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive-grid.css">
+    <link rel="stylesheet" href="css/table-system.css">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FrameX">
     <meta property="og:title" content="Products | FrameX - Smart Steel Construction Solutions">
-    <meta property="og:description" content="Explore FrameX product range: Starter, Family, Custom, and PRO steel construction solutions for every need and budget.">
+    <meta property="og:description" content="Explore FrameX product range: Starter, Smart, Premium steel construction solutions for every need and budget.">
     <meta property="og:url" content="https://framex.vn/products.html">
     <meta property="og:image" content="https://framex.vn/assets/images/og-image.jpg">
+    
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Products | FrameX - Smart Steel Construction Solutions">
-    <meta name="twitter:description" content="Explore FrameX product range: Starter, Family, Custom, and PRO steel construction solutions for every need and budget.">
+    <meta name="twitter:description" content="Explore FrameX product range: Starter, Smart, Premium steel construction solutions for every need and budget.">
     <meta name="twitter:image" content="https://framex.vn/assets/images/twitter-card.jpg">
-    <link rel="stylesheet" href="css/footer-v2.css">
-    <link rel="stylesheet" href="css/surgical-updates.css">
-    <link rel="stylesheet" href="css/footer-white-override.css">
-    <link rel="stylesheet" href="css/footer-fixes.css">
-                            <link rel="stylesheet" href="css/comparison-table-redesign.css">
-    <link rel="stylesheet" href="css/vi-table-refinements.css">
-    </head>
+</head>
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main" style="position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px;z-index:10000;text-decoration:none;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation" class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">
+                <a href="index.html" class="nav-brand">
                     <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
                          alt="FrameX Logo" 
                          width="120" 
@@ -59,20 +58,20 @@
                 </a>
                 
                 <ul class="nav-menu">
-                    <li><a href="index.html" data-lang="home">Home</a></li>
-                    <li><a href="products.html" class="active" data-lang="products">Products</a></li>
-                    <li><a href="about.html" data-lang="about">About</a></li>
-                    <li><a href="projects.html" data-lang="projects">Projects</a></li>
-                    <li><a href="blog.html" data-lang="blog">Blog</a></li>
-                    <li><a href="investor-relations.html" data-lang="investor">Investor Relations</a></li>
-                    <li><a href="contact.html" data-lang="contact">Contact</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-lang="home">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link active" data-lang="products">Products</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link" data-lang="about">About</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link" data-lang="projects">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link" data-lang="blog">Blog</a></li>
+                    <li class="nav-item"><a href="investor-relations.html" class="nav-link" data-lang="investor">Investor Relations</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" data-lang="contact">Contact</a></li>
                 </ul>
                 
                 <div class="nav-actions">
-                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="lang-switch" onclick="toggleLanguage()">
+                    <button class="lang-switch" onclick="toggleLanguage()" aria-label="Switch language">
                         <span class="lang-text">VN</span>
                     </button>
-                    <button aria-label="Toggle navigation menu" aria-expanded="false" class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -83,419 +82,375 @@
     </nav>
 
     <main id="main" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-lang="products-title">Our Products</h1>
+                <p data-lang="products-subtitle">Smart prefabricated steel structures for every need and budget</p>
+            </div>
+        </section>
+        
+        <!-- Products Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="products-grid">
+                    <!-- FrameX Starter -->
+                    <div class="product-card" id="starter">
+                        <div class="product-header">
+                            <h2 class="product-title" data-lang="starter-title">FrameX STARTER</h2>
+                            <div class="product-price" data-lang="starter-price">800M - 1.2B VND</div>
+                            <p class="product-description" data-lang="starter-desc">Perfect for small homes and townhouses up to 150m²</p>
+                        </div>
+                        
+                        <ul class="product-features">
+                            <li data-lang="starter-feature-1">Standard steel structure</li>
+                            <li data-lang="starter-feature-2">Basic waterproofing & insulation</li>
+                            <li data-lang="starter-feature-3">Simple staircase design</li>
+                            <li data-lang="starter-feature-4">15-year structural warranty</li>
+                            <li data-lang="starter-feature-5">Single floor or 2-3 floors (50m²/floor)</li>
+                            <li data-lang="starter-feature-6">Perfect for general-purpose projects</li>
+                        </ul>
+                        
+                        <div class="product-cta">
+                            <a href="contact.html?product=starter" class="btn btn-outline w-full" data-lang="get-quote">Get Quote</a>
+                        </div>
+                    </div>
 
-    
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 data-lang="products-title">Our Products</h1>
-            <p data-lang="products-subtitle">Smart prefabricated steel structures for every need</p>
-        </div>
-    </section>
-    
-    <!-- Removed category tabs - streamlined product display -->
-    
-    <!-- Products Grid -->
-    <section class="products-section">
-        <div class="container">
-            <div class="products-full-grid">
-                
-                <!-- FrameX STARTER -->
-                <div class="product-detail-card" id="starter" data-category="residential">
-                    <div class="product-badge">Best Value</div>
-                    <div class="product-header">
-                        <div class="product-icon-large">
-                            <i class="fas fa-home"></i>
+                    <!-- FrameX Smart (Featured) -->
+                    <div class="product-card featured" id="smart">
+                        <div class="product-header">
+                            <h2 class="product-title" data-lang="smart-title">FrameX SMART</h2>
+                            <div class="product-price" data-lang="smart-price">1.5B - 2.5B VND</div>
+                            <p class="product-description" data-lang="smart-desc">Smart home integration for modern living up to 225m²</p>
                         </div>
-                        <h2>FrameX STARTER</h2>
-                        <p class="product-tagline" data-lang="starter-tagline">Khởi Đầu Thông Minh</p>
-                        <div class="product-description" data-lang="starter-main-desc">
-                            Giải pháp nhà thép tiền chế tiêu chuẩn với hệ thống chống thấm và cách nhiệt cơ bản.
-                            Thiết kế tối ưu cho nhà phố nhỏ, xây dựng nhanh, chi phí hợp lý.
+                        
+                        <ul class="product-features">
+                            <li data-lang="smart-feature-1">Advanced customizable steel structure</li>
+                            <li data-lang="smart-feature-2">Basic waterproofing & insulation</li>
+                            <li data-lang="smart-feature-3"><strong>Smart Home System:</strong> Anti-theft, fire alarm, cameras, internet</li>
+                            <li data-lang="smart-feature-4">Simple staircase design</li>
+                            <li data-lang="smart-feature-5">15-year structural warranty</li>
+                            <li data-lang="smart-feature-6">Single floor or 2-3 floors (75m²/floor)</li>
+                            <li data-lang="smart-feature-7">Perfect for small villas seeking convenience</li>
+                        </ul>
+                        
+                        <div class="product-cta">
+                            <a href="contact.html?product=smart" class="btn btn-primary w-full" data-lang="get-quote">Get Quote</a>
                         </div>
                     </div>
-                    
-                    <div class="product-specs">
-                        <h3 data-lang="specs-title">Đặc điểm sản phẩm</h3>
-                        <ul class="specs-list">
-                            <li><i class="fas fa-check"></i> <span data-lang="starter-spec-1">Nhà thép tiền chế tích hợp hệ thống chống thấm & cách nhiệt cơ bản</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="starter-spec-2">Cầu thang thép đơn giản trong nhà</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="starter-spec-3">Kết cấu chuẩn quốc tế, bảo hành 15 năm</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="starter-spec-4">90% vật liệu tái chế, tiết kiệm năng lượng</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-features">
-                        <h3 data-lang="benefits-title">Lợi ích chính</h3>
-                        <ul class="features-grid">
-                            <li data-lang="starter-benefit-1">Xây dựng nhanh hơn 50%</li>
-                            <li data-lang="starter-benefit-2">Giá rẻ hơn nhờ tiêu chuẩn hóa giải pháp và vật tư</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-target">
-                        <h3 data-lang="target-title">Dành cho</h3>
-                        <ul class="target-list">
-                            <li><i class="fas fa-user"></i> <span data-lang="starter-target-1">Nhà phố nhỏ <150m² (1 tầng) hoặc 50m²/tầng (2-3 tầng)</span></li>
-                            <li><i class="fas fa-user"></i> <span data-lang="starter-target-2">Công trình phổ thông, không phức tạp về kiến trúc/kết cấu</span></li>
-                            <li><i class="fas fa-user"></i> <span data-lang="starter-target-3">Không yêu cầu nhà thông minh</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-action">
-                        <a href="contact.html?product=starter" class="btn btn-primary" data-lang="get-quote">Get Quote</a>
-                        <a href="#" class="btn btn-outline" data-lang="download-specs">Download Specs</a>
-                    </div>
-                </div>
-                
-                <!-- FrameX SMART -->
-                <div class="product-detail-card featured" id="smart" data-category="residential">
-                    <div class="product-badge orange">Most Popular</div>
-                    <div class="product-header">
-                        <div class="product-icon-large">
-                            <i class="fas fa-house-user"></i>
-                        </div>
-                        <h2>FrameX SMART</h2>
-                        <p class="product-tagline" data-lang="smart-tagline">Sống Thông Minh Bền Vững</p>
-                        <div class="product-description" data-lang="smart-main-desc">
-                            Nâng cấp toàn diện với thiết kế tùy biến, tích hợp SmartHome cơ bản.
-                            Hoàn hảo cho villa nhỏ với yêu cầu tiện ích và cá nhân hóa cao.
-                        </div>
-                    </div>
-                    
-                    <div class="product-specs">
-                        <h3 data-lang="specs-title">Đặc điểm sản phẩm</h3>
-                        <ul class="specs-list">
-                            <li><i class="fas fa-check"></i> <span data-lang="smart-spec-1">Bao gồm toàn bộ giải pháp Starter</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="smart-spec-2">Thiết kế nâng cao, tùy biến kết cấu</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="smart-spec-3">Tích hợp SmartHome cơ bản: chống trộm, báo cháy, camera an ninh, internet</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-features">
-                        <h3 data-lang="benefits-title">Lợi ích chính</h3>
-                        <ul class="features-grid">
-                            <li data-lang="smart-benefit-1">Nâng cao tiện nghi và an ninh</li>
-                            <li data-lang="smart-benefit-2">Hiệu quả năng lượng nhờ hệ thống thông minh</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-target">
-                        <h3 data-lang="target-title">Dành cho</h3>
-                        <ul class="target-list">
-                            <li><i class="fas fa-user"></i> <span data-lang="smart-target-1">Villa nhỏ <225m² (1 tầng) hoặc 75m²/tầng (2-3 tầng)</span></li>
-                            <li><i class="fas fa-user"></i> <span data-lang="smart-target-2">Khách hàng cần nâng cấp tiện ích & cá nhân hóa thiết kế</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-action">
-                        <a href="contact.html?product=smart" class="btn btn-primary" data-lang="get-quote">Get Quote</a>
-                        <a href="#" class="btn btn-outline" data-lang="download-specs">Download Specs</a>
-                    </div>
-                </div>
-                
-                <!-- FrameX PREMIUM -->
-                <div class="product-detail-card" id="premium" data-category="residential commercial">
-                    <div class="product-badge">Premium Class</div>
-                    <div class="product-header">
-                        <div class="product-icon-large">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h2>FrameX PREMIUM</h2>
-                        <p class="product-tagline" data-lang="premium-tagline">Kiến Trúc Đẳng Cấp</p>
-                        <div class="product-description" data-lang="premium-main-desc">
-                            Giải pháp cao cấp với thiết kế kiến trúc độc quyền, thép nghệ thuật, SmartHome nâng cao.
-                            Dành cho biệt thự lớn và công trình đặc biệt.
-                        </div>
-                    </div>
-                    
-                    <div class="product-specs">
-                        <h3 data-lang="specs-title">Đặc điểm sản phẩm</h3>
-                        <ul class="specs-list">
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-1">Bao gồm toàn bộ giải pháp Smart ở mức cao hơn</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-2">Thiết kế kiến trúc theo nhu cầu</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-3">Chống thấm, cách nhiệt nâng cao</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-4">Chống cháy kết cấu</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-5">Thép nghệ thuật: cầu thang, lan can, chi tiết đặc biệt</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="premium-spec-6">Tích hợp SmartHome nâng cao (theo nhu cầu)</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-features">
-                        <h3 data-lang="benefits-title">Lợi ích chính</h3>
-                        <ul class="features-grid">
-                            <li data-lang="premium-benefit-1">Trải nghiệm sống xa hoa</li>
-                            <li data-lang="premium-benefit-2">Vật liệu và tay nghề chất lượng cao nhất</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-target">
-                        <h3 data-lang="target-title">Dành cho</h3>
-                        <ul class="target-list">
-                            <li><i class="fas fa-user"></i> <span data-lang="premium-target-1">Biệt thự lớn >300m² sàn (hoặc >150m²/tầng cho nhà 2 tầng)</span></li>
-                            <li><i class="fas fa-user"></i> <span data-lang="premium-target-2">Nhà ở thương mại, công trình nghệ thuật, yêu cầu thiết kế đặc biệt</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-action">
-                        <a href="contact.html?product=premium" class="btn btn-primary" data-lang="get-quote">Get Quote</a>
-                        <a href="#" class="btn btn-outline" data-lang="download-specs">Download Specs</a>
-                    </div>
-                </div>
-                
 
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="compare-title">So Sánh Sản Phẩm</h2>
-            <!-- Vietnamese Version - Use when html[lang="vi"] -->
-            <div class="comparison-table-wrapper">
-                <table class="fx-table comparison-table" role="table" aria-label="So sánh sản phẩm FrameX">
-                    <caption class="sr-only">Bảng so sánh các gói sản phẩm FrameX: Starter, Smart và Premium</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col"><strong>Tính năng</strong></th>
-                            <th scope="col"><strong>FrameX STARTER</strong></th>
-                            <th scope="col" class="featured-col"><strong>FrameX SMART</strong></th>
-                            <th scope="col"><strong>FrameX PREMIUM</strong></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"><strong>Diện tích phù hợp</strong></th>
-                            <td>&lt; 150 m² (một tầng)<br>hoặc 50 m²/tầng (2–3 tầng)</td>
-                            <td class="featured-col">&lt; 225 m² (một tầng)<br>hoặc 75 m²/tầng (2–3 tầng)</td>
-                            <td>&gt; 300 m² sàn<br>hoặc &gt; 150 m²/tầng (2 tầng)</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Kết cấu thép</strong></th>
-                            <td>Tiêu chuẩn</td>
-                            <td class="featured-col">Nâng cao, có thể tùy biến theo yêu cầu</td>
-                            <td>Cao cấp, thiết kế riêng hoàn toàn</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Chống thấm</strong></th>
-                            <td>Cơ bản</td>
-                            <td class="featured-col">Cơ bản</td>
-                            <td>Nâng cao</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Cách nhiệt</strong></th>
-                            <td>Cơ bản</td>
-                            <td class="featured-col">Cơ bản</td>
-                            <td>Nâng cao</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Tiện ích thông minh (Smart Home)</strong></th>
-                            <td><span class="empty-value">–</span></td>
-                            <td class="featured-col">Cơ bản<br>(chống trộm, báo cháy, camera, internet)</td>
-                            <td>Nâng cao<br>tùy chỉnh theo yêu cầu riêng</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Chống cháy</strong></th>
-                            <td><span class="empty-value">–</span></td>
-                            <td class="featured-col"><span class="empty-value">–</span></td>
-                            <td>Kết cấu chống cháy đầy đủ</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Chi tiết sắt mỹ thuật</strong><br>(cầu thang, lan can, chi tiết đặc biệt)</th>
-                            <td>Cầu thang đơn giản</td>
-                            <td class="featured-col">Cầu thang đơn giản</td>
-                            <td>Cầu thang + lan can + các chi tiết đặc biệt</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Bảo hành</strong></th>
-                            <td>15 năm</td>
-                            <td class="featured-col">15 năm</td>
-                            <td>20 năm</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><strong>Khách hàng mục tiêu</strong></th>
-                            <td>Nhà phố nhỏ, công trình phổ thông</td>
-                            <td class="featured-col">Villa nhỏ, cần tiện ích &amp; cá nhân hóa</td>
-                            <td>Biệt thự lớn, công trình đặc biệt</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Work Process Section -->
-    <section class="work-process">
-        <div class="container">
-            <h2 class="section-title" data-lang="process-title">Quy Trình Làm Việc</h2>
-            <div class="process-timeline">
-                <!-- Step 1 -->
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3 data-lang="step1-title">Tư vấn & Thiết kế</h3>
-                        <p class="step-duration" data-lang="step1-duration">3-5 ngày</p>
-                        <p class="step-desc" data-lang="step1-desc">Khảo sát nhu cầu, tư vấn giải pháp phù hợp và thiết kế chi tiết theo yêu cầu khách hàng.</p>
-                    </div>
-                </div>
-                
-                <!-- Connector -->
-                <div class="process-connector"></div>
-                
-                <!-- Step 2 -->
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3 data-lang="step2-title">Sản xuất thép tiền chế</h3>
-                        <p class="step-duration" data-lang="step2-duration">10-15 ngày</p>
-                        <p class="step-desc" data-lang="step2-desc">Sản xuất các cấu kiện thép tiền chế tại nhà máy với công nghệ hiện đại, đảm bảo chất lượng.</p>
-                    </div>
-                </div>
-                
-                <!-- Connector -->
-                <div class="process-connector"></div>
-                
-                <!-- Step 3 -->
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3 data-lang="step3-title">Thi công lắp đặt</h3>
-                        <p class="step-duration" data-lang="step3-duration">15-20 ngày</p>
-                        <p class="step-desc" data-lang="step3-desc">Lắp ráp kết cấu thép tại công trình, thi công nhanh chóng với đội ngũ chuyên nghiệp.</p>
-                    </div>
-                </div>
-                
-                <!-- Connector -->
-                <div class="process-connector"></div>
-                
-                <!-- Step 4 -->
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3 data-lang="step4-title">Hoàn thiện & Bàn giao</h3>
-                        <p class="step-duration" data-lang="step4-duration">3-5 ngày</p>
-                        <p class="step-desc" data-lang="step4-desc">Kiểm tra chất lượng, hoàn thiện chi tiết và bàn giao công trình cho khách hàng.</p>
+                    <!-- FrameX Premium -->
+                    <div class="product-card" id="premium">
+                        <div class="product-header">
+                            <h2 class="product-title" data-lang="premium-title">FrameX PREMIUM</h2>
+                            <div class="product-price" data-lang="premium-price">3B+ VND</div>
+                            <p class="product-description" data-lang="premium-desc">Luxury features for large villas 300m² and above</p>
+                        </div>
+                        
+                        <ul class="product-features">
+                            <li data-lang="premium-feature-1">Premium custom-designed steel structure</li>
+                            <li data-lang="premium-feature-2">Advanced waterproofing & insulation</li>
+                            <li data-lang="premium-feature-3"><strong>Advanced Smart Home:</strong> Customized automation system</li>
+                            <li data-lang="premium-feature-4">Fire-resistant structure</li>
+                            <li data-lang="premium-feature-5">Artistic steel: Staircase, railing & special details</li>
+                            <li data-lang="premium-feature-6">20-year structural warranty</li>
+                            <li data-lang="premium-feature-7">300m² total floor area</li>
+                            <li data-lang="premium-feature-8">Perfect for special projects & large villas</li>
+                        </ul>
+                        
+                        <div class="product-cta">
+                            <a href="contact.html?product=premium" class="btn btn-outline w-full" data-lang="get-quote">Get Quote</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-lang="comparison-title">Compare Our Products</h2>
+                    <p class="section-subtitle" data-lang="comparison-subtitle">Find the perfect steel structure solution for your needs</p>
+                </div>
+                
+                <!-- Desktop Table -->
+                <div class="comparison-table-wrapper">
+                    <div class="fx-table-container">
+                        <table class="fx-table comparison-table" role="table" aria-label="FrameX Products Comparison">
+                            <caption class="sr-only">Comparison table of FrameX product tiers: Starter, Smart, and Premium</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Feature</th>
+                                    <th scope="col">FrameX STARTER</th>
+                                    <th scope="col" class="featured-col">FrameX SMART</th>
+                                    <th scope="col">FrameX PREMIUM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Area Coverage</th>
+                                    <td>&lt;150m² (1 floor)<br>50m²/floor (2–3 floors)</td>
+                                    <td class="featured-col">&lt;225m² (1 floor)<br>75m²/floor (2–3 floors)</td>
+                                    <td>&gt;300m² total floor area<br>&gt;150m²/floor (2 floors)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Steel Structure</th>
+                                    <td>Standard framework</td>
+                                    <td class="featured-col">Advanced, customizable design</td>
+                                    <td>Premium, custom-engineered</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Waterproofing</th>
+                                    <td>Basic protection</td>
+                                    <td class="featured-col">Basic protection</td>
+                                    <td>Advanced weather resistance</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Insulation</th>
+                                    <td>Basic thermal insulation</td>
+                                    <td class="featured-col">Basic thermal insulation</td>
+                                    <td>Advanced energy efficiency</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Smart Home System</th>
+                                    <td><span class="empty-value">Not included</span></td>
+                                    <td class="featured-col highlight-value">Basic IoT Package<br>(Security, fire alarm, cameras, internet)</td>
+                                    <td class="highlight-value">Advanced Custom System<br>(Full home automation)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fire Protection</th>
+                                    <td><span class="empty-value">Standard only</span></td>
+                                    <td class="featured-col"><span class="empty-value">Standard only</span></td>
+                                    <td class="highlight-value">Fire-resistant structure</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Artistic Steel Work</th>
+                                    <td>Simple staircase</td>
+                                    <td class="featured-col">Simple staircase</td>
+                                    <td class="highlight-value">Staircase, railings & decorative elements</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Structural Warranty</th>
+                                    <td>15 years</td>
+                                    <td class="featured-col">15 years</td>
+                                    <td class="highlight-value">20 years</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Target Customers</th>
+                                    <td>Small townhouses<br>Budget-conscious projects</td>
+                                    <td class="featured-col highlight-value">Small villas<br>Tech-savvy homeowners</td>
+                                    <td>Large luxury villas<br>High-end custom projects</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Mobile Cards (Hidden on Desktop) -->
+                <div class="mobile-table-cards md:hidden">
+                    <div class="mobile-product-card">
+                        <h3>FrameX STARTER</h3>
+                        <ul class="mobile-feature-list">
+                            <li><span class="mobile-feature-label">Area Coverage</span><span class="mobile-feature-value">&lt;150m² (1 floor), 50m²/floor (2–3 floors)</span></li>
+                            <li><span class="mobile-feature-label">Steel Structure</span><span class="mobile-feature-value">Standard framework</span></li>
+                            <li><span class="mobile-feature-label">Waterproofing</span><span class="mobile-feature-value">Basic protection</span></li>
+                            <li><span class="mobile-feature-label">Insulation</span><span class="mobile-feature-value">Basic thermal insulation</span></li>
+                            <li><span class="mobile-feature-label">Smart Home</span><span class="mobile-feature-value empty-value">Not included</span></li>
+                            <li><span class="mobile-feature-label">Fire Protection</span><span class="mobile-feature-value empty-value">Standard only</span></li>
+                            <li><span class="mobile-feature-label">Artistic Steel</span><span class="mobile-feature-value">Simple staircase</span></li>
+                            <li><span class="mobile-feature-label">Warranty</span><span class="mobile-feature-value">15 years</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="mobile-product-card featured">
+                        <h3>FrameX SMART ⭐</h3>
+                        <ul class="mobile-feature-list">
+                            <li><span class="mobile-feature-label">Area Coverage</span><span class="mobile-feature-value">&lt;225m² (1 floor), 75m²/floor (2–3 floors)</span></li>
+                            <li><span class="mobile-feature-label">Steel Structure</span><span class="mobile-feature-value">Advanced, customizable</span></li>
+                            <li><span class="mobile-feature-label">Waterproofing</span><span class="mobile-feature-value">Basic protection</span></li>
+                            <li><span class="mobile-feature-label">Insulation</span><span class="mobile-feature-value">Basic thermal insulation</span></li>
+                            <li><span class="mobile-feature-label">Smart Home</span><span class="mobile-feature-value highlight-value">Basic IoT Package</span></li>
+                            <li><span class="mobile-feature-label">Fire Protection</span><span class="mobile-feature-value empty-value">Standard only</span></li>
+                            <li><span class="mobile-feature-label">Artistic Steel</span><span class="mobile-feature-value">Simple staircase</span></li>
+                            <li><span class="mobile-feature-label">Warranty</span><span class="mobile-feature-value">15 years</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="mobile-product-card">
+                        <h3>FrameX PREMIUM</h3>
+                        <ul class="mobile-feature-list">
+                            <li><span class="mobile-feature-label">Area Coverage</span><span class="mobile-feature-value">&gt;300m² total, &gt;150m²/floor (2 floors)</span></li>
+                            <li><span class="mobile-feature-label">Steel Structure</span><span class="mobile-feature-value">Premium, custom-engineered</span></li>
+                            <li><span class="mobile-feature-label">Waterproofing</span><span class="mobile-feature-value">Advanced weather resistance</span></li>
+                            <li><span class="mobile-feature-label">Insulation</span><span class="mobile-feature-value">Advanced energy efficiency</span></li>
+                            <li><span class="mobile-feature-label">Smart Home</span><span class="mobile-feature-value highlight-value">Advanced Custom System</span></li>
+                            <li><span class="mobile-feature-label">Fire Protection</span><span class="mobile-feature-value highlight-value">Fire-resistant structure</span></li>
+                            <li><span class="mobile-feature-label">Artistic Steel</span><span class="mobile-feature-value highlight-value">Full decorative package</span></li>
+                            <li><span class="mobile-feature-label">Warranty</span><span class="mobile-feature-value highlight-value">20 years</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="section bg-surface-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-lang="tech-title">Advanced Technology</h2>
+                    <p class="section-subtitle" data-lang="tech-subtitle">Smart construction meets modern innovation</p>
+                </div>
+                
+                <div class="grid lg:grid-2 gap-12 items-center">
+                    <div>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl text-accent">🏗️</div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2" data-lang="tech-1-title">BIM Design Process</h3>
+                                    <p class="text-secondary" data-lang="tech-1-desc">3D modeling and precise engineering calculations ensure structural integrity and optimal material usage.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl text-accent">🏭</div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2" data-lang="tech-2-title">Prefabricated Manufacturing</h3>
+                                    <p class="text-secondary" data-lang="tech-2-desc">Factory-controlled production ensures consistent quality and reduces on-site construction time by 60%.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl text-accent">📱</div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2" data-lang="tech-3-title">IoT Integration</h3>
+                                    <p class="text-secondary" data-lang="tech-3-desc">Smart sensors monitor structural health, energy efficiency, and security in real-time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <!-- Smart House SVG Illustration -->
+                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+                            <title>Smart Steel House Technology</title>
+                            <!-- House Structure -->
+                            <rect x="50" y="150" width="300" height="120" fill="var(--color-gray-100)" stroke="var(--color-gray-400)" stroke-width="2"/>
+                            <!-- Roof -->
+                            <polygon points="40,150 200,80 360,150" fill="var(--color-gray-600)"/>
+                            <!-- Windows -->
+                            <rect x="80" y="180" width="40" height="40" fill="var(--color-info)" opacity="0.7"/>
+                            <rect x="280" y="180" width="40" height="40" fill="var(--color-info)" opacity="0.7"/>
+                            <!-- Door -->
+                            <rect x="180" y="200" width="40" height="70" fill="var(--color-gray-800)"/>
+                            <!-- Smart Elements -->
+                            <circle cx="100" cy="160" r="6" fill="var(--color-success)">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="300" cy="160" r="6" fill="var(--color-warning)">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="200" cy="100" r="6" fill="var(--color-error)">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <!-- Connection Lines -->
+                            <path d="M100,160 L200,100 L300,160" stroke="var(--color-primary)" stroke-width="2" opacity="0.6" stroke-dasharray="3,3">
+                                <animate attributeName="stroke-dashoffset" values="0;6" dur="1s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section bg-primary text-white">
+            <div class="container text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4" data-lang="products-cta-title">Ready to Choose Your Steel Structure?</h2>
+                <p class="text-lg lg:text-xl mb-8 max-w-2xl mx-auto" data-lang="products-cta-subtitle">Our experts will help you select the perfect FrameX solution for your project needs and budget.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="btn btn-secondary btn-lg" data-lang="get-consultation">Get Free Consultation</a>
+                    <a href="#comparison" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary" data-lang="compare-products">Compare Products</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->    <!-- Enhanced Footer with Logo -->
-        <!-- Footer v2.0 - Minimalist Design -->
-    <footer class="footer-v2" role="contentinfo">
-        <div class="footer-v2__container">
-            <!-- Top Section: Brand & Quick Actions -->
-            <div class="footer-v2__top">
-                <div class="footer-v2__brand">
-                    <a href="/" class="footer-v2__logo" aria-label="FrameX - Trang chủ">
-                        <img src="http://framex.vn/assets/images/framex-logo-footer.png" 
-                             alt="FrameX" 
-                             width="140" 
-                             height="36"
-                             loading="lazy">
-                    </a>
-                    <p class="footer-v2__tagline" data-lang="footer-tagline">Định hình không gian sống tương lai</p>
-                </div>
-                
-                <div class="footer-v2__cta">
-                    <a href="/contact.html?source=footer" class="footer-v2__button" data-lang="footer-cta">
-                        <span>Nhận báo giá</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Main Section: Navigation & Contact -->
-            <div class="footer-v2__main">
-                <!-- Primary Navigation -->
-                <nav class="footer-v2__nav" aria-label="Footer navigation">
-                    <ul class="footer-v2__nav-list">
-                        <li><a href="/products.html" data-lang="footer-products">Sản phẩm</a></li>
-                        <li><a href="/services.html" data-lang="footer-services">Dịch vụ</a></li>
-                        <li><a href="/projects.html" data-lang="footer-projects">Dự án</a></li>
-                        <li><a href="/about.html" data-lang="footer-about">Về chúng tôi</a></li>
-                        <li><a href="/blog.html" data-lang="footer-blog">Blog</a></li>
-                        <li><a href="/investor-relations.html" data-lang="footer-investor">Nhà đầu tư</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Contact Information -->
-                <address class="footer-v2__contact">
-                    <a href="tel:+84909005683" class="footer-v2__contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <span>0909 005 683</span>
-                    </a>
-                    
-                    <a href="mailto:sales@framex.vn" class="footer-v2__contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <span>sales@framex.vn</span>
-                    </a>
-                    
-                    <div class="footer-v2__contact-item footer-v2__contact-item--address">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span data-lang="footer-address">150/52A Phú Định, TP.HCM</span>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo mb-6">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/c648078921c4cc3d26de6fb9d1e94e5b" 
+                             alt="FrameX Logo" 
+                             width="150" 
+                             height="50" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='assets/images/logo-placeholder.svg';">
                     </div>
-                </address>
-            </div>
-            
-            <!-- Bottom Section: Legal & Social -->
-            <div class="footer-v2__bottom">
-                <div class="footer-v2__legal">
-                    <p class="footer-v2__copyright" data-lang="footer-copyright">© 2024 FrameX - ABM Architectural Material Co., Ltd</p>
-                    <ul class="footer-v2__legal-links">
-                        <li><a href="/privacy" data-lang="footer-privacy">Chính sách bảo mật</a></li>
-                        <li><a href="/terms" data-lang="footer-terms">Điều khoản sử dụng</a></li>
+                    <p class="mb-6" data-lang="footer-description">FrameX pioneers smart prefabricated steel construction with IoT integration. Building tomorrow's living spaces today.</p>
+                    <div class="social-links">
+                        <a href="https://www.pinterest.com/FRAMEXVN/" target="_blank" rel="noopener" aria-label="Pinterest">
+                            <i class="fab fa-pinterest" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://3dwarehouse.sketchup.com/by/Framexvn" target="_blank" rel="noopener" aria-label="3D Warehouse">
+                            <i class="fas fa-cube" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-lang="footer-products-title">Products</h3>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#starter" data-lang="footer-product-starter">FrameX Starter</a></li>
+                        <li class="mb-2"><a href="#smart" data-lang="footer-product-smart">FrameX Smart</a></li>
+                        <li class="mb-2"><a href="#premium" data-lang="footer-product-premium">FrameX Premium</a></li>
                     </ul>
                 </div>
                 
-                                <div class="footer-v2__social">
-                    <a href="https://3dwarehouse.sketchup.com/by/framexvn" target="_blank" rel="noopener noreferrer" aria-label="3D Warehouse">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7l-10-5z"></path>
-                            <path d="M12 22V12"></path>
-                            <path d="M22 7l-10 5L2 7"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </a>
-                    <a href="https://www.pinterest.com/FRAMEXVN/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 11.973c0-2.483 1.826-4.505 4.08-4.505 2.254 0 4.08 2.022 4.08 4.505 0 2.483-1.826 4.505-4.08 4.505-.522 0-1.023-.109-1.479-.311"></path>
-                            <path d="M9.56 15.51l1.528-5.572"></path>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/framexvn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
+                <div class="footer-section">
+                    <h3 data-lang="footer-company-title">Company</h3>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="about.html" data-lang="footer-about">About Us</a></li>
+                        <li class="mb-2"><a href="projects.html" data-lang="footer-projects">Projects</a></li>
+                        <li class="mb-2"><a href="blog.html" data-lang="footer-blog">Blog</a></li>
+                        <li class="mb-2"><a href="investor-relations.html" data-lang="footer-investors">Investors</a></li>
+                        <li class="mb-2"><a href="contact.html" data-lang="footer-contact">Contact</a></li>
+                    </ul>
                 </div>
+                
+                <div class="footer-section">
+                    <h3 data-lang="footer-contact-title">Contact Info</h3>
+                    <p class="mb-2">
+                        <strong>Email:</strong> sales@framex.vn
+                    </p>
+                    <p class="mb-2">
+                        <strong>Phone:</strong> +84 909 005 683
+                    </p>
+                    <p class="mb-4">
+                        <strong>Address:</strong><br>
+                        150/52A Phú Định<br>
+                        TP. Hồ Chí Minh, Vietnam
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ABM Architectural Material Co., Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/products.js"></script>
-    <script src="js/comparison-table-i18n.js"></script>
 </body>
 </html>
